@@ -6,6 +6,8 @@ function Header() {
       <a href="/suggest-character">Suggest a character</a>
 
       <a href="/login">Login</a>
+
+      <a href="/">Home</a>
     </header>
   );
 }

@@ -5,7 +5,18 @@ import { useHistory } from "react-router-dom";
 
 function SuggestCharacter() {
   const history = useHistory();
-
+  const [characterName, setCharacterName] = React.useState("");
+  const [gender, setGender] = React.useState("");
+  const [series, setSeries] = React.useState("");
+  const [author, setAuthor] = React.useState("");
+  const [genre, setGenre] = React.useState("");
+  const [relationships, setRelationships] = React.useState("");
+  const [notes, setNotes] = React.useState("");
+  const [importance, setImportance] = React.useState("");
+  const [type, setType] = React.useState("");
+  const [romanticOrientation, setRomanticOrientation] = React.useState("");
+  const [sexualOrientation, setSexualOrientation] = React.useState("");
+  const [pairings, setPairings] = React.useState("");
   return (
     <div>
       <Header />
@@ -15,10 +26,21 @@ function SuggestCharacter() {
             //const novoToken = localStorage.getItem("token");
             event.preventDefault();
             fazerRequisicaoComBody(
-              "http://localhost:8081/clientes",
+              "https://aroacedb-back.herokuapp.com/suggest",
               "POST",
               {
-                // post elemenents
+                character_name: characterName,
+                gender,
+                main_storyseries: series,
+                author,
+                genre,
+                relationships,
+                rep_noteswarnings: notes,
+                importance,
+                type_of_rep: type,
+                romantic_orientation: romanticOrientation,
+                sexual_orientation: sexualOrientation,
+                pairing_qpp_or_romantic: pairings,
               }
               //
             )
@@ -26,7 +48,7 @@ function SuggestCharacter() {
               .then((resJson) => {
                 console.log(resJson);
 
-                history.push("/sucess");
+                history.push("/success");
               });
           }}
         >
@@ -35,7 +57,7 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setCharacterName(event.target.value);
               }}
             ></input>
           </label>
@@ -45,7 +67,7 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setGender(event.target.value);
               }}
             ></input>
           </label>
@@ -55,7 +77,7 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setSeries(event.target.value);
               }}
             ></input>
           </label>
@@ -65,7 +87,7 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setAuthor(event.target.value);
               }}
             ></input>
           </label>
@@ -75,7 +97,7 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setGenre(event.target.value);
               }}
             ></input>
           </label>
@@ -85,7 +107,7 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setRelationships(event.target.value);
               }}
             ></input>
           </label>
@@ -95,23 +117,35 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setNotes(event.target.value);
               }}
             ></input>
           </label>
 
           <label>
             Character importance
-            <select>
-              <option>Main</option>
-              <option>Lead</option>
-              <option>Side</option>
+            <select
+              value={importance}
+              placeholder="Select one"
+              onChange={(event) => {
+                console.log(importance);
+                setImportance(event.target.value);
+                console.log(importance);
+              }}
+            >
+              <option value="Main">Main</option>
+              <option value="Lead">Lead</option>
+              <option value="Side">Side</option>
             </select>
           </label>
 
           <label>
             Type of Rep
-            <select>
+            <select
+              onSelect={(event) => {
+                setType(event.target.value);
+              }}
+            >
               <option>On Page</option>
               <option>Word Used</option>
               <option>Word of God</option>
@@ -123,7 +157,7 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setRomanticOrientation(event.target.value);
               }}
             ></input>
           </label>
@@ -133,7 +167,7 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setSexualOrientation(event.target.value);
               }}
             ></input>
           </label>
@@ -143,7 +177,7 @@ function SuggestCharacter() {
             <input
               type="text"
               onChange={(event) => {
-                //setNome(event.target.value);
+                setPairings(event.target.value);
               }}
             ></input>
           </label>

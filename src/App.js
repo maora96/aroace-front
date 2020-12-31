@@ -5,6 +5,7 @@ import Home from "./pages/home/home";
 import Login from "./pages/login/login";
 import Results from "./pages/results/results";
 import SuggestCharacter from "./pages/suggest-character/suggest-character";
+import Success from "./pages/success/success";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/results" component={Results} />
           <Route path="/suggest-character" component={SuggestCharacter} />
+          <Route path="/success" component={Success} />
         </Switch>
       </div>
     </BrowserRouter>

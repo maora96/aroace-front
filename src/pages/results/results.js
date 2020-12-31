@@ -4,12 +4,22 @@ import Header from "../../components/header/header";
 
 function Results() {
   const [results, setResults] = React.useState([]);
+  const [filteredResults, setFilteredResults] = React.useState([]);
 
   React.useEffect(() => {
     const newResults = JSON.parse(localStorage.getItem("results"));
     setResults(newResults);
     console.log(results);
-  }, [results]);
+  }, []);
+
+  React.useEffect(() => {
+    setFilteredResults(
+      results.filter((res) => {
+        res.character_name.toLowerCase().includes();
+      })
+    );
+  });
+
   return (
     <div>
       <Header />
