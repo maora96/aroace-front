@@ -1,0 +1,69 @@
+.SingleCharacter {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.SingleCharacter .single-character-container {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: left;
+}
+
+.SingleCharacter .single-character-container .top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SingleCharacter .single-character-container .top h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #0fefc9;
+}
+
+.SingleCharacter .single-character-container .top h3 {
+  font-size: 1.5rem;
+  color: #2b193d;
+}
+
+.SingleCharacter .single-character-container .top span {
+  margin-top: 0.4rem;
+  color: #2b193d;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.SingleCharacter .single-character-container span {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.SingleCharacter .single-character-container span span {
+  text-transform: lowercase;
+}
+
+.SingleCharacter .single-character-container a {
+  color: white;
+  text-transform: uppercase;
+  background-color: #0fefc9;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+}
+
+.SingleCharacter .single-character-container .button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}

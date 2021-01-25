@@ -1,0 +1,94 @@
+.Home {
+  display: flex;
+  background-color: #0fefc9;
+}
+
+.Home .home-container {
+  width: 73%;
+  margin: 0.35rem auto;
+  background: #2b193d;
+  overflow-y: auto;
+  height: 99vh;
+  border-radius: 15px;
+}
+
+.Home .home-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.Home .home-container::-webkit-scrollbar {
+  width: 20px;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+
+.Home .home-container::-webkit-scrollbar-thumb {
+  border: none;
+
+  background-color: #0fefc9;
+}
+
+.Home .home-container form {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.Home .home-container form input {
+  margin-top: 3rem;
+  width: 100%;
+  border: none;
+  height: 50px;
+  border-radius: 10px;
+  color: #0fefc9;
+  padding-left: 1rem;
+}
+
+.Home .home-container form button {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  border-radius: 0 5px 5px 0;
+  background-color: #0fefc9;
+  border: none;
+  height: 50px;
+  width: 75px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #bab5b5;
+  font-family: "Lato", sans-serif;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #bab5b5;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #bab5b5;
+}
+
+.Home .char-btn {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Home .char-btn button {
+  color: white;
+  text-transform: uppercase;
+  background-color: #0fefc9;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+}

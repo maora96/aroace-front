@@ -1,0 +1,29 @@
+.Character {
+  display: flex;
+  background-color: #0fefc9;
+}
+
+.Character .character-container {
+  width: 73%;
+  margin: 0.35rem auto;
+  background: #2b193d;
+  overflow-y: auto;
+  height: 99vh;
+  border-radius: 15px;
+}
+
+.Character .character-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.Character .character-container::-webkit-scrollbar {
+  width: 20px;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+
+.Character .character-container::-webkit-scrollbar-thumb {
+  border: none;
+  background-color: #0fefc9;
+}
