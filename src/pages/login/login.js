@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 function Login() {
   return (
     <div>
-      <h1>Hello from Login</h1>
+      <h1>No login working yet!</h1>
     </div>
   );
 }
