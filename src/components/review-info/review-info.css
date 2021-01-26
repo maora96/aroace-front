@@ -1,0 +1,11 @@
+.ReviewInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.ReviewInfo h4 {
+  text-transform: uppercase;
+  color: #2b193d;
+}

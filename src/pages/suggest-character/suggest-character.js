@@ -1,189 +1,231 @@
 import React from "react";
 import { fazerRequisicaoComBody } from "../../utils/fetch";
-import Header from "../../components/header/header";
+import "./suggest-character.css";
+
 import { useHistory } from "react-router-dom";
+import SidebarUser from "../../components/sidebar-user/sidebar-user";
+
+import { Formik } from "formik";
+import * as Yup from "yup";
 
 function SuggestCharacter() {
   const history = useHistory();
-  const [characterName, setCharacterName] = React.useState("");
-  const [gender, setGender] = React.useState("");
-  const [series, setSeries] = React.useState("");
-  const [author, setAuthor] = React.useState("");
-  const [genre, setGenre] = React.useState("");
-  const [relationships, setRelationships] = React.useState("");
-  const [notes, setNotes] = React.useState("");
-  const [importance, setImportance] = React.useState("");
-  const [type, setType] = React.useState("");
-  const [romanticOrientation, setRomanticOrientation] = React.useState("");
-  const [sexualOrientation, setSexualOrientation] = React.useState("");
-  const [pairings, setPairings] = React.useState("");
+
   return (
-    <div>
-      <Header />
-      <div className="suggest-character">
-        <form
-          onSubmit={(event) => {
-            //const novoToken = localStorage.getItem("token");
-            event.preventDefault();
-            fazerRequisicaoComBody(
-              "https://aroacedb-back.herokuapp.com/suggest",
-              "POST",
-              {
-                character_name: characterName,
-                gender,
-                main_storyseries: series,
-                author,
-                genre,
-                relationships,
-                rep_noteswarnings: notes,
-                importance,
-                type_of_rep: type,
-                romantic_orientation: romanticOrientation,
-                sexual_orientation: sexualOrientation,
-                pairing_qpp_or_romantic: pairings,
-              }
-              //
-            )
-              .then((res) => res.json())
-              .then((resJson) => {
-                console.log(resJson);
+    <div className="SuggestCharacter">
+      <SidebarUser />
+      <div className="suggest-container">
+        <div className="suggest">
+          <h2 class="title">Suggest a character</h2>
 
-                history.push("/success");
-              });
-          }}
-        >
-          <label>
-            Character name
-            <input
-              type="text"
-              onChange={(event) => {
-                setCharacterName(event.target.value);
-              }}
-            ></input>
-          </label>
+          <Formik
+            initialValues={{
+              character_name: "",
+              author: "",
+              gender: "",
+              importance: "",
+              pairing_qpp_or_romantic: "",
+              main_storyseries: "",
+              type_of_rep: "",
+              romantic_orientation: "",
+              sexual_orientation: "",
+              genre: "",
+              relationships: "",
+              rep_noteswarnings: "",
+            }}
+            onSubmit={(values) => {
+              console.log(JSON.stringify(values, null, 2));
+              fazerRequisicaoComBody(
+                "https://aroacedb-back.herokuapp.com/suggest",
+                "POST",
+                values
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                });
+              history.push("/success");
+            }}
+          >
+            {(props) => {
+              const {
+                values,
+                isSubmitting,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+              } = props;
+              return (
+                <form onSubmit={handleSubmit}>
+                  <div className="suggest-character-info">
+                    <div className="line">
+                      <h2>
+                        <input
+                          id="character_name"
+                          placeholder="Character Name"
+                          type="text"
+                          value={values.character_name}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </h2>
+                      <input
+                        id="importance"
+                        placeholder="Character Importance"
+                        type="text"
+                        value={values.importance}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+                    <div className="line">
+                      <div className="chunk">
+                        <span>Author</span>
+                        <input
+                          id="author"
+                          placeholder="Author"
+                          type="text"
+                          value={values.author}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </div>
+                      <div className="chunk">
+                        <span>Gender</span>{" "}
+                        <input
+                          id="gender"
+                          placeholder="Gender"
+                          type="text"
+                          value={values.gender}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </div>
+                      <div className="chunk">
+                        <span>Pairing</span>
+                        <input
+                          id="pairing_qpp_or_romantic"
+                          placeholder="Pairing"
+                          type="text"
+                          value={values.pairing_qpp_or_romantic}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </div>
+                    </div>
 
-          <label>
-            Gender
-            <input
-              type="text"
-              onChange={(event) => {
-                setGender(event.target.value);
-              }}
-            ></input>
-          </label>
+                    <div className="line">
+                      <div className="chunk">
+                        <span>Series</span>
+                        <input
+                          id="main_storyseries"
+                          placeholder="Series"
+                          type="text"
+                          value={values.main_storyseries}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </div>
+                      <div className="chunk">
+                        <span>Type of Rep</span>
+                        <input
+                          id="type_of_rep"
+                          placeholder="Type of Rep"
+                          type="text"
+                          value={values.type_of_rep}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </div>
+                    </div>
 
-          <label>
-            Series
-            <input
-              type="text"
-              onChange={(event) => {
-                setSeries(event.target.value);
-              }}
-            ></input>
-          </label>
+                    <div className="line">
+                      <div className="chunk">
+                        <span>Romantic orientation</span>
+                        <input
+                          id="romantic_orientation"
+                          placeholder="Romantic Orientation"
+                          type="text"
+                          value={values.romantic_orientation}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </div>
+                      <div className="chunk">
+                        <span>Sexual Orientation</span>
+                        <input
+                          id="sexual_orientation"
+                          placeholder="Sexual Orientation"
+                          type="text"
+                          value={values.sexual_orientation}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </div>
+                    </div>
 
-          <label>
-            Author
-            <input
-              type="text"
-              onChange={(event) => {
-                setAuthor(event.target.value);
-              }}
-            ></input>
-          </label>
+                    <div className="line">
+                      <div className="chunk">
+                        <span>Genre</span>
+                        <input
+                          id="genre"
+                          placeholder="Genres"
+                          type="text"
+                          value={values.genre}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                      </div>
+                    </div>
 
-          <label>
-            Genre
-            <input
-              type="text"
-              onChange={(event) => {
-                setGenre(event.target.value);
-              }}
-            ></input>
-          </label>
+                    <div clasName="square">
+                      <p>
+                        <span>Relationships</span>
+                      </p>
+                      <textarea
+                        id="relationships"
+                        placeholder="Relationships"
+                        type="text"
+                        value={values.relationships}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
 
-          <label>
-            Relationships
-            <input
-              type="text"
-              onChange={(event) => {
-                setRelationships(event.target.value);
-              }}
-            ></input>
-          </label>
+                    <div clasName="square">
+                      <p>
+                        <span>Notes & Warnings</span>
+                      </p>
+                      <textarea
+                        id="rep_noteswarnings"
+                        placeholder="Representation Notes & Warnings"
+                        type="text"
+                        value={values.rep_noteswarnings}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+                  </div>
 
-          <label>
-            Notes and Warnings on Representation
-            <input
-              type="text"
-              onChange={(event) => {
-                setNotes(event.target.value);
-              }}
-            ></input>
-          </label>
+                  <div className="suggest-review">
+                    <p>
+                      Once the character has been accepted to the database you
+                      will be able to suggest reviews and stories for them!
+                    </p>
+                  </div>
 
-          <label>
-            Character importance
-            <select
-              value={importance}
-              placeholder="Select one"
-              onChange={(event) => {
-                console.log(importance);
-                setImportance(event.target.value);
-                console.log(importance);
-              }}
-            >
-              <option value="Main">Main</option>
-              <option value="Lead">Lead</option>
-              <option value="Side">Side</option>
-            </select>
-          </label>
-
-          <label>
-            Type of Rep
-            <select
-              onSelect={(event) => {
-                setType(event.target.value);
-              }}
-            >
-              <option>On Page</option>
-              <option>Word Used</option>
-              <option>Word of God</option>
-            </select>
-          </label>
-
-          <label>
-            Romantic orientation
-            <input
-              type="text"
-              onChange={(event) => {
-                setRomanticOrientation(event.target.value);
-              }}
-            ></input>
-          </label>
-
-          <label>
-            Sexual orientation
-            <input
-              type="text"
-              onChange={(event) => {
-                setSexualOrientation(event.target.value);
-              }}
-            ></input>
-          </label>
-
-          <label>
-            Pairings (queerplatonic relationship or romantic)
-            <input
-              type="text"
-              onChange={(event) => {
-                setPairings(event.target.value);
-              }}
-            ></input>
-          </label>
-
-          <button>Submit</button>
-        </form>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="submit"
+                  >
+                    Suggest Character
+                  </button>
+                </form>
+              );
+            }}
+          </Formik>
+        </div>
       </div>
     </div>
   );

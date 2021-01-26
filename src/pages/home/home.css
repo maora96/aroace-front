@@ -1,6 +1,7 @@
 .Home {
   display: flex;
   background-color: #0fefc9;
+  height: 100vh;
 }
 
 .Home .home-container {
@@ -57,19 +58,19 @@
   width: 75px;
 }
 
-::placeholder {
+.Home::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #bab5b5;
   font-family: "Lato", sans-serif;
   opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder {
+.Home:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #bab5b5;
 }
 
-::-ms-input-placeholder {
+.Home::-ms-input-placeholder {
   /* Microsoft Edge */
   color: #bab5b5;
 }

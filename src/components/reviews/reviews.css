@@ -1,0 +1,17 @@
+.Reviews {
+  width: 60%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.Reviews h3 {
+  color: #0fefc9;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin-bottom: 1.4rem;
+}

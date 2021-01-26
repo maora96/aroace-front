@@ -1,0 +1,77 @@
+.SuggestCharacterInfo {
+  width: 60%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+
+.SuggestCharacterInfo h2 {
+  color: #0fefc9;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.SuggestCharacterInfo .line {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.SuggestCharacterInfo span {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  color: #2b193d;
+}
+
+.SuggestCharacterInfo p {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.8rem;
+}
+
+.SuggestCharacterInfo p span {
+  margin-right: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.SuggestCharacterInfo blockquote {
+  margin-left: 2rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.SuggestCharacterInfo input {
+  border: none;
+  border-bottom: 1px solid #2b193d;
+}
+
+.SuggestCharacterInfo h2 input {
+  color: #0fefc9;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.SuggestCharacterInfo ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #0fefc9;
+  font-family: "Lato", sans-serif;
+  opacity: 1; /* Firefox */
+}
+
+.SuggestCharacterInfo :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #0fefc9;
+}
+
+.SuggestCharacterInfo ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #0fefc9;
+}

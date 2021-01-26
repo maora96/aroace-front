@@ -1,6 +1,7 @@
 .Character {
   display: flex;
   background-color: #0fefc9;
+  height: 100vh;
 }
 
 .Character .character-container {

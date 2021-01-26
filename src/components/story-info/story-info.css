@@ -1,0 +1,44 @@
+.StoryInfo {
+  background: #ebfcf8;
+  width: 95%;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.StoryInfo .line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.StoryInfo .line:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.StoryInfo h4 {
+  text-transform: uppercase;
+  color: #2b193d;
+}
+
+.StoryInfo span span {
+  font-weight: bold;
+  color: #2b193d;
+}
+
+.StoryInfo p {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.8rem;
+}
+
+.StoryInfo p span {
+  margin-right: 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.StoryInfo span .to-capitalize {
+  text-transform: capitalize;
+}

@@ -1,0 +1,76 @@
+.About {
+  display: flex;
+  background-color: #0fefc9;
+  height: 100vh;
+}
+
+.About .about-container {
+  width: 73%;
+  margin: 0.35rem auto;
+  background: #2b193d;
+  overflow-y: auto;
+  height: 99vh;
+  border-radius: 15px;
+}
+
+.About .about-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.About .about-container::-webkit-scrollbar {
+  width: 20px;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+
+.About .about-container::-webkit-scrollbar-thumb {
+  border: none;
+
+  background-color: #0fefc9;
+}
+
+.About .about {
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: left;
+}
+
+.About h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #0fefc9;
+  margin-bottom: 1rem;
+}
+
+.About .about p {
+  line-height: 1.4rem;
+}
+
+.About .social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.About .social-media img {
+  margin-right: 1.5rem;
+}
+
+.About .kofi-link {
+  width: 250px;
+  background: #2b193d;
+  color: #0fefc9;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  margin: 1.5rem auto 1.2rem auto;
+}

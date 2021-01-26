@@ -6,6 +6,7 @@ import Login from "./pages/login/login";
 import Character from "./pages/character/character";
 import SuggestCharacter from "./pages/suggest-character/suggest-character";
 import Success from "./pages/success/success";
+import About from "./pages/about/about";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/character/:id" component={Character} />
           <Route path="/suggest-character" component={SuggestCharacter} />
           <Route path="/success" component={Success} />
+          <Route path="/about" component={About} />
         </Switch>
       </div>
     </BrowserRouter>

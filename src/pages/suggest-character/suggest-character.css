@@ -1,0 +1,150 @@
+.SuggestCharacter {
+  display: flex;
+  background-color: #0fefc9;
+  height: 100vh;
+}
+
+.SuggestCharacter .suggest-container {
+  width: 73%;
+  margin: 0.35rem auto;
+  background: #2b193d;
+  overflow-y: auto;
+  height: 99vh;
+  border-radius: 15px;
+}
+
+.SuggestCharacter .suggest-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.SuggestCharacter .suggest-container::-webkit-scrollbar {
+  width: 20px;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+
+.SuggestCharacter .suggest-container::-webkit-scrollbar-thumb {
+  border: none;
+
+  background-color: #0fefc9;
+}
+
+.SuggestCharacter .suggest-character-info {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+.SuggestCharacter .suggest {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.SuggestCharacter .suggest h2 {
+  color: #0fefc9;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+}
+
+.SuggestCharacter .suggest .line {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.SuggestCharacter .suggest span {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  color: #2b193d;
+}
+
+.SuggestCharacter .suggest p {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.8rem;
+}
+
+.SuggestCharacter .suggest p span {
+  margin-right: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.SuggestCharacter .suggest input {
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #2b193d;
+}
+
+.SuggestCharacter .suggest h2 input {
+  color: #0fefc9;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.SuggestCharacter .suggest ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #0fefc9;
+  font-family: "Lato", sans-serif;
+  opacity: 1; /* Firefox */
+}
+
+.SuggestCharacter .suggest :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #0fefc9;
+}
+
+.SuggestCharacter .suggest ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #0fefc9;
+}
+
+.SuggestCharacter .suggest-story,
+.SuggestCharacter .suggest-review {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.SuggestCharacter h3 {
+  color: #0fefc9;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.SuggestCharacter textarea {
+  width: 100%;
+  border: 1px solid #2b193d;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.SuggestCharacter .title {
+  margin-bottom: 2rem !important;
+}
+
+.SuggestCharacter button {
+  border: none;
+  background: #0fefc9;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  float: right;
+  margin-top: 2rem;
+}
