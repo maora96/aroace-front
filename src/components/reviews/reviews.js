@@ -8,9 +8,11 @@ export default function Reviews(props) {
   return (
     <div className="Reviews">
       <h3>Reviews</h3>
-      {reviews.map((review) => {
-        return <ReviewInfo review={review} />;
-      })}
+      {reviews.length !== 0
+        ? reviews.map((review) => {
+            return <ReviewInfo review={review} />;
+          })
+        : "No reviews available."}
     </div>
   );
 }

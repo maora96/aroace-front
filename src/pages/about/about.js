@@ -17,12 +17,16 @@ export default function About() {
             <a href="http://claudiearseneault.com/">claudiearseneault.com</a>!
           </p>
 
-          <a href="#aa" className="kofi-link">
+          <a href="https://ko-fi.com/claudie" className="kofi-link">
             Buy Claudie a Ko-fi!
           </a>
           <div className="social-media">
-            <img src={Twitter} alt="twitter" />
-            <img src={Globe} alt="website" />
+            <a href="https://twitter.com/ClH2OArs">
+              <img src={Twitter} alt="twitter" />
+            </a>
+            <a href="http://claudiearseneault.com/">
+              <img src={Globe} alt="website" />
+            </a>
           </div>
         </div>
 
@@ -38,12 +42,16 @@ export default function About() {
             me at <a href="https://twitter.com/nyphren">@nyphren</a>!
           </p>
 
-          <a href="#aa" className="kofi-link">
+          <a href="https://ko-fi.com/nyphren" className="kofi-link">
             Buy nyphren a Ko-fi!
           </a>
           <div className="social-media">
-            <img src={Twitter} alt="twitter" />
-            <img src={Globe} alt="website" />
+            <a href="https://twitter.com/nyphren">
+              <img src={Twitter} alt="twitter" />
+            </a>
+            <a href="https://nyphren.netlify.app/">
+              <img src={Globe} alt="website" />
+            </a>
           </div>
         </div>
       </div>

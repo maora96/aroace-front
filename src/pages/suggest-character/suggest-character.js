@@ -58,6 +58,7 @@ function SuggestCharacter() {
               return (
                 <form onSubmit={handleSubmit}>
                   <div className="suggest-character-info">
+                    <p>Suggestions are not being received yet!</p>
                     <div className="line">
                       <h2>
                         <input
