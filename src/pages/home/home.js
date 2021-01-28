@@ -7,7 +7,7 @@ import { ReactComponent as ButtonIcon } from "../../assets/chevron-right-solid.s
 function Home() {
   const [random, setRandom] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
-  const [search, setSearch] = React.useState("");
+  const [search, setSearch] = React.useState([]);
   const [results, setResults] = React.useState([]);
   const [filteredResults, setFilteredResults] = React.useState([]);
 
@@ -29,6 +29,8 @@ function Home() {
       <div className="home-container">
         <form
           onSubmit={(event) => {
+            console.log(search);
+            const newSearch = search.split(" ");
             console.log(search);
 
             event.preventDefault();
