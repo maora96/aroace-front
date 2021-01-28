@@ -1,0 +1,75 @@
+.RecentSuggested {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+}
+
+.RecentSuggested h3 {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #0fefc9;
+  margin-bottom: 2rem;
+}
+
+.RecentSuggested .characters {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.RecentSuggested .character-card {
+  width: 400px;
+  height: 200px;
+  background: white;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.RecentSuggested .character-card .line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.RecentSuggested .character-card h4 {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #0fefc9;
+}
+
+.RecentSuggested .character-card .line .chunk span {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #2b193d;
+}
+
+.RecentSuggested .character-card p {
+  font-size: 15px;
+  line-height: 18px;
+  color: #7a7a7a;
+}
+
+.RecentSuggested .character-card a {
+  align-self: flex-end;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 45px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #0fefc9;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 160px;
+  height: 45px;
+  text-align: center;
+}

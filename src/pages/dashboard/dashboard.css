@@ -1,0 +1,60 @@
+.Dashboard {
+  display: flex;
+  background-color: #0fefc9;
+  height: 100vh;
+}
+
+.Dashboard .dashboard-container {
+  width: 73%;
+  margin: 0.35rem auto;
+  background: #2b193d;
+  overflow-y: auto;
+  height: 99vh;
+  border-radius: 15px;
+}
+
+.Dashboard .dashboard-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.Dashboard .dashboard-container::-webkit-scrollbar {
+  width: 20px;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+
+.Dashboard .dashboard-container::-webkit-scrollbar-thumb {
+  border: none;
+
+  background-color: #0fefc9;
+}
+
+.Dashboard .header {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Dashboard h2 {
+  font-size: 50px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #0fefc9;
+}
+
+.Dashboard .header a {
+  float: right;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 45px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #0fefc9;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 160px;
+  height: 45px;
+  text-align: center;
+}

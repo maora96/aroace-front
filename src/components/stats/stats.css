@@ -1,0 +1,46 @@
+.Stats {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.Stats h3 {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #0fefc9;
+  margin-bottom: 2rem;
+}
+
+.Stats .big-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.Stats .stats-box {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  width: 250px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Stats .stats-box span {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #2b193d;
+}
+
+.Stats .stats-box span:first-child {
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 42px;
+  text-transform: uppercase;
+  color: #0fefc9;
+}

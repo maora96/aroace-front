@@ -1,50 +1,59 @@
 import React from "react";
+import "./suggested-character.css";
+import { useRouteMatch } from "react-router-dom";
+import CharacterInfo from "../../components/character-info/character-info";
+import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
 import { fazerRequisicaoComBody } from "../../utils/fetch";
-import "./suggest-character.css";
-
-import { useHistory } from "react-router-dom";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
-
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-function SuggestCharacter() {
-  const history = useHistory();
+export default function SuggestedCharacter() {
+  const [character, setCharacter] = React.useState({});
+  const { params } = useRouteMatch();
+
+  React.useEffect(() => {
+    fetch(`https://aroacedb-back.herokuapp.com/suggest/${params.id}`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        setCharacter(resJson.dados.character[0]);
+      });
+  }, []);
 
   return (
-    <div className="SuggestCharacter">
-      <SidebarUser />
-      <div className="suggest-container">
+    <div className="Character">
+      <SidebarAdmin />
+      <div className="character-container">
         <div className="suggest">
-          <h2 class="title">Suggest a character</h2>
+          <h2 class="title">Suggested character</h2>
 
           <Formik
+            enableReinitialize={true}
             initialValues={{
-              character_name: "",
-              author: "",
-              gender: "",
-              importance: "",
-              pairing_qpp_or_romantic: "",
-              main_storyseries: "",
-              type_of_rep: "",
-              romantic_orientation: "",
-              sexual_orientation: "",
-              genre: "",
-              relationships: "",
-              rep_noteswarnings: "",
+              character_name: character.character_name,
+              author: character.author,
+              gender: character.gender,
+              importance: character.importance,
+              pairing_qpp_or_romantic: character.pairing_qpp_or_romantic,
+              main_storyseries: character.main_storyseries,
+              type_of_rep: character.type_of_rep,
+              romantic_orientation: character.romantic_orientation,
+              sexual_orientation: character.sexual_orientation,
+              genre: character.genre,
+              relationships: character.relationships,
+              rep_noteswarnings: character.rep_noteswarnings,
             }}
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
-              fazerRequisicaoComBody(
-                "https://aroacedb-back.herokuapp.com/suggest",
-                "POST",
-                values
-              )
-                .then((res) => res.json())
-                .then((resJson) => {
-                  console.log(resJson);
-                });
-              history.push("/success");
+              //   fazerRequisicaoComBody(
+              //     "https://aroacedb-back.herokuapp.com/suggest",
+              //     "POST",
+              //     values
+              //   )
+              //     .then((res) => res.json())
+              //     .then((resJson) => {
+              //       console.log(resJson);
+              //     });
+              //s history.push("/success");
             }}
           >
             {(props) => {
@@ -58,12 +67,11 @@ function SuggestCharacter() {
               return (
                 <form onSubmit={handleSubmit}>
                   <div className="suggest-character-info">
-                    <p>Suggestions are not being received yet!</p>
                     <div className="line">
                       <h2>
                         <input
                           id="character_name"
-                          placeholder="Insert Character Name"
+                          placeholder={character.character_name}
                           type="text"
                           value={values.character_name}
                           onChange={handleChange}
@@ -72,7 +80,7 @@ function SuggestCharacter() {
                       </h2>
                       <input
                         id="importance"
-                        placeholder="Insert Character Importance"
+                        placeholder={character.importance}
                         type="text"
                         value={values.importance}
                         onChange={handleChange}
@@ -84,7 +92,7 @@ function SuggestCharacter() {
                         <span>Author</span>
                         <input
                           id="author"
-                          placeholder="Author"
+                          placeholder={character.author}
                           type="text"
                           value={values.author}
                           onChange={handleChange}
@@ -95,7 +103,7 @@ function SuggestCharacter() {
                         <span>Gender</span>{" "}
                         <input
                           id="gender"
-                          placeholder="Insert Character Gender"
+                          placeholder={character.gender}
                           type="text"
                           value={values.gender}
                           onChange={handleChange}
@@ -106,7 +114,7 @@ function SuggestCharacter() {
                         <span>Pairing</span>
                         <input
                           id="pairing_qpp_or_romantic"
-                          placeholder="Insert Pairing"
+                          placeholder={character.pairing_qpp_or_romantic}
                           type="text"
                           value={values.pairing_qpp_or_romantic}
                           onChange={handleChange}
@@ -120,7 +128,7 @@ function SuggestCharacter() {
                         <span>Series</span>
                         <input
                           id="main_storyseries"
-                          placeholder="Insert Series"
+                          placeholder={character.main_storyseries}
                           type="text"
                           value={values.main_storyseries}
                           onChange={handleChange}
@@ -131,7 +139,7 @@ function SuggestCharacter() {
                         <span>Type of Rep</span>
                         <input
                           id="type_of_rep"
-                          placeholder="Insert Type of Rep"
+                          placeholder={character.type_of_rep}
                           type="text"
                           value={values.type_of_rep}
                           onChange={handleChange}
@@ -145,7 +153,7 @@ function SuggestCharacter() {
                         <span>Romantic orientation</span>
                         <input
                           id="romantic_orientation"
-                          placeholder="Insert Romantic Orientation"
+                          placeholder={character.romantic_orientation}
                           type="text"
                           value={values.romantic_orientation}
                           onChange={handleChange}
@@ -156,7 +164,7 @@ function SuggestCharacter() {
                         <span>Sexual Orientation</span>
                         <input
                           id="sexual_orientation"
-                          placeholder="Insert Sexual Orientation"
+                          placeholder={character.sexual_orientation}
                           type="text"
                           value={values.sexual_orientation}
                           onChange={handleChange}
@@ -170,7 +178,7 @@ function SuggestCharacter() {
                         <span>Genre</span>
                         <input
                           id="genre"
-                          placeholder="Insert Genres"
+                          placeholder={character.genre}
                           type="text"
                           value={values.genre}
                           onChange={handleChange}
@@ -185,7 +193,7 @@ function SuggestCharacter() {
                       </p>
                       <textarea
                         id="relationships"
-                        placeholder="Insert Relationships"
+                        placeholder={character.relationships}
                         type="text"
                         value={values.relationships}
                         onChange={handleChange}
@@ -199,7 +207,7 @@ function SuggestCharacter() {
                       </p>
                       <textarea
                         id="rep_noteswarnings"
-                        placeholder="Insert Representation Notes & Warnings"
+                        placeholder={character.rep_noteswarnings}
                         type="text"
                         value={values.rep_noteswarnings}
                         onChange={handleChange}
@@ -207,21 +215,23 @@ function SuggestCharacter() {
                       />
                     </div>
                   </div>
-
-                  <div className="suggest-review">
-                    <p>
-                      Once the character has been accepted to the database you
-                      will be able to suggest reviews and stories for them!
-                    </p>
+                  <div className="buttons">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        console.log("delete from database");
+                      }}
+                    >
+                      Delete
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="submit"
+                    >
+                      Add Character to Database
+                    </button>
                   </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="submit"
-                  >
-                    Suggest Character
-                  </button>
                 </form>
               );
             }}
@@ -231,5 +241,3 @@ function SuggestCharacter() {
     </div>
   );
 }
-
-export default SuggestCharacter;
