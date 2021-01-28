@@ -13,6 +13,7 @@ export default function Reviews(props) {
             return <ReviewInfo review={review} />;
           })
         : "No reviews available."}
+      <a href="/suggest-review">Suggest Review</a>
     </div>
   );
 }

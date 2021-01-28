@@ -19,6 +19,7 @@ export default function SingleCharacter() {
         console.log(resJson.dados.character[0]);
         setCharacter(resJson.dados.character[0]);
         console.log(character);
+        console.log("params", params.id);
       });
 
     fetch(`https://aroacedb-back.herokuapp.com/stories/character/${params.id}`)
@@ -48,8 +49,9 @@ export default function SingleCharacter() {
       <SidebarUser />
       <div className="character-container">
         <CharacterInfo character={character} />
-        <Stories stories={stories} />
-        <Reviews reviews={reviews} />
+        {console.log(params.id)}
+        <Stories stories={stories} character_id={params.id} />
+        <Reviews reviews={reviews} character_id={params.id} />
       </div>
     </div>
   );
