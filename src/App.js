@@ -10,6 +10,8 @@ import About from "./pages/about/about";
 import Dashboard from "./pages/dashboard/dashboard";
 import SuggestedCharacters from "./pages/suggested-characters/suggested-characters";
 import SuggestedCharacter from "./pages/suggested-character/suggested-character";
+import AllCharacters from "./pages/all-characters/all-characters";
+import UpdateCharacter from "./components/update-character/update-character";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
             path="/suggested-character/:id"
             component={SuggestedCharacter}
           />
+          <Route path="/all-characters" component={AllCharacters} />
+          <Route path="/update-character/:id" component={UpdateCharacter} />
         </Switch>
       </div>
     </BrowserRouter>

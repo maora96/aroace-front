@@ -30,7 +30,7 @@ export default function RecentSuggested(props) {
                 {character.sexual_orientation} character.
               </p>
 
-              <a href={`/character/${character.id}`}>Read more</a>
+              <a href={`/suggested-character/${character.id}`}>Read more</a>
             </div>
           );
         })}

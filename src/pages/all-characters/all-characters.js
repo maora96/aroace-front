@@ -1,10 +1,10 @@
-import "./suggested-characters.css";
+import "./all-characters.css";
 import React from "react";
 import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
 import Table from "../../components/table/table";
 import Pagination from "../../components/pagination/pagination";
 
-export default function SuggestedCharacters() {
+export default function AllCharacters() {
   const [characters, setCharacters] = React.useState([]);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [totalPages, setTotalPages] = React.useState(0);
@@ -20,13 +20,14 @@ export default function SuggestedCharacters() {
   }, [currentPage]);
 
   return (
-    <div className="SuggestedCharacters">
+    <div className="AllCharacters">
       <SidebarAdmin />
-      <div className="suggested-container">
+      <div className="all-characters-container">
         <div className="title">
-          <h2>Suggested Characters</h2>
+          <h2>All Characters</h2>
         </div>
-        <Table characters={characters} type="suggest" />
+        <Table characters={characters} type="regular" />
+
         <Pagination />
         {/* <Pagination
             totalDePaginas={totalPaginas}

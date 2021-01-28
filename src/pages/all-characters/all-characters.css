@@ -1,10 +1,10 @@
-.SuggestedCharacters {
+.AllCharacters {
   display: flex;
   background-color: #0fefc9;
   height: 100vh;
 }
 
-.SuggestedCharacters .suggested-container {
+.AllCharacters .all-characters-container {
   width: 73%;
   margin: 0.35rem auto;
   background: #2b193d;
@@ -13,24 +13,24 @@
   border-radius: 15px;
 }
 
-.SuggestedCharacters .suggested-container::-webkit-scrollbar-track {
+.AllCharacters .all-characters-container::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: white;
 }
 
-.SuggestedCharacters .suggested-container::-webkit-scrollbar {
+.AllCharacters .all-characters-container::-webkit-scrollbar {
   width: 20px;
   background-color: white;
   border-radius: 0 10px 10px 0;
 }
 
-.SuggestedCharacters .suggested-container::-webkit-scrollbar-thumb {
+.AllCharacters .all-characters-container::-webkit-scrollbar-thumb {
   border: none;
 
   background-color: #0fefc9;
 }
 
-.SuggestedCharacters .title {
+.AllCharacters .title {
   width: 70%;
   margin: 0 auto;
   margin-top: 3rem;

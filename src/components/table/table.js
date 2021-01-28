@@ -2,8 +2,8 @@ import Row from "../row/row";
 import "./table.css";
 
 function Table(props) {
-  const { characters } = props;
-
+  const { characters, type } = props;
+  console.log(type);
   return (
     <table class="table">
       <thead>
@@ -18,7 +18,7 @@ function Table(props) {
       </thead>
       <tbody>
         {characters.map((character) => {
-          return <Row character={character} />;
+          return <Row character={character} type={type} />;
         })}
       </tbody>
     </table>

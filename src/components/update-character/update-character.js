@@ -1,30 +1,55 @@
 import React from "react";
-import "./suggested-character.css";
+import "./update-character.css";
 import { useRouteMatch } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
 import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
 import { fazerRequisicaoComBody } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import Stories from "../../components/stories/stories";
+import Reviews from "../../components/reviews/reviews";
 
-export default function SuggestedCharacter() {
+export default function UpdateCharacter() {
   const [character, setCharacter] = React.useState({});
+  const [stories, setStories] = React.useState([]);
+  const [reviews, setReviews] = React.useState([]);
   const { params } = useRouteMatch();
 
   React.useEffect(() => {
-    fetch(`https://aroacedb-back.herokuapp.com/suggest/${params.id}`)
+    fetch(`https://aroacedb-back.herokuapp.com/characters/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
         setCharacter(resJson.dados.character[0]);
       });
+
+    fetch(`https://aroacedb-back.herokuapp.com/stories/character/${params.id}`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        const possibleStories = resJson.dados.stories;
+        if (possibleStories.length !== 0) {
+          console.log(possibleStories);
+          setStories(possibleStories);
+        }
+      });
+
+    fetch(`https://aroacedb-back.herokuapp.com/reviews/character/${params.id}`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        const possibleReviews = resJson.dados.reviews;
+        console.log(resJson);
+        if (possibleReviews.length !== 0) {
+          console.log(possibleReviews);
+          setReviews(possibleReviews);
+        }
+      });
   }, []);
 
   return (
-    <div className="Character">
+    <div className="UpdateCharacter">
       <SidebarAdmin />
       <div className="character-container">
         <div className="suggest">
-          <h2 class="title">Suggested character</h2>
+          <h2 class="title">Update character</h2>
 
           <Formik
             enableReinitialize={true}
@@ -46,7 +71,7 @@ export default function SuggestedCharacter() {
               console.log(JSON.stringify(values, null, 2));
               //   fazerRequisicaoComBody(
               //     "https://aroacedb-back.herokuapp.com/character",
-              //     "POST",
+              //     "PUT",
               //     values
               //   )
               //     .then((res) => res.json())
@@ -221,7 +246,7 @@ export default function SuggestedCharacter() {
                       onClick={() => {
                         console.log("delete from database");
                         fetch(
-                          `https://aroacedb-back.herokuapp.com/suggest/${params}`,
+                          `https://aroacedb-back.herokuapp.com/characters/${params}`,
                           {
                             method: "DELETE",
                             headers: { "Content-Type": "application/json" },
@@ -242,7 +267,7 @@ export default function SuggestedCharacter() {
                       disabled={isSubmitting}
                       className="submit"
                     >
-                      Add Character to Database
+                      Update Character
                     </button>
                   </div>
                 </form>
@@ -250,6 +275,8 @@ export default function SuggestedCharacter() {
             }}
           </Formik>
         </div>
+        <Stories stories={stories} />
+        <Reviews reviews={reviews} />
       </div>
     </div>
   );
