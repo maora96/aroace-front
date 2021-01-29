@@ -42,3 +42,13 @@
 .StoryInfo span .to-capitalize {
   text-transform: capitalize;
 }
+
+.StoryInfo .buttons-story {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.StoryInfo .buttons-story button {
+  margin-left: 1rem;
+  font-size: 20px;
+}

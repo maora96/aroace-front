@@ -13,6 +13,7 @@ import SuggestedCharacter from "./pages/suggested-character/suggested-character"
 import AllCharacters from "./pages/all-characters/all-characters";
 import UpdateCharacter from "./components/update-character/update-character";
 import SuggestStory from "./pages/suggest-story/suggest-story";
+import UpdateStory from "./pages/update-story/update-story";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/all-characters" component={AllCharacters} />
           <Route path="/update-character/:id" component={UpdateCharacter} />
           <Route path="/suggest-story/:id" component={SuggestStory} />
+          <Route path="/update-story/:id" component={UpdateStory} />
         </Switch>
       </div>
     </BrowserRouter>

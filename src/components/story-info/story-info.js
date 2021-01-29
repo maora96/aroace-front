@@ -1,8 +1,11 @@
 import "./story-info.css";
 import React from "react";
+import { fazerRequisicaoComBody } from "../../utils/fetch";
+import { useHistory } from "react-router-dom";
 
 export default function StoryInfo(props) {
   const { story } = props;
+  const history = useHistory();
 
   return (
     <div className="StoryInfo">
@@ -46,6 +49,23 @@ export default function StoryInfo(props) {
           ? "No other notes or warnings."
           : story.other_noteswarnings}
       </p>
+      <div className="buttons-story">
+        <button
+          onClick={() => {
+            console.log("https://aroacedb-back.herokuapp.com/" + story.id);
+            // fetch(`https://aroacedb-back.herokuapp.com/stories/${story.id}`, "DELETE");
+          }}
+        >
+          Delete
+        </button>
+        <button
+          onClick={() => {
+            history.push("/update-story/" + story.id);
+          }}
+        >
+          Update
+        </button>
+      </div>
     </div>
   );
 }
