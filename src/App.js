@@ -19,6 +19,10 @@ import SuggestedReviews from "./pages/suggested-reviews/suggested-reviews";
 import UpdateCharacter from "./pages/update-character/update-character";
 import AddCharacter from "./pages/add-character/add-character";
 import UpdateReview from "./pages/update-review/update-review";
+import SuggestedStory from "./pages/suggested-story/suggested-story";
+import AddStory from "./pages/add-story/add-story";
+import SuggestedReview from "./pages/suggested-review/suggested-review";
+import AddReview from "./pages/add-review/add-review";
 
 function App() {
   return (
@@ -46,6 +50,10 @@ function App() {
           <Route path="/suggested-reviews" component={SuggestedReviews} />
           <Route path="/add-character" component={AddCharacter} />
           <Route path="/update-review/:id" component={UpdateReview} />
+          <Route path="/suggested-story/:id" component={SuggestedStory} />
+          <Route path="/suggested-review/:id" component={SuggestedReview} />
+          <Route path="/add-story" component={AddStory} />
+          <Route path="/add-review" component={AddReview} />
         </Switch>
       </div>
     </BrowserRouter>

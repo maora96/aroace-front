@@ -1,0 +1,145 @@
+.SuggestStory {
+  display: flex;
+  background-color: #0fefc9;
+  height: 100vh;
+}
+
+.SuggestStory .story-container {
+  width: 73%;
+  margin: 0.35rem auto;
+  background: #2b193d;
+  overflow-y: auto;
+  height: 99vh;
+  border-radius: 15px;
+}
+
+.SuggestStory .story-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.SuggestStory .story-container::-webkit-scrollbar {
+  width: 20px;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+
+.SuggestStory .story-container::-webkit-scrollbar-thumb {
+  border: none;
+  background-color: #0fefc9;
+}
+
+.SuggestStory .stories {
+  width: 60%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.SuggestStory .stories h3 {
+  color: #0fefc9;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.SuggestStory .stories a {
+  color: white;
+  background: #0fefc9;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  align-self: flex-end;
+}
+
+.SuggestStory .StoryInfo {
+  background: #ebfcf8;
+  width: 95%;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.StoryInfo .line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.StoryInfo .line:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.StoryInfo h4 {
+  text-transform: uppercase;
+  color: #2b193d;
+}
+
+.StoryInfo span span {
+  font-weight: bold;
+  color: #2b193d;
+}
+
+.StoryInfo p {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.8rem;
+}
+
+.StoryInfo p span {
+  margin-right: 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.StoryInfo span .to-capitalize {
+  text-transform: capitalize;
+}
+
+.SuggestStory label {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.SuggestStory input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+}
+
+.SuggestStory textarea {
+  display: block;
+  margin-top: 1rem;
+  border-radius: 10px;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.SuggestStory button {
+  color: white;
+  background: #0fefc9;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: none;
+  align-self: flex-end;
+}
+
+.SuggestStory .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}

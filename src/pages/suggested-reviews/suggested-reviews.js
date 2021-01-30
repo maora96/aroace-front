@@ -1,8 +1,9 @@
 import "./suggested-reviews.css";
 import React from "react";
 import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import Table from "../../components/table/table";
+import Table from "../../components/table-character/table";
 import Pagination from "../../components/pagination/pagination";
+import TableReview from "../../components/table-review/table";
 
 export default function SuggestedReviews() {
   const [reviews, setReviews] = React.useState([]);
@@ -27,7 +28,7 @@ export default function SuggestedReviews() {
         <div className="title">
           <h2>Suggested Reviews</h2>
         </div>
-        <Table characters={reviews} type="suggest" />
+        <TableReview content={reviews} type="suggest" id="review" />
         <Pagination />
         {/* <Pagination
             totalDePaginas={totalPaginas}

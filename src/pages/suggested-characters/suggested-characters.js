@@ -1,8 +1,9 @@
 import "./suggested-characters.css";
 import React from "react";
 import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import Table from "../../components/table/table";
+import Table from "../../components/table-character/table";
 import Pagination from "../../components/pagination/pagination";
+import TableCharacter from "../../components/table-character/table";
 
 export default function SuggestedCharacters() {
   const [characters, setCharacters] = React.useState([]);
@@ -27,7 +28,7 @@ export default function SuggestedCharacters() {
         <div className="title">
           <h2>Suggested Characters</h2>
         </div>
-        <Table characters={characters} type="suggest" />
+        <TableCharacter content={characters} type="suggest" id="character" />
         <Pagination />
         {/* <Pagination
             totalDePaginas={totalPaginas}

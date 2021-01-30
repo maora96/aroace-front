@@ -1,0 +1,26 @@
+.SuggestStory .block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SuggestStory .block label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4rem;
+  margin-top: 2rem;
+}
+
+.SuggestStory .content-hundred {
+  width: 100%;
+}
+
+.SuggestStory .block input {
+  width: 300px;
+  margin-top: 1rem;
+}
+
+.SuggestStory .review-right {
+  float: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+}

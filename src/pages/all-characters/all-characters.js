@@ -1,8 +1,9 @@
 import "./all-characters.css";
 import React from "react";
 import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import Table from "../../components/table/table";
+import Table from "../../components/table-character/table";
 import Pagination from "../../components/pagination/pagination";
+import TableCharacter from "../../components/table-character/table";
 
 export default function AllCharacters() {
   const [characters, setCharacters] = React.useState([]);
@@ -10,10 +11,11 @@ export default function AllCharacters() {
   const [totalPages, setTotalPages] = React.useState(0);
 
   React.useEffect(() => {
-    fetch("https://aroacedb-back.herokuapp.com/suggest/")
+    fetch("https://aroacedb-back.herokuapp.com/characters")
       .then((res) => res.json())
       .then((resJson) => {
-        const data = resJson.dados.characters;
+        console.log(resJson);
+        const data = resJson.data.character;
         console.log(data);
         setCharacters(data);
       });
@@ -27,7 +29,7 @@ export default function AllCharacters() {
           <h2>All Characters</h2>
           <a href="/add-character">Add character</a>
         </div>
-        <Table characters={characters} type="regular" />
+        <TableCharacter content={characters} type="regular" id="character" />
 
         <Pagination />
         {/* <Pagination
