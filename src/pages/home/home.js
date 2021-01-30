@@ -15,7 +15,7 @@ function Home() {
     fetch("https://aroacedb-back.herokuapp.com/character")
       .then((res) => res.json())
       .then((resJson) => {
-        const newRandom = resJson.dados;
+        const newRandom = resJson.data;
         console.log(newRandom);
         console.log(filteredResults.length);
         setRandom(newRandom);
@@ -39,10 +39,10 @@ function Home() {
             )
               .then((res) => res.json())
               .then((resJson) => {
-                console.log(resJson.dados.characters);
+                console.log(resJson.data.characters);
 
                 if (resJson.dados.characters) {
-                  const newResults = resJson.dados.characters;
+                  const newResults = resJson.data.characters;
                   setFilteredResults(newResults);
                   //localStorage.setItem("results", JSON.stringify(newResults));
                   //setSearch("");
@@ -82,8 +82,8 @@ function Home() {
                     fetch("https://aroacedb-back.herokuapp.com/character")
                       .then((res) => res.json())
                       .then((resJson) => {
-                        console.log(resJson.dados);
-                        const newRandom = resJson.dados;
+                        console.log(resJson.data);
+                        const newRandom = resJson.data;
                         setRandom(newRandom);
                       });
                   }}

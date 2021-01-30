@@ -16,8 +16,8 @@ export default function SingleCharacter() {
     fetch(`https://aroacedb-back.herokuapp.com/characters/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
-        console.log(resJson.dados.character[0]);
-        setCharacter(resJson.dados.character[0]);
+        console.log(resJson.data.character[0]);
+        setCharacter(resJson.data.character[0]);
         console.log(character);
         console.log("params", params.id);
       });
@@ -25,7 +25,8 @@ export default function SingleCharacter() {
     fetch(`https://aroacedb-back.herokuapp.com/stories/character/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
-        const possibleStories = resJson.dados.stories;
+        console.log(resJson);
+        const possibleStories = resJson.data.stories;
         if (possibleStories.length !== 0) {
           console.log(possibleStories);
           setStories(possibleStories);
@@ -35,7 +36,7 @@ export default function SingleCharacter() {
     fetch(`https://aroacedb-back.herokuapp.com/reviews/character/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
-        const possibleReviews = resJson.dados.reviews;
+        const possibleReviews = resJson.data.reviews;
         console.log(resJson);
         if (possibleReviews.length !== 0) {
           console.log(possibleReviews);

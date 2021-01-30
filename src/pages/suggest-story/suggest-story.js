@@ -14,10 +14,11 @@ export default function SuggestStory() {
   const { params } = useRouteMatch();
 
   React.useEffect(() => {
-    fetch(`https://aroacedb-back.herokuapp.com/characters/${params.id}`)
+    fetch(`https://aroacedb-back.herokuapp.com/stories/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
-        setCharacter(resJson.dados.character[0]);
+        console.log(resJson);
+        //setCharacter(resJson.data.character[0]);
       });
   }, []);
 
@@ -29,24 +30,24 @@ export default function SuggestStory() {
           <h3>Suggest a Story</h3>
           <Formik
             initialValues={{
-              title: "",
-              series_or_antho: "",
+              story_title: "",
+              series_or_anthology: "",
               genre: "",
-              story_length: "",
+              length: "",
               type_of_rep: "",
-              importance: "",
+              character_importance: "",
               rep_noteswarnings: "",
               other_noteswarnings: "",
             }}
             onSubmit={(values) => {
               values.character_id = params.id;
               console.log(JSON.stringify(values, null, 2));
-              fetch("https://aroacedb-back.herokuapp.com/stories", {
+              fetch("https://aroacedb-back.herokuapp.com/suggest/stories", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: values,
+                body: JSON.stringify(values),
               })
                 .then((res) => res.json())
                 .then((resJson) => {
@@ -71,10 +72,10 @@ export default function SuggestStory() {
                       <h4>
                         <label>Story title</label>
                         <input
-                          id="title"
+                          id="story_title"
                           type="text"
                           placeholder="Story title"
-                          value={values.title}
+                          value={values.story_title}
                           onChange={handleChange}
                           onBlur={handleBlur}
                         />
@@ -83,10 +84,10 @@ export default function SuggestStory() {
                         <label>Story length</label>
                         <span>
                           <input
-                            id="story_length"
+                            id="length"
                             type="text"
                             placeholder="Story length"
-                            value={values.story_length}
+                            value={values.length}
                             onChange={handleChange}
                             onBlur={handleBlur}
                           />
@@ -95,10 +96,10 @@ export default function SuggestStory() {
                       <span>
                         <label>Character importance</label>
                         <input
-                          id="importance"
+                          id="character_importance"
                           type="text"
                           placeholder="Character importance"
-                          value={values.importance}
+                          value={values.character_importance}
                           onChange={handleChange}
                           onBlur={handleBlur}
                         />
@@ -108,10 +109,10 @@ export default function SuggestStory() {
                       <span>
                         <label>Series title</label>
                         <input
-                          id="series_or_antho"
+                          id="series_or_anthology"
                           type="text"
                           placeholder="Series title"
-                          value={values.series_or_antho}
+                          value={values.series_or_anthology}
                           onChange={handleChange}
                           onBlur={handleBlur}
                         />

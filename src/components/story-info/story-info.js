@@ -52,8 +52,15 @@ export default function StoryInfo(props) {
       <div className="buttons-story">
         <button
           onClick={() => {
-            console.log("https://aroacedb-back.herokuapp.com/" + story.id);
-            // fetch(`https://aroacedb-back.herokuapp.com/stories/${story.id}`, "DELETE");
+            console.log(
+              "https://aroacedb-back.herokuapp.com/stories/" + story.id
+            );
+            fetch(`https://aroacedb-back.herokuapp.com/stories/${story.id}`, {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
           }}
         >
           Delete

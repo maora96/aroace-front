@@ -1,8 +1,10 @@
 import "./character-info.css";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 export default function CharacterInfo(props) {
   const { character } = props;
+  const history = useHistory();
   return (
     <div className="CharacterInfo">
       <h2>{character.character_name}</h2>
@@ -71,6 +73,34 @@ export default function CharacterInfo(props) {
             ? "No warnings."
             : character.rep_noteswarnings}
         </p>
+      </div>
+      <div className="buttons-character">
+        <button
+          onClick={() => {
+            fetch(
+              `https://aroacedb-back.herokuapp.com/characters/${character.id}`,
+              {
+                method: "DELETE",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            )
+              .then((res) => res.json())
+              .then((resJson) => {
+                console.log(resJson);
+              });
+          }}
+        >
+          Delete
+        </button>
+        <button
+          onClick={() => {
+            history.push("/update-character/" + character.id);
+          }}
+        >
+          Update
+        </button>
       </div>
     </div>
   );

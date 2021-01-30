@@ -1,11 +1,31 @@
 .ReviewInfo {
+  margin-bottom: 1.5rem;
+}
+
+.ReviewInfo .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
 }
 
 .ReviewInfo h4 {
   text-transform: uppercase;
   color: #2b193d;
+}
+
+.ReviewInfo a {
+  color: white;
+  background: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0;
+  border-radius: 10px;
+  align-self: flex-end;
+}
+
+.ReviewInfo .buttons-review button {
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  margin-right: 1rem;
 }

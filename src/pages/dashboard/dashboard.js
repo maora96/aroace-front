@@ -9,17 +9,17 @@ function Dashboard() {
   const [stats, setStats] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("https://aroacedb-back.herokuapp.com/suggest/recent")
+    fetch("https://aroacedb-back.herokuapp.com/suggest/characters/recent")
       .then((res) => res.json())
       .then((resJson) => {
-        const suggested = resJson.dados.recentlyAdded;
+        const suggested = resJson.data.recentlyAdded;
         console.log(suggested);
         setRecentlyAdded(suggested);
       });
 
     fetch("https://aroacedb-back.herokuapp.com/stats").then((res) =>
       res.json().then((resJson) => {
-        const data = resJson.dados;
+        const data = resJson.data;
         console.log(data);
         setStats(data);
       })

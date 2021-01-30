@@ -1,4 +1,4 @@
-export function fazerRequisicaoComBody(url, metodo, conteudo, token) {
+export function fetchWithBody(url, metodo, conteudo, token) {
   return fetch(url, {
     method: metodo,
     headers: {

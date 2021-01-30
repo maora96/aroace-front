@@ -42,6 +42,20 @@ export default function SidebarAdmin() {
                 <span>Suggested characters</span>
               </a>
             </div>
+
+            <div className="link-container">
+              <a href="/suggested-stories">
+                <FeatherIcon fill="white" height="20px" width="30px" />
+                <span>Suggested stories</span>
+              </a>
+            </div>
+
+            <div className="link-container">
+              <a href="/suggested-reviews">
+                <FeatherIcon fill="white" height="20px" width="30px" />
+                <span>Suggested reviews</span>
+              </a>
+            </div>
           </div>
           <div className="link-container">
             <a href="/login">

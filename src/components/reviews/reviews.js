@@ -3,7 +3,7 @@ import React from "react";
 import ReviewInfo from "../../components/review-info/review-info";
 
 export default function Reviews(props) {
-  const { reviews } = props;
+  const { reviews, character_id } = props;
 
   return (
     <div className="Reviews">
@@ -13,7 +13,7 @@ export default function Reviews(props) {
             return <ReviewInfo review={review} />;
           })
         : "No reviews available."}
-      <a href="/suggest-review">Suggest Review</a>
+      <a href={`/suggest-review/${character_id}`}>Suggest Review</a>
     </div>
   );
 }

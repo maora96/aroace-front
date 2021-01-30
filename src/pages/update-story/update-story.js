@@ -17,7 +17,9 @@ export default function UpdateStory() {
     fetch(`https://aroacedb-back.herokuapp.com/stories/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
-        console.log(resJson);
+        console.log(resJson.data.story[0]);
+
+        setStory(resJson.data.story[0]);
       });
   }, []);
 
@@ -26,28 +28,28 @@ export default function UpdateStory() {
       <SidebarUser />
       <div className="story-container">
         <div className="stories">
-          <h3>Suggest a Story</h3>
+          <h3>Update Story</h3>
           <Formik
             enableReinitialize={true}
             initialValues={{
-              title: story.title,
-              series_or_antho: "",
-              genre: "",
-              story_length: "",
-              type_of_rep: "",
-              importance: "",
-              rep_noteswarnings: "",
-              other_noteswarnings: "",
+              story_title: story.story_title,
+              series_or_anthology: story.series_or_anthology,
+              genre: story.genre,
+              story_length: story.length,
+              type_of_rep: story.type_of_rep,
+              character_importance: story.character_importance,
+              rep_noteswarnings: story.rep_noteswarnings,
+              other_noteswarnings: story.other_noteswarnings,
             }}
             onSubmit={(values) => {
-              values.character_id = params.id;
               console.log(JSON.stringify(values, null, 2));
-              fetch("https://aroacedb-back.herokuapp.com/stories", {
-                method: "POST",
+
+              fetch(`https://aroacedb-back.herokuapp.com/stories/${story.id}`, {
+                method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: values,
+                body: JSON.stringify(values),
               })
                 .then((res) => res.json())
                 .then((resJson) => {
@@ -72,10 +74,10 @@ export default function UpdateStory() {
                       <h4>
                         <label>Story title</label>
                         <input
-                          id="title"
+                          id="story_title"
                           type="text"
                           placeholder="Story title"
-                          value={values.title}
+                          value={values.story_title}
                           onChange={handleChange}
                           onBlur={handleBlur}
                         />
@@ -96,10 +98,10 @@ export default function UpdateStory() {
                       <span>
                         <label>Character importance</label>
                         <input
-                          id="importance"
+                          id="chracter_importance"
                           type="text"
                           placeholder="Character importance"
-                          value={values.importance}
+                          value={values.character_importance}
                           onChange={handleChange}
                           onBlur={handleBlur}
                         />
@@ -109,10 +111,10 @@ export default function UpdateStory() {
                       <span>
                         <label>Series title</label>
                         <input
-                          id="series_or_antho"
+                          id="series_or_anthology"
                           type="text"
                           placeholder="Series title"
-                          value={values.series_or_antho}
+                          value={values.series_or_anthology}
                           onChange={handleChange}
                           onBlur={handleBlur}
                         />
@@ -169,7 +171,7 @@ export default function UpdateStory() {
                       disabled={isSubmitting}
                       className="submit"
                     >
-                      Suggest
+                      Update
                     </button>
                   </div>
                 </form>

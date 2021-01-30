@@ -10,10 +10,11 @@ export default function SuggestedCharacters() {
   const [totalPages, setTotalPages] = React.useState(0);
 
   React.useEffect(() => {
-    fetch("https://aroacedb-back.herokuapp.com/suggest/")
+    fetch("https://aroacedb-back.herokuapp.com/suggest/characters")
       .then((res) => res.json())
       .then((resJson) => {
-        const data = resJson.dados.characters;
+        console.log(resJson);
+        const data = resJson.data.characters;
         console.log(data);
         setCharacters(data);
       });
