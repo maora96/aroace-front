@@ -6,6 +6,7 @@ import Sidebar from "../../components/sidebar/sidebar";
 import { fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function AddCharacter() {
   const [character, setCharacter] = React.useState({});
@@ -14,6 +15,7 @@ export default function AddCharacter() {
   return (
     <div className="Character">
       <Sidebar />
+      <MobileHeader />
       <div className="character-container">
         <div className="suggest">
           <h2 class="title">Add a character</h2>
@@ -33,6 +35,7 @@ export default function AddCharacter() {
               genre: "",
               relationships: "",
               rep_noteswarnings: "",
+              cover: "",
             }}
             onSubmit={(values) => {
               const token = localStorage.getItem("token");
@@ -206,6 +209,20 @@ export default function AddCharacter() {
                         placeholder={character.rep_noteswarnings}
                         type="text"
                         value={values.rep_noteswarnings}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+
+                    <div clasName="square">
+                      <p>
+                        <span>Cover</span>
+                      </p>
+                      <input
+                        id="cover"
+                        placeholder={character.cover}
+                        type="text"
+                        value={values.cover}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />

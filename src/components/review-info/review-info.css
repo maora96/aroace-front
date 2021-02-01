@@ -29,3 +29,22 @@
   font-size: 1rem;
   margin-right: 1rem;
 }
+
+@media only screen and (max-width: 416px) {
+  .ReviewInfo .container {
+    flex-direction: column;
+  }
+
+  .ReviewInfo .container .content h4 {
+    margin-bottom: 0.5rem;
+  }
+  .ReviewInfo .container .content span {
+    margin-bottom: 0.5rem;
+  }
+
+  .ReviewInfo a {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+  }
+}

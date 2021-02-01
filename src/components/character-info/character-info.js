@@ -115,6 +115,8 @@ export default function CharacterInfo(props) {
                 .then((resJson) => {
                   console.log(resJson);
                 });
+
+              history.push("/");
             }}
           >
             Delete

@@ -74,3 +74,27 @@
   text-decoration: none;
   margin: 1.5rem auto 1.2rem auto;
 }
+
+@media only screen and (max-width: 768px) {
+  .About .about {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .About {
+    flex-direction: column;
+  }
+
+  .About .about-container {
+    width: 90%;
+  }
+
+  .About .kofi-link {
+    width: 150px;
+  }
+
+  .About h2 {
+    font-size: 1.5rem;
+  }
+}

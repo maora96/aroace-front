@@ -5,6 +5,7 @@ import Sidebar from "../../components/sidebar/sidebar";
 import CharacterInfo from "../../components/character-info/character-info";
 import Stories from "../../components/stories/stories";
 import Reviews from "../../components/reviews/reviews";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function SingleCharacter() {
   const [character, setCharacter] = React.useState({});
@@ -48,6 +49,7 @@ export default function SingleCharacter() {
   return (
     <div className="Character">
       <Sidebar />
+      <MobileHeader />
       <div className="character-container">
         <CharacterInfo character={character} />
         {console.log(params.id)}

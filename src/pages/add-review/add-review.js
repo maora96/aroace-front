@@ -8,6 +8,7 @@ import * as Yup from "yup";
 import Sidebar from "../../components/sidebar/sidebar";
 import StoryInfo from "../../components/story-info/story-info";
 import { useHistory } from "react-router-dom";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function AddReview() {
   const { params } = useRouteMatch();
@@ -23,6 +24,7 @@ export default function AddReview() {
   return (
     <div className="SuggestStory">
       <Sidebar />
+      <MobileHeader />
       <div className="story-container">
         <div className="stories">
           <h3>Add a Review</h3>

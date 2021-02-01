@@ -93,3 +93,25 @@
   padding: 0.8rem 2rem;
   margin-top: 1rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .Home .char-btn {
+    width: 80%;
+  }
+
+  .Home .home-container form {
+    width: 80%;
+    z-index: 0;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .Home {
+    display: flex;
+    flex-direction: column;
+  }
+  .Home .home-container {
+    width: 90%;
+    padding-bottom: 1rem;
+  }
+}

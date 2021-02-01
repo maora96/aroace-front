@@ -26,3 +26,9 @@
   border-radius: 10px;
   align-self: flex-end;
 }
+
+@media only screen and (max-width: 768px) {
+  .Reviews {
+    width: 80%;
+  }
+}

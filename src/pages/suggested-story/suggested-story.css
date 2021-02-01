@@ -143,3 +143,12 @@
   justify-content: space-between;
   margin-top: 2rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .SuggestStory .buttons {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

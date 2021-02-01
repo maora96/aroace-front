@@ -50,3 +50,25 @@
   border-radius: 10px;
   background-color: #0fefc9;
 }
+
+@media only screen and (max-width: 768px) {
+  .AllCharacters .title {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .AllCharacters {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .AllCharacters .all-characters-container {
+    width: 100%;
+  }
+
+  .AllCharacters .title a {
+    text-align: center;
+  }
+}

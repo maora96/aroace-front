@@ -3,9 +3,11 @@ import "./home.css";
 import Sidebar from "../../components/sidebar/sidebar";
 import SingleCharacter from "../../components/single-character/single-character";
 import { ReactComponent as ButtonIcon } from "../../assets/chevron-right-solid.svg";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 function Home() {
   const [random, setRandom] = React.useState([]);
+  const [stories, setStories] = React.useState([]);
   const [search, setSearch] = React.useState([]);
   const [filteredResults, setFilteredResults] = React.useState([]);
 
@@ -24,6 +26,7 @@ function Home() {
   return (
     <div className="Home">
       <Sidebar />
+      <MobileHeader />
 
       <div className="home-container">
         <form
@@ -44,10 +47,7 @@ function Home() {
                   const newResults = resJson.data.characters;
                   setFilteredResults(newResults);
                   console.log(filteredResults);
-                  //localStorage.setItem("results", JSON.stringify(newResults));
-                  //setSearch("");
                 }
-                //history.push("/results");
               });
           }}
         >

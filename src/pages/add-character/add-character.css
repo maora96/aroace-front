@@ -135,3 +135,35 @@
   padding: 1rem;
   border-radius: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+  .character-container .suggest {
+    width: 80%;
+    padding: 1rem 0;
+  }
+
+  .Character .suggest .line {
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-direction: column;
+  }
+
+  .Character .suggest h2 input {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .Character .character-container {
+    width: 90%;
+  }
+
+  .Character .buttons {
+    flex-direction: column;
+  }
+
+  .Character button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}

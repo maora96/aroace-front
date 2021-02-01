@@ -1,8 +1,9 @@
 import "./review-info.css";
-import React from "react";
+import React, { Component } from "react";
 import ExternalLink from "../../assets/external-link.png";
 import { useHistory } from "react-router-dom";
 import { fetchWithTokenNoBody } from "../../utils/fetch";
+import SuggestReview from "../../pages/suggest-review/suggest-review";
 
 export default function ReviewInfo(props) {
   const { review } = props;
@@ -39,6 +40,8 @@ export default function ReviewInfo(props) {
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
+
+                  window.location.reload();
                 });
             }}
           >

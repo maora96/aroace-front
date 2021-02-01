@@ -7,6 +7,7 @@ import { fazerRequisicaoComBody } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import StoryInfo from "../../components/story-info/story-info";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function SuggestStory() {
   const [character, setCharacter] = React.useState({});
@@ -25,6 +26,7 @@ export default function SuggestStory() {
   return (
     <div className="SuggestStory">
       <Sidebar />
+      <MobileHeader />
       <div className="story-container">
         <div className="stories">
           <h3>Suggest a Story</h3>
@@ -166,14 +168,17 @@ export default function SuggestStory() {
                         onBlur={handleBlur}
                       />
                     </p>
-                    <input
-                      id="cover"
-                      type="text"
-                      placeholder="cover"
-                      value={values.cover}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
+                    <p>
+                      <span>Cover</span>
+                      <input
+                        id="cover"
+                        type="text"
+                        placeholder="cover"
+                        value={values.cover}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </p>
                     <button
                       type="submit"
                       disabled={isSubmitting}

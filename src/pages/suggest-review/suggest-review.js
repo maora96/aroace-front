@@ -8,6 +8,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import StoryInfo from "../../components/story-info/story-info";
 import { useHistory } from "react-router-dom";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function SuggestReview() {
   const [character, setCharacter] = React.useState({});
@@ -17,6 +18,7 @@ export default function SuggestReview() {
   return (
     <div className="SuggestStory">
       <Sidebar />
+      <MobileHeader />
       <div className="story-container">
         <div className="stories">
           <h3>Suggest a Review</h3>

@@ -6,12 +6,14 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import jwt_decode from "jwt-decode";
 import { fetchWithBody } from "../../utils/fetch";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 function Login() {
   const history = useHistory();
   return (
     <div className="Login">
       <Sidebar />
+      <MobileHeader />
 
       <div className="login-container">
         <div className="login-box">

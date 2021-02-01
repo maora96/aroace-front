@@ -4,6 +4,7 @@ import Sidebar from "../../components/sidebar/sidebar";
 import Pagination from "../../components/pagination/pagination";
 import TableCharacter from "../../components/table-character/table";
 import ReactPaginate from "react-paginate";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function AllCharacters() {
   const [characters, setCharacters] = React.useState([]);
@@ -30,6 +31,8 @@ export default function AllCharacters() {
   return (
     <div className="AllCharacters">
       <Sidebar />
+
+      <MobileHeader />
       <div className="all-characters-container">
         <div className="title">
           <h2>All Characters</h2>

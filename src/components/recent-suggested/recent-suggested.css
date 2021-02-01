@@ -73,3 +73,9 @@
   height: 45px;
   text-align: center;
 }
+
+@media only screen and (max-width: 416px) {
+  .RecentSuggested {
+    width: 80%;
+  }
+}

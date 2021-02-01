@@ -3,6 +3,7 @@ import "./dashboard.css";
 import Sidebar from "../../components/sidebar/sidebar";
 import Stats from "../../components/stats/stats";
 import RecentSuggested from "../../components/recent-suggested/recent-suggested";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 function Dashboard() {
   const [recentlyAdded, setRecentlyAdded] = React.useState([]);
@@ -29,6 +30,7 @@ function Dashboard() {
   return (
     <div className="Dashboard">
       <Sidebar />
+      <MobileHeader />
 
       <div className="dashboard-container">
         <div className="header">

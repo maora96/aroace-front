@@ -14,9 +14,6 @@ function TableCharacter(props) {
           <tr>
             <th>Character Name</th>
             <th>Author</th>
-            <th>Importance</th>
-            <th>Romantic Orientation</th>
-            <th>Sexual Orientation</th>
             <th>More</th>
           </tr>
         ) : id === "story" ? (

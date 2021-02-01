@@ -39,3 +39,21 @@
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
+@media only screen and (max-width: 768px) {
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .SuggestedCharacters {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .SuggestedCharacters .suggested-container {
+    width: 100%;
+  }
+}

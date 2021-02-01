@@ -7,6 +7,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import StoryInfo from "../../components/story-info/story-info";
 import Sidebar from "../../components/sidebar/sidebar";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function UpdateStory() {
   const [story, setStory] = React.useState({});
@@ -30,6 +31,7 @@ export default function UpdateStory() {
   return (
     <div className="SuggestStory">
       <Sidebar />
+      <MobileHeader />
       <div className="story-container">
         <div className="stories">
           <h3>Update Story</h3>

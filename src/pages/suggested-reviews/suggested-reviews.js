@@ -4,6 +4,7 @@ import Sidebar from "../../components/sidebar/sidebar";
 import Table from "../../components/table-character/table";
 import Pagination from "../../components/pagination/pagination";
 import TableReview from "../../components/table-review/table";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function SuggestedReviews() {
   const [reviews, setReviews] = React.useState([]);
@@ -26,6 +27,7 @@ export default function SuggestedReviews() {
   return (
     <div className="SuggestedCharacters">
       <Sidebar />
+      <MobileHeader />
       <div className="suggested-container">
         <div className="title">
           <h2>Suggested Reviews</h2>

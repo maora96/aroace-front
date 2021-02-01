@@ -89,3 +89,15 @@
   border-radius: 0 15px 15px 0;
   padding: 4rem 0.2rem 2.3rem 0.2rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .SidebarAdmin .sidebar-true-content .link-container a span {
+    line-height: 20px;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .SidebarAdmin {
+    display: none;
+  }
+}

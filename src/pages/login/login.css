@@ -87,3 +87,20 @@
   text-transform: uppercase;
   font-size: 1.3rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .Login .login-box {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .Login {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Login .login-container {
+    width: 90%;
+  }
+}

@@ -3,11 +3,13 @@ import React from "react";
 import Sidebar from "../../components/sidebar/sidebar";
 import Globe from "../../assets/globe.png";
 import Twitter from "../../assets/twitter.png";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function About() {
   return (
     <div className="About">
       <Sidebar />
+      <MobileHeader />
       <div className="about-container">
         <div className="about">
           <h2>About the creator</h2>

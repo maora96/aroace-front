@@ -53,3 +53,39 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 768px) {
+  .CharacterInfo {
+    width: 80%;
+  }
+
+  .CharacterInfo .line {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .CharacterInfo {
+    padding: 1rem;
+  }
+
+  .CharacterInfo .line .chunk {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 1rem;
+  }
+
+  .CharacterInfo .line {
+    margin-bottom: 0;
+  }
+
+  .CharacterInfo p {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .CharacterInfo .buttons-character {
+    flex-direction: column;
+  }
+}

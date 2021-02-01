@@ -64,3 +64,44 @@
 .StoryInfo .story-container {
   width: 100%;
 }
+
+@media only screen and (max-width: 768px) {
+  .StoryInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .StoryInfo img {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .StoryInfo .line {
+    flex-direction: column;
+  }
+
+  .SuggestStory .stories {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .StoryInfo {
+    width: 100%;
+    padding-right: 1rem;
+  }
+
+  .StoryInfo img {
+    width: 100%;
+  }
+
+  .StoryInfo .buttons-story {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .StoryInfo p {
+    display: flex;
+    flex-direction: column;
+  }
+}

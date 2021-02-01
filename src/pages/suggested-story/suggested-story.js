@@ -11,6 +11,7 @@ import {
 import { Formik } from "formik";
 import * as Yup from "yup";
 import StoryInfo from "../../components/story-info/story-info";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function SuggestedStory() {
   const [story, setStory] = React.useState({});
@@ -36,6 +37,7 @@ export default function SuggestedStory() {
   return (
     <div className="SuggestStory">
       <Sidebar />
+      <MobileHeader />
       <div className="story-container">
         <div className="stories">
           <h3>Suggested Story</h3>

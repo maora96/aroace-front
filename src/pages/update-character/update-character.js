@@ -6,6 +6,7 @@ import Sidebar from "../../components/sidebar/sidebar";
 import { fetchWithBody, fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function UpdateCharacter() {
   const [character, setCharacter] = React.useState({});
@@ -26,6 +27,7 @@ export default function UpdateCharacter() {
   return (
     <div className="Character">
       <Sidebar />
+      <MobileHeader />
       <div className="character-container">
         <div className="suggest">
           <h2 class="title">Update character</h2>
@@ -45,6 +47,7 @@ export default function UpdateCharacter() {
               genre: character.genre,
               relationships: character.relationships,
               rep_noteswarnings: character.rep_noteswarnings,
+              cover: character.cover,
             }}
             onSubmit={(values) => {
               console.log(token);
@@ -218,6 +221,19 @@ export default function UpdateCharacter() {
                         placeholder={character.rep_noteswarnings}
                         type="text"
                         value={values.rep_noteswarnings}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+                    <div clasName="square">
+                      <p>
+                        <span>Cover</span>
+                      </p>
+                      <input
+                        id="cover"
+                        placeholder={character.cover}
+                        type="text"
+                        value={values.cover}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />

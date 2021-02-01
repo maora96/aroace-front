@@ -1,8 +1,9 @@
 .table {
-  width: 70%;
+  width: 80%;
   text-align: left;
   border-spacing: 0 1rem;
   margin: 0 auto;
+  overflow-x: auto;
 }
 
 .table th:first-of-type {

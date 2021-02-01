@@ -58,3 +58,28 @@
   height: 45px;
   text-align: center;
 }
+
+@media only screen and (max-width: 768px) {
+  .Stats .big-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Stats .big-box .stats-box {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .Dashboard {
+    flex-direction: column;
+  }
+
+  .Dashboard .dashboard-container {
+    width: 90%;
+  }
+
+  .Dashboard h2 {
+    font-size: 30px;
+  }
+}

@@ -137,3 +137,41 @@
   border: none;
   align-self: flex-end;
 }
+
+@media only screen and (max-width: 768px) {
+  .SuggestStory .stories {
+    width: 80%;
+  }
+
+  .SuggestStory .line {
+    width: 100%;
+  }
+
+  .SuggestStory .StoryInfo {
+    align-items: baseline;
+  }
+
+  .SuggestStory button {
+    align-self: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .SuggestStory input {
+    width: 100%;
+  }
+
+  .SuggestStory p {
+    width: 100%;
+  }
+
+  .SuggestStory textarea {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .SuggestStory .story-container {
+    width: 90%;
+  }
+}

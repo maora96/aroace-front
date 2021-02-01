@@ -70,6 +70,7 @@ export default function StoryInfo(props) {
                   .then((res) => res.json())
                   .then((resJson) => {
                     console.log(resJson);
+                    window.location.reload();
                   });
               }}
             >

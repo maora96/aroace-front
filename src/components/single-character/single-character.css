@@ -87,3 +87,40 @@
   margin-top: 0.5rem;
   width: 100%;
 }
+
+@media only screen and (max-width: 768px) {
+  .SingleCharacter .single-character-container {
+    flex-direction: column;
+  }
+
+  .SingleCharacter img {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .SingleCharacter .single-character-container .button-container {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .SingleCharacter {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 416px) {
+  .SingleCharacter .single-character-container a {
+    font-size: 0.9rem;
+  }
+  .SingleCharacter .single-character-container .top h2 {
+    font-size: 1.5rem;
+  }
+
+  .SingleCharacter .single-character-container .top h3 {
+    font-size: 1rem;
+  }
+
+  .SingleCharacter .single-character-container .top span {
+    font-size: 1rem;
+  }
+}

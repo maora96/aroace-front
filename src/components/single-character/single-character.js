@@ -3,13 +3,19 @@ import "./single-character.css";
 
 export default function SingleCharacter(props) {
   const { character } = props;
+
   return (
     <div className="SingleCharacter">
       <div className="single-character-container">
-        <img
-          src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1592493557l/39897752.jpg"
-          alt="cover"
-        />
+        {character.cover ? (
+          <img src={character.cover} alt="cover" />
+        ) : (
+          <img
+            src="https://www.globaluniversityalliance.org/wp-content/uploads/2017/10/No-Cover-Image-01.png"
+            alt="cover"
+          />
+        )}
+
         <div className="single-character-container-flex">
           <div className="top">
             <div className="header">

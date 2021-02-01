@@ -7,6 +7,7 @@ import Sidebar from "../../components/sidebar/sidebar";
 
 import { Formik } from "formik";
 import * as Yup from "yup";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 function SuggestCharacter() {
   const history = useHistory();
@@ -20,6 +21,7 @@ function SuggestCharacter() {
   return (
     <div className="SuggestCharacter">
       <Sidebar />
+      <MobileHeader />
       <div className="suggest-container">
         <div className="suggest">
           <h2 class="title">Suggest a character</h2>
@@ -38,6 +40,7 @@ function SuggestCharacter() {
               genre: "",
               relationships: "",
               rep_noteswarnings: "",
+              cover: "",
             }}
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
@@ -208,6 +211,20 @@ function SuggestCharacter() {
                         placeholder="Insert Representation Notes & Warnings"
                         type="text"
                         value={values.rep_noteswarnings}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+
+                    <div clasName="square">
+                      <p>
+                        <span>Cover</span>
+                      </p>
+                      <input
+                        id="cover"
+                        placeholder="cover"
+                        type="text"
+                        value={values.cover}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />

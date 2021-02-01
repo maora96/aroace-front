@@ -28,3 +28,9 @@
   border: none;
   background-color: #0fefc9;
 }
+
+@media only screen and (max-width: 416px) {
+  .Character .character-container {
+    width: 90%;
+  }
+}

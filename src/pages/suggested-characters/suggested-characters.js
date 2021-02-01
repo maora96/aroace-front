@@ -4,6 +4,7 @@ import Table from "../../components/table-character/table";
 import Pagination from "../../components/pagination/pagination";
 import TableCharacter from "../../components/table-character/table";
 import Sidebar from "../../components/sidebar/sidebar";
+import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function SuggestedCharacters() {
   const [characters, setCharacters] = React.useState([]);
@@ -26,16 +27,19 @@ export default function SuggestedCharacters() {
   return (
     <div className="SuggestedCharacters">
       <Sidebar />
+      <MobileHeader />
       <div className="suggested-container">
         <div className="title">
           <h2>Suggested Characters</h2>
         </div>
-        <TableCharacter content={characters} type="suggest" id="character" />
-        <Pagination
-          totalPages={totalPages}
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-        />
+        <div className="table-container">
+          <TableCharacter content={characters} type="suggest" id="character" />
+          <Pagination
+            totalPages={totalPages}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+          />
+        </div>
       </div>
     </div>
   );
