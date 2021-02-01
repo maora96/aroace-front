@@ -3,7 +3,7 @@ import ExternalLink from "../../assets/external-link.png";
 
 export default function RowStory(props) {
   const { content, type, id } = props;
-  console.log(type);
+
   return (
     <tr class="tbody">
       <td>{content.story_title}</td>

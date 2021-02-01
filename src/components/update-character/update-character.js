@@ -2,7 +2,7 @@ import React from "react";
 import "./update-character.css";
 import { useRouteMatch } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
+import Sidebar from "../../components/sidebar/sidebar";
 import { fazerRequisicaoComBody } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -46,7 +46,7 @@ export default function UpdateCharacter() {
 
   return (
     <div className="UpdateCharacter">
-      <SidebarAdmin />
+      <Sidebar />
       <div className="character-container">
         <div className="suggest">
           <h2 class="title">Update character</h2>

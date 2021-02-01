@@ -1,20 +1,19 @@
 import React from "react";
 import "./home.css";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
+import Sidebar from "../../components/sidebar/sidebar";
 import SingleCharacter from "../../components/single-character/single-character";
 import { ReactComponent as ButtonIcon } from "../../assets/chevron-right-solid.svg";
 
 function Home() {
   const [random, setRandom] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
   const [search, setSearch] = React.useState([]);
-  const [results, setResults] = React.useState([]);
   const [filteredResults, setFilteredResults] = React.useState([]);
 
   React.useEffect(() => {
     fetch("https://aroacedb-back.herokuapp.com/character")
       .then((res) => res.json())
       .then((resJson) => {
+        console.log(resJson);
         const newRandom = resJson.data;
         console.log(newRandom);
         console.log(filteredResults.length);
@@ -24,7 +23,7 @@ function Home() {
 
   return (
     <div className="Home">
-      <SidebarUser />
+      <Sidebar />
 
       <div className="home-container">
         <form
@@ -35,15 +34,16 @@ function Home() {
 
             event.preventDefault();
             fetch(
-              `https://aroacedb-back.herokuapp.com/characters?search=${search}`
+              `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
             )
               .then((res) => res.json())
               .then((resJson) => {
-                console.log(resJson.data.characters);
+                console.log(resJson.data);
 
-                if (resJson.dados.characters) {
+                if (resJson.data) {
                   const newResults = resJson.data.characters;
                   setFilteredResults(newResults);
+                  console.log(filteredResults);
                   //localStorage.setItem("results", JSON.stringify(newResults));
                   //setSearch("");
                 }

@@ -1,9 +1,9 @@
 import "./all-characters.css";
 import React from "react";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import Table from "../../components/table-character/table";
+import Sidebar from "../../components/sidebar/sidebar";
 import Pagination from "../../components/pagination/pagination";
 import TableCharacter from "../../components/table-character/table";
+import ReactPaginate from "react-paginate";
 
 export default function AllCharacters() {
   const [characters, setCharacters] = React.useState([]);
@@ -11,19 +11,25 @@ export default function AllCharacters() {
   const [totalPages, setTotalPages] = React.useState(0);
 
   React.useEffect(() => {
-    fetch("https://aroacedb-back.herokuapp.com/characters")
+    fetch(
+      `https://aroacedb-back.herokuapp.com/characters?offset=${
+        currentPage * 20 - 20
+      }`
+    )
       .then((res) => res.json())
       .then((resJson) => {
         console.log(resJson);
-        const data = resJson.data.character;
-        console.log(data);
+        const data = resJson.data.paginated_characters;
+        console.log("characters:", data);
         setCharacters(data);
+        setCurrentPage(resJson.data.currentPage);
+        setTotalPages(resJson.data.totalPages);
       });
   }, [currentPage]);
 
   return (
     <div className="AllCharacters">
-      <SidebarAdmin />
+      <Sidebar />
       <div className="all-characters-container">
         <div className="title">
           <h2>All Characters</h2>
@@ -31,11 +37,19 @@ export default function AllCharacters() {
         </div>
         <TableCharacter content={characters} type="regular" id="character" />
 
-        <Pagination />
-        {/* <Pagination
-            totalDePaginas={totalPaginas}
-            setPaginaAtual={setPaginaAtual}
-          /> */}
+        {/* <ReactPaginate
+          pageCount={totalPages}
+          pageRangeDisplayed={5}
+          marginPagesDisplayed={2}
+          previousLabel="Previous"
+          nextLabel="Next"
+          onPageChange={handlePageClick}
+        /> */}
+        <Pagination
+          totalPages={totalPages}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
       </div>
     </div>
   );

@@ -1,31 +1,41 @@
 import React from "react";
 import "./suggested-story.css";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import { fazerRequisicaoComBody } from "../../utils/fetch";
+import Sidebar from "../../components/sidebar/sidebar";
+import {
+  fazerRequisicaoComBody,
+  fetchWithToken,
+  fetchWithTokenNoBody,
+} from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
 import StoryInfo from "../../components/story-info/story-info";
 
 export default function SuggestedStory() {
   const [story, setStory] = React.useState({});
+  const [token, setToken] = React.useState("");
+  const [cover, setCover] = React.useState("");
   const { params } = useRouteMatch();
+  const history = useHistory();
 
   React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+
+    setToken(newToken);
     fetch(`https://aroacedb-back.herokuapp.com/suggest/stories/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
         console.log(resJson.data.story[0]);
-
         setStory(resJson.data.story[0]);
+        console.log(resJson.data.story[0].cover);
+        setCover(resJson.data.story[0].cover);
       });
   }, []);
 
   return (
     <div className="SuggestStory">
-      <SidebarUser />
+      <Sidebar />
       <div className="story-container">
         <div className="stories">
           <h3>Suggested Story</h3>
@@ -41,34 +51,30 @@ export default function SuggestedStory() {
               character_importance: story.character_importance,
               rep_noteswarnings: story.rep_noteswarnings,
               other_noteswarnings: story.other_noteswarnings,
+              character_id: story.character_id,
+              cover: story.cover,
             }}
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
-
-              fetch(`https://aroacedb-back.herokuapp.com/stories`, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(values),
-              })
-                .then((res) => res.json())
-                .then((resJson) => {
-                  console.log(resJson);
-                });
-
-              fetch(
-                `https://aroacedb-back.herokuapp.com/suggest/stories/${story.id}`,
-                {
-                  method: "DELETE",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                }
+              fetchWithToken(
+                `https://aroacedb-back.herokuapp.com/stories`,
+                "POST",
+                values,
+                token
               )
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
+                });
+              fetchWithTokenNoBody(
+                `https://aroacedb-back.herokuapp.com/suggest/stories/${story.id}`,
+                "DELETE",
+                token
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                  history.push("/success");
                 });
             }}
           >
@@ -181,21 +187,30 @@ export default function SuggestedStory() {
                         onBlur={handleBlur}
                       />
                     </p>
+                    <p>
+                      <span>Cover</span>
+                      <input
+                        id="cover"
+                        type="text"
+                        placeholder="cover"
+                        value={values.cover}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </p>
+                    <img src={values.cover} alt="cover" />
                     <div className="buttons">
                       <button
                         onClick={() => {
-                          fetch(
+                          fetchWithTokenNoBody(
                             `https://aroacedb-back.herokuapp.com/suggest/stories/${story.id}`,
-                            {
-                              method: "DELETE",
-                              headers: {
-                                "Content-Type": "application/json",
-                              },
-                            }
+                            "DELETE",
+                            token
                           )
                             .then((res) => res.json())
                             .then((resJson) => {
                               console.log(resJson);
+                              history.push("/success");
                             });
                         }}
                       >

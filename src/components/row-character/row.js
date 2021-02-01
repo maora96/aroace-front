@@ -3,7 +3,6 @@ import ExternalLink from "../../assets/external-link.png";
 
 export default function RowCharacter(props) {
   const { content, type, id } = props;
-  console.log(type);
   return (
     <tr class="tbody">
       <td>{content.character_name}</td>

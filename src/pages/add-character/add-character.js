@@ -1,27 +1,19 @@
 import React from "react";
 import "./add-character.css";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import { fazerRequisicaoComBody } from "../../utils/fetch";
+import Sidebar from "../../components/sidebar/sidebar";
+import { fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
 export default function AddCharacter() {
   const [character, setCharacter] = React.useState({});
-  const { params } = useRouteMatch();
-
-  React.useEffect(() => {
-    fetch(`https://aroacedb-back.herokuapp.com/characters/${params.id}`)
-      .then((res) => res.json())
-      .then((resJson) => {
-        setCharacter(resJson.dados.character[0]);
-      });
-  }, []);
+  const history = useHistory();
 
   return (
     <div className="Character">
-      <SidebarAdmin />
+      <Sidebar />
       <div className="character-container">
         <div className="suggest">
           <h2 class="title">Add a character</h2>
@@ -43,16 +35,20 @@ export default function AddCharacter() {
               rep_noteswarnings: "",
             }}
             onSubmit={(values) => {
+              const token = localStorage.getItem("token");
+              console.log(token);
               console.log(JSON.stringify(values, null, 2));
-              //   fazerRequisicaoComBody(
-              //     "https://aroacedb-back.herokuapp.com/character",
-              //     "POST",
-              //     values
-              //   )
-              //     .then((res) => res.json())
-              //     .then((resJson) => {
-              //       console.log(resJson);
-              //     });
+              fetchWithToken(
+                "https://aroacedb-back.herokuapp.com/characters",
+                "POST",
+                values,
+                token
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                  history.push("/success");
+                });
               //s history.push("/success");
             }}
           >

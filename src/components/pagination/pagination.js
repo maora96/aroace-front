@@ -2,7 +2,7 @@ import "./pagination.css";
 import React from "react";
 
 export default function Pagination(props) {
-  const { totalPaginas, setPaginaAtual, paginaAtual } = props;
+  const { totalPages, setCurrentPage, currentPage } = props;
 
   const pages = [];
   const montarPaginas = (total) => {
@@ -11,17 +11,26 @@ export default function Pagination(props) {
     }
   };
 
-  montarPaginas(totalPaginas);
+  montarPaginas(totalPages);
   return (
     <div className="Pagination">
-      <div className="placeholder">
-        <span>1</span> <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        {/* <img src="" alt="arrow for changing page" /> */}
-      </div>
+      {totalPages ? (
+        <div className="placeholder">
+          {pages.map((page) => {
+            return (
+              <span
+                onClick={() => {
+                  setCurrentPage(page);
+                }}
+              >
+                {page}
+              </span>
+            );
+          })}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

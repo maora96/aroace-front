@@ -1,4 +1,4 @@
-import RowCharacter from "../row-review/row";
+import RowCharacter from "../row-character/row";
 import Row from "../row-review/row";
 import RowReview from "../row-review/row";
 import RowStory from "../row-story/row";
@@ -6,7 +6,7 @@ import "./table.css";
 
 function TableCharacter(props) {
   const { content, type, id } = props;
-  console.log(type);
+
   return (
     <table class="table">
       <thead>

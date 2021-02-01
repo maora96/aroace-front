@@ -1,6 +1,6 @@
 import "./suggested-reviews.css";
 import React from "react";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
+import Sidebar from "../../components/sidebar/sidebar";
 import Table from "../../components/table-character/table";
 import Pagination from "../../components/pagination/pagination";
 import TableReview from "../../components/table-review/table";
@@ -15,25 +15,27 @@ export default function SuggestedReviews() {
       .then((res) => res.json())
       .then((resJson) => {
         console.log(resJson);
-        const data = resJson.data.reviews;
+        const data = resJson.data.paginated_reviews;
         console.log(data);
         setReviews(data);
+        setCurrentPage(resJson.data.currentPage);
+        setTotalPages(resJson.data.totalPages);
       });
   }, [currentPage]);
 
   return (
     <div className="SuggestedCharacters">
-      <SidebarAdmin />
+      <Sidebar />
       <div className="suggested-container">
         <div className="title">
           <h2>Suggested Reviews</h2>
         </div>
         <TableReview content={reviews} type="suggest" id="review" />
-        <Pagination />
-        {/* <Pagination
-            totalDePaginas={totalPaginas}
-            setPaginaAtual={setPaginaAtual}
-          /> */}
+        <Pagination
+          totalPages={totalPages}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
       </div>
     </div>
   );

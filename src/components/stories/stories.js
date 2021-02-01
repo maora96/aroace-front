@@ -6,15 +6,25 @@ import { useHistory } from "react-router-dom";
 export default function Stories(props) {
   const { stories, character_id } = props;
   const history = useHistory();
-  console.log(character_id);
+  const [token, setToken] = React.useState("");
+
+  React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
+    console.log(token);
+  });
+
   return (
     <div className="Stories">
       <h3>Stories</h3>
       {stories.map((story) => {
         return <StoryInfo story={story} />;
       })}
-
-      <a href={`/suggest-story/${character_id}`}>Suggest Story</a>
+      {token ? (
+        <a href={`/add-story/${character_id}`}>Add Story</a>
+      ) : (
+        <a href={`/suggest-story/${character_id}`}>Suggest Story</a>
+      )}
     </div>
   );
 }

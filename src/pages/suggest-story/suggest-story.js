@@ -1,17 +1,17 @@
 import React from "react";
 import "./suggest-story.css";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
+import Sidebar from "../../components/sidebar/sidebar";
 import { fazerRequisicaoComBody } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
 import StoryInfo from "../../components/story-info/story-info";
 
 export default function SuggestStory() {
   const [character, setCharacter] = React.useState({});
   const { params } = useRouteMatch();
+  const history = useHistory();
 
   React.useEffect(() => {
     fetch(`https://aroacedb-back.herokuapp.com/stories/${params.id}`)
@@ -24,7 +24,7 @@ export default function SuggestStory() {
 
   return (
     <div className="SuggestStory">
-      <SidebarUser />
+      <Sidebar />
       <div className="story-container">
         <div className="stories">
           <h3>Suggest a Story</h3>
@@ -38,6 +38,7 @@ export default function SuggestStory() {
               character_importance: "",
               rep_noteswarnings: "",
               other_noteswarnings: "",
+              cover: "",
             }}
             onSubmit={(values) => {
               values.character_id = params.id;
@@ -52,6 +53,7 @@ export default function SuggestStory() {
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
+                  history.push("/success");
                 });
             }}
           >
@@ -164,6 +166,14 @@ export default function SuggestStory() {
                         onBlur={handleBlur}
                       />
                     </p>
+                    <input
+                      id="cover"
+                      type="text"
+                      placeholder="cover"
+                      value={values.cover}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
                     <button
                       type="submit"
                       disabled={isSubmitting}

@@ -1,19 +1,23 @@
 import React from "react";
 import "./update-story.css";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import { fazerRequisicaoComBody } from "../../utils/fetch";
+import { fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
 import StoryInfo from "../../components/story-info/story-info";
+import Sidebar from "../../components/sidebar/sidebar";
 
 export default function UpdateStory() {
   const [story, setStory] = React.useState({});
   const { params } = useRouteMatch();
+  const [token, setToken] = React.useState("");
+  const history = useHistory();
 
   React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
+    console.log(token);
     fetch(`https://aroacedb-back.herokuapp.com/stories/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
@@ -25,7 +29,7 @@ export default function UpdateStory() {
 
   return (
     <div className="SuggestStory">
-      <SidebarUser />
+      <Sidebar />
       <div className="story-container">
         <div className="stories">
           <h3>Update Story</h3>
@@ -40,20 +44,20 @@ export default function UpdateStory() {
               character_importance: story.character_importance,
               rep_noteswarnings: story.rep_noteswarnings,
               other_noteswarnings: story.other_noteswarnings,
+              cover: story.cover,
             }}
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
-
-              fetch(`https://aroacedb-back.herokuapp.com/stories/${story.id}`, {
-                method: "PUT",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(values),
-              })
+              fetchWithToken(
+                `https://aroacedb-back.herokuapp.com/stories/${story.id}`,
+                "PUT",
+                values,
+                token
+              )
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
+                  history.push("/success");
                 });
             }}
           >
@@ -162,6 +166,17 @@ export default function UpdateStory() {
                         id="other_noteswarnings"
                         placeholder="other notes and warnings"
                         value={values.other_noteswarnings}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </p>
+                    <p>
+                      <span>Cover</span>
+                      <input
+                        id="cover"
+                        type="text"
+                        placeholder="cover"
+                        value={values.cover}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />

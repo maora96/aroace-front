@@ -1,15 +1,17 @@
 import React from "react";
 import "./login.css";
 import { useHistory } from "react-router-dom";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
+import Sidebar from "../../components/sidebar/sidebar";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import jwt_decode from "jwt-decode";
+import { fetchWithBody } from "../../utils/fetch";
 
 function Login() {
+  const history = useHistory();
   return (
     <div className="Login">
-      <SidebarUser />
+      <Sidebar />
 
       <div className="login-container">
         <div className="login-box">
@@ -28,32 +30,26 @@ function Login() {
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
 
-              // fazerRequisicaoComBody("http://localhost:8081/auth", "POST", {
-              //   email: values.email,
-              //   password: values.password,
-              // })
-              //   .then((res) => res.json())
-              //   .then((resJson) => {
-              //     const dados = resJson.dados;
-              //     	console.log(dados);
-              //      console.log(resJson.dados.token);
+              fetchWithBody("http://aroacedb-back.herokuapp.com/auth", "POST", {
+                email: values.email,
+                password: values.password,
+              })
+                .then((res) => res.json())
+                .then((resJson) => {
+                  const data = resJson.data;
+                  console.log(data);
+                  console.log(resJson.data.token);
 
-              //       localStorage.setItem("token", resJson.dados.token);
-              // 	  const novoToken = localStorage.getItem("token");
+                  localStorage.setItem("token", resJson.data.token);
+                  const newToken = localStorage.getItem("token");
 
-              // 	  const tokenDecoded = jwt_decode(novoToken);
-              // 	  console.log(tokenDecoded)
+                  const decodedToken = jwt_decode(newToken);
+                  console.log(decodedToken);
 
-              // 	  if (novoToken) {
-              //         // checar tipo do usuário através do token
-              //         if (tokenDecoded.type === 1) {
-              //           history.push("/pagina-de-sonhos");
-              //         }else {
-              // 			history.push("/em-analise");
-              // 		}
-
-              //     }
-              //   });
+                  if (newToken) {
+                    history.push("/dashboard");
+                  }
+                });
             }}
             validationSchema={Yup.object().shape({
               email: Yup.string().email().required("Required"),

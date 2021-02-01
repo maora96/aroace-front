@@ -7,14 +7,29 @@
   margin-bottom: 2rem;
 }
 
+.SingleCharacter img {
+  width: 200px;
+  margin-right: 2rem;
+}
+
+.SingleCharacter .top .header {
+  width: 100%;
+}
+
 .SingleCharacter .single-character-container {
   width: 100%;
   background-color: white;
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
   padding: 2rem;
   text-align: left;
+}
+
+.SingleCharacter .single-character-container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .SingleCharacter .single-character-container .top {
@@ -29,6 +44,10 @@
 }
 
 .SingleCharacter .single-character-container .top h3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 1.5rem;
   color: #2b193d;
 }
@@ -66,4 +85,5 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 0.5rem;
+  width: 100%;
 }

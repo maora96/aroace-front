@@ -2,11 +2,17 @@ import "./review-info.css";
 import React from "react";
 import ExternalLink from "../../assets/external-link.png";
 import { useHistory } from "react-router-dom";
+import { fetchWithTokenNoBody } from "../../utils/fetch";
 
 export default function ReviewInfo(props) {
   const { review } = props;
   const history = useHistory();
-  console.log(review);
+  const [token, setToken] = React.useState("");
+  React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
+    console.log(token);
+  }, []);
   return (
     <div className="ReviewInfo">
       <div className="container">
@@ -21,27 +27,34 @@ export default function ReviewInfo(props) {
           <img src={ExternalLink} alt="link para resenha em site externo" />
         </a>
       </div>
-      <div className="buttons-review">
-        <button
-          onClick={() => {
-            fetch(`https://aroacedb-back.herokuapp.com/reviews/${review.id}`, {
-              method: "DELETE",
-              headers: {
-                "Content-Type": "application/json",
-              },
-            });
-          }}
-        >
-          Delete
-        </button>
-        <button
-          onClick={() => {
-            history.push("/update-review/" + review.id);
-          }}
-        >
-          Update
-        </button>
-      </div>
+      {token ? (
+        <div className="buttons-review">
+          <button
+            onClick={() => {
+              fetchWithTokenNoBody(
+                `https://aroacedb-back.herokuapp.com/reviews/${review.id}`,
+                "DELETE",
+                token
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                });
+            }}
+          >
+            Delete
+          </button>
+          <button
+            onClick={() => {
+              history.push("/update-review/" + review.id);
+            }}
+          >
+            Update
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

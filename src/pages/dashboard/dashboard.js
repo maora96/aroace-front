@@ -1,6 +1,6 @@
 import React from "react";
 import "./dashboard.css";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
+import Sidebar from "../../components/sidebar/sidebar";
 import Stats from "../../components/stats/stats";
 import RecentSuggested from "../../components/recent-suggested/recent-suggested";
 
@@ -28,7 +28,7 @@ function Dashboard() {
 
   return (
     <div className="Dashboard">
-      <SidebarAdmin />
+      <Sidebar />
 
       <div className="dashboard-container">
         <div className="header">

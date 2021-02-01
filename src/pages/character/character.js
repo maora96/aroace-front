@@ -1,7 +1,7 @@
 import React from "react";
 import "./character.css";
 import { useRouteMatch } from "react-router-dom";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
+import Sidebar from "../../components/sidebar/sidebar";
 import CharacterInfo from "../../components/character-info/character-info";
 import Stories from "../../components/stories/stories";
 import Reviews from "../../components/reviews/reviews";
@@ -47,7 +47,7 @@ export default function SingleCharacter() {
 
   return (
     <div className="Character">
-      <SidebarUser />
+      <Sidebar />
       <div className="character-container">
         <CharacterInfo character={character} />
         {console.log(params.id)}

@@ -1,13 +1,13 @@
 import "./about.css";
 import React from "react";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
+import Sidebar from "../../components/sidebar/sidebar";
 import Globe from "../../assets/globe.png";
 import Twitter from "../../assets/twitter.png";
 
 export default function About() {
   return (
     <div className="About">
-      <SidebarUser />
+      <Sidebar />
       <div className="about-container">
         <div className="about">
           <h2>About the creator</h2>

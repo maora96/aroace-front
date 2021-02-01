@@ -1,9 +1,11 @@
 .StoryInfo {
   background: #ebfcf8;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   padding: 1rem;
   margin-bottom: 1.5rem;
+  display: flex;
+  padding-right: 2rem;
 }
 
 .StoryInfo .line {
@@ -50,5 +52,15 @@
 
 .StoryInfo .buttons-story button {
   margin-left: 1rem;
-  font-size: 20px;
+  padding: 0.5rem;
+  font-size: 18px;
+}
+
+.StoryInfo img {
+  width: 200px;
+  margin-right: 2rem;
+}
+
+.StoryInfo .story-container {
+  width: 100%;
 }

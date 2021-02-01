@@ -1,10 +1,18 @@
 import "./character-info.css";
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { fetchWithTokenNoBody } from "../../utils/fetch";
 
 export default function CharacterInfo(props) {
   const { character } = props;
+  const [token, setToken] = React.useState("");
   const history = useHistory();
+
+  React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
+    console.log(token);
+  }, []);
   return (
     <div className="CharacterInfo">
       <h2>{character.character_name}</h2>
@@ -74,34 +82,54 @@ export default function CharacterInfo(props) {
             : character.rep_noteswarnings}
         </p>
       </div>
-      <div className="buttons-character">
-        <button
-          onClick={() => {
-            fetch(
-              `https://aroacedb-back.herokuapp.com/characters/${character.id}`,
-              {
-                method: "DELETE",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }
-            )
-              .then((res) => res.json())
-              .then((resJson) => {
-                console.log(resJson);
-              });
-          }}
-        >
-          Delete
-        </button>
-        <button
-          onClick={() => {
-            history.push("/update-character/" + character.id);
-          }}
-        >
-          Update
-        </button>
-      </div>
+      {token ? (
+        <div className="buttons-character">
+          <button
+            onClick={() => {
+              fetchWithTokenNoBody(
+                `https://aroacedb-back.herokuapp.com/characters/${character.id}`,
+                "DELETE",
+                token
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                });
+
+              fetchWithTokenNoBody(
+                `https://aroacedb-back.herokuapp.com/stories/character/${character.id}`,
+                "DELETE",
+                token
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                });
+
+              fetchWithTokenNoBody(
+                `https://aroacedb-back.herokuapp.com/reviews/character/${character.id}`,
+                "DELETE",
+                token
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                });
+            }}
+          >
+            Delete
+          </button>
+          <button
+            onClick={() => {
+              history.push("/update-character/" + character.id);
+            }}
+          >
+            Update
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

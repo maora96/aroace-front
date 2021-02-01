@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { fetchWithBody } from "../../utils/fetch";
 import "./suggest-character.css";
 
 import { useHistory } from "react-router-dom";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
+import Sidebar from "../../components/sidebar/sidebar";
 
 import { Formik } from "formik";
 import * as Yup from "yup";
 
 function SuggestCharacter() {
   const history = useHistory();
+  const [token, setToken] = useState("");
+
+  React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
+  });
 
   return (
     <div className="SuggestCharacter">
-      <SidebarUser />
+      <Sidebar />
       <div className="suggest-container">
         <div className="suggest">
           <h2 class="title">Suggest a character</h2>
@@ -36,15 +42,15 @@ function SuggestCharacter() {
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
               fetchWithBody(
-                "https://aroacedb-back.herokuapp.com/suggest",
+                "https://aroacedb-back.herokuapp.com/suggest/characters",
                 "POST",
                 values
               )
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
+                  history.push("/success");
                 });
-              history.push("/success");
             }}
           >
             {(props) => {

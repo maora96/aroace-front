@@ -6,7 +6,7 @@ import "./table.css";
 
 function TableReview(props) {
   const { content, type, id } = props;
-  console.log(type);
+
   return (
     <table class="table">
       <thead>

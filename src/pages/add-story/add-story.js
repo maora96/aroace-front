@@ -1,31 +1,29 @@
 import React from "react";
 import "./add-story.css";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import { fazerRequisicaoComBody } from "../../utils/fetch";
+import Sidebar from "../../components/sidebar/sidebar";
+import { fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
 import StoryInfo from "../../components/story-info/story-info";
 
 export default function AddStory() {
-  const [story, setStory] = React.useState({});
+  const [character, setCharacter] = React.useState({});
+  const [token, setToken] = React.useState("");
   const { params } = useRouteMatch();
+  const history = useHistory();
+  const [file, setFile] = React.useState("");
 
   React.useEffect(() => {
-    fetch(`https://aroacedb-back.herokuapp.com/suggest/stories/${params.id}`)
-      .then((res) => res.json())
-      .then((resJson) => {
-        console.log(resJson.data.story[0]);
-
-        setStory(resJson.data.story[0]);
-      });
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
+    console.log(token);
   }, []);
 
   return (
     <div className="SuggestStory">
-      <SidebarUser />
+      <Sidebar />
       <div className="story-container">
         <div className="stories">
           <h3>Add Story</h3>
@@ -41,20 +39,21 @@ export default function AddStory() {
               character_importance: "",
               rep_noteswarnings: "",
               other_noteswarnings: "",
+              character_id: params.id,
+              cover: "",
             }}
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
-
-              fetch(`https://aroacedb-back.herokuapp.com/stories`, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(values),
-              })
+              fetchWithToken(
+                `https://aroacedb-back.herokuapp.com/stories`,
+                "POST",
+                values,
+                token
+              )
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
+                  history.push("/success");
                 });
             }}
           >
@@ -163,6 +162,17 @@ export default function AddStory() {
                         id="other_noteswarnings"
                         placeholder="other notes and warnings"
                         value={values.other_noteswarnings}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </p>
+                    <p>
+                      <span>Cover</span>
+                      <input
+                        id="cover"
+                        type="text"
+                        placeholder="cover"
+                        value={values.cover}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />

@@ -23,6 +23,7 @@ import SuggestedStory from "./pages/suggested-story/suggested-story";
 import AddStory from "./pages/add-story/add-story";
 import SuggestedReview from "./pages/suggested-review/suggested-review";
 import AddReview from "./pages/add-review/add-review";
+import Results from "./components/results/results";
 
 function App() {
   return (
@@ -52,8 +53,9 @@ function App() {
           <Route path="/update-review/:id" component={UpdateReview} />
           <Route path="/suggested-story/:id" component={SuggestedStory} />
           <Route path="/suggested-review/:id" component={SuggestedReview} />
-          <Route path="/add-story" component={AddStory} />
-          <Route path="/add-review" component={AddReview} />
+          <Route path="/add-story/:id" component={AddStory} />
+          <Route path="/add-review/:id" component={AddReview} />
+          <Route path="/success" component={Success} />
         </Switch>
       </div>
     </BrowserRouter>

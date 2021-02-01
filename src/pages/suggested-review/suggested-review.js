@@ -2,20 +2,27 @@ import React from "react";
 import "./suggested-review.css";
 import { useRouteMatch } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import { fazerRequisicaoComBody } from "../../utils/fetch";
+import Sidebar from "../../components/sidebar/sidebar";
+import {
+  fazerRequisicaoComBody,
+  fetchWithToken,
+  fetchWithTokenNoBody,
+} from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
 import StoryInfo from "../../components/story-info/story-info";
 import { useHistory } from "react-router-dom";
 
 export default function SuggestedReview() {
   const [review, setReview] = React.useState({});
+  const [token, setToken] = React.useState("");
   const { params } = useRouteMatch();
   const history = useHistory();
 
   React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+
+    setToken(newToken);
     fetch(`https://aroacedb-back.herokuapp.com/suggest/reviews/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
@@ -26,7 +33,7 @@ export default function SuggestedReview() {
 
   return (
     <div className="SuggestStory">
-      <SidebarUser />
+      <Sidebar />
       <div className="story-container">
         <div className="stories">
           <h3>Suggested Review</h3>
@@ -37,37 +44,31 @@ export default function SuggestedReview() {
               reviewer: review.reviewer,
               ownvoice_for: review.ownvoice_for,
               link: review.link,
+              character_id: review.character_id,
             }}
             onSubmit={(values) => {
               values.character_id = review.character_id;
               console.log(JSON.stringify(values, null, 2));
-              fetch(
-                `https://aroacedb-back.herokuapp.com/reviews/${review.id}`,
-                {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(values),
-                }
+              console.log(review.character_id);
+              fetchWithToken(
+                `https://aroacedb-back.herokuapp.com/reviews`,
+                "POST",
+                values,
+                token
               )
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
                 });
-
-              fetch(
+              fetchWithTokenNoBody(
                 `https://aroacedb-back.herokuapp.com/suggest/reviews/${review.id}`,
-                {
-                  method: "DELETE",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                }
+                "DELETE",
+                token
               )
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
+                  history.push("/success");
                 });
             }}
           >
@@ -140,18 +141,15 @@ export default function SuggestedReview() {
                   </div>
                   <button
                     onClick={() => {
-                      fetch(
+                      fetchWithTokenNoBody(
                         `https://aroacedb-back.herokuapp.com/suggest/reviews/${review.id}`,
-                        {
-                          method: "DELETE",
-                          headers: {
-                            "Content-Type": "application/json",
-                          },
-                        }
+                        "DELETE",
+                        token
                       )
                         .then((res) => res.json())
                         .then((resJson) => {
                           console.log(resJson);
+                          history.push("/success");
                         });
                     }}
                   >

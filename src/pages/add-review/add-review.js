@@ -1,23 +1,28 @@
 import React from "react";
 import "./add-review.css";
 import { useRouteMatch } from "react-router-dom";
-import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import { fazerRequisicaoComBody } from "../../utils/fetch";
+
+import { fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import SidebarUser from "../../components/sidebar-user/sidebar-user";
+import Sidebar from "../../components/sidebar/sidebar";
 import StoryInfo from "../../components/story-info/story-info";
 import { useHistory } from "react-router-dom";
 
 export default function AddReview() {
-  const [review, setReview] = React.useState({});
   const { params } = useRouteMatch();
+  const [token, setToken] = React.useState("");
   const history = useHistory();
+
+  React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
+    console.log(token);
+  }, []);
 
   return (
     <div className="SuggestStory">
-      <SidebarUser />
+      <Sidebar />
       <div className="story-container">
         <div className="stories">
           <h3>Add a Review</h3>
@@ -28,23 +33,20 @@ export default function AddReview() {
               reviewer: "",
               ownvoice_for: "",
               link: "",
+              character_id: params.id,
             }}
             onSubmit={(values) => {
-              values.character_id = review.character_id;
               console.log(JSON.stringify(values, null, 2));
-              fetch(
-                `https://aroacedb-back.herokuapp.com/reviews/${review.id}`,
-                {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(values),
-                }
+              fetchWithToken(
+                `https://aroacedb-back.herokuapp.com/reviews`,
+                "POST",
+                values,
+                token
               )
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
+                  history.push("/success");
                 });
             }}
           >
@@ -116,7 +118,7 @@ export default function AddReview() {
                     </div>
                   </div>
                   <button type="submit" className="review-right">
-                    Update
+                    Add Review to Database
                   </button>
                 </form>
               );

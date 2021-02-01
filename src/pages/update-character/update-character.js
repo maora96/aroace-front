@@ -1,17 +1,21 @@
 import React from "react";
 import "./update-character.css";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import { fetchWithBody } from "../../utils/fetch";
+import Sidebar from "../../components/sidebar/sidebar";
+import { fetchWithBody, fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
 export default function UpdateCharacter() {
   const [character, setCharacter] = React.useState({});
+  const [token, setToken] = React.useState("");
   const { params } = useRouteMatch();
+  const history = useHistory();
 
   React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
     fetch(`https://aroacedb-back.herokuapp.com/characters/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
@@ -21,7 +25,7 @@ export default function UpdateCharacter() {
 
   return (
     <div className="Character">
-      <SidebarAdmin />
+      <Sidebar />
       <div className="character-container">
         <div className="suggest">
           <h2 class="title">Update character</h2>
@@ -43,15 +47,19 @@ export default function UpdateCharacter() {
               rep_noteswarnings: character.rep_noteswarnings,
             }}
             onSubmit={(values) => {
+              console.log(token);
+              console.log(`http:localhost:8081/characters/${params.id}`);
               console.log(JSON.stringify(values, null, 2));
-              fetchWithBody(
+              fetchWithToken(
                 `https://aroacedb-back.herokuapp.com/characters/${params.id}`,
                 "PUT",
-                values
+                values,
+                token
               )
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
+                  history.push("/success");
                 });
               //s history.push("/success");
             }}

@@ -1,27 +1,35 @@
 import React from "react";
 import "./suggested-character.css";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
-import SidebarAdmin from "../../components/sidebar-admin/sidebar-admin";
-import { fazerRequisicaoComBody } from "../../utils/fetch";
+import Sidebar from "../../components/sidebar/sidebar";
+import {
+  fazerRequisicaoComBody,
+  fetchWithToken,
+  fetchWithTokenNoBody,
+} from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
 export default function SuggestedCharacter() {
   const [character, setCharacter] = React.useState({});
   const { params } = useRouteMatch();
+  const [token, setToken] = React.useState("");
 
+  const history = useHistory();
   React.useEffect(() => {
-    fetch(`https://aroacedb-back.herokuapp.com/suggest/${params.id}`)
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
+    fetch(`https://aroacedb-back.herokuapp.com/suggest/characters/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
-        setCharacter(resJson.dados.character[0]);
+        setCharacter(resJson.data.character[0]);
       });
   }, []);
 
   return (
     <div className="Character">
-      <SidebarAdmin />
+      <Sidebar />
       <div className="character-container">
         <div className="suggest">
           <h2 class="title">Suggested character</h2>
@@ -44,16 +52,27 @@ export default function SuggestedCharacter() {
             }}
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
-              //   fazerRequisicaoComBody(
-              //     "https://aroacedb-back.herokuapp.com/character",
-              //     "POST",
-              //     values
-              //   )
-              //     .then((res) => res.json())
-              //     .then((resJson) => {
-              //       console.log(resJson);
-              //     });
-              //s history.push("/success");
+              fetchWithToken(
+                "https://aroacedb-back.herokuapp.com/characters",
+                "POST",
+                values,
+                token
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                });
+
+              fetchWithTokenNoBody(
+                `https://aroacedb-back.herokuapp.com/suggest/characters/${params.id}`,
+                "DELETE",
+                token
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                  history.push("/success");
+                });
             }}
           >
             {(props) => {
@@ -220,19 +239,18 @@ export default function SuggestedCharacter() {
                       type="button"
                       onClick={() => {
                         console.log("delete from database");
-                        fetch(
-                          `https://aroacedb-back.herokuapp.com/suggest/${params}`,
-                          {
-                            method: "DELETE",
-                            headers: { "Content-Type": "application/json" },
-                          }
+                        fetchWithTokenNoBody(
+                          `https://aroacedb-back.herokuapp.com/suggest/characters/${params.id}`,
+                          "DELETE",
+                          token
                         )
                           .then((res) => res.json())
                           .then((resJson) => {
                             console.log(resJson);
+                            history.push("/success");
                           });
 
-                        //history.push("/success");
+                        history.push("/success");
                       }}
                     >
                       Delete
