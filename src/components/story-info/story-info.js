@@ -14,7 +14,15 @@ export default function StoryInfo(props) {
   }, []);
   return (
     <div className="StoryInfo">
-      <img src={story.cover} alt="cover" />
+      {story.cover ? (
+        <img src={story.cover} alt="cover" />
+      ) : (
+        <img
+          src="https://www.globaluniversityalliance.org/wp-content/uploads/2017/10/No-Cover-Image-01.png"
+          alt="cover"
+        />
+      )}
+
       <div className="story-container">
         <div className="line">
           <h4>{story.story_title}</h4>
