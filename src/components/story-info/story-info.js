@@ -19,7 +19,7 @@ export default function StoryInfo(props) {
         <div className="line">
           <h4>{story.story_title}</h4>
           <span>
-            <span>{story.length}</span>
+            <span>{story.story_length}</span>
           </span>
           {/* <span>
             {story.character_importance === null ? (

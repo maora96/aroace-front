@@ -48,7 +48,7 @@ export default function SuggestedStory() {
               story_title: story.story_title,
               series_or_anthology: story.series_or_anthology,
               genre: story.genre,
-              story_length: story.length,
+              story_length: story.story_length,
               type_of_rep: story.type_of_rep,
               character_importance: story.character_importance,
               rep_noteswarnings: story.rep_noteswarnings,

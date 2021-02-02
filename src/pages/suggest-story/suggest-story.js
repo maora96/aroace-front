@@ -35,7 +35,7 @@ export default function SuggestStory() {
               story_title: "",
               series_or_anthology: "",
               genre: "",
-              length: "",
+              story_length: "",
               type_of_rep: "",
               character_importance: "",
               rep_noteswarnings: "",
@@ -88,10 +88,10 @@ export default function SuggestStory() {
                         <label>Story length</label>
                         <span>
                           <input
-                            id="length"
+                            id="story_length"
                             type="text"
                             placeholder="Story length"
-                            value={values.length}
+                            value={values.story_length}
                             onChange={handleChange}
                             onBlur={handleBlur}
                           />
