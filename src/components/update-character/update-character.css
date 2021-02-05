@@ -1,6 +1,6 @@
 .UpdateCharacter {
   display: flex;
-  background-color: #61d79e;
+  background-color: #67ffb6;
   height: 100vh;
 }
 
@@ -26,7 +26,7 @@
 
 .UpdateCharacter .character-container::-webkit-scrollbar-thumb {
   border: none;
-  background-color: #61d79e;
+  background-color: #67ffb6;
 }
 
 .UpdateCharacter .suggest-character-info {
@@ -46,7 +46,7 @@
 }
 
 .UpdateCharacter .suggest h2 {
-  color: #61d79e;
+  color: #67ffb6;
   text-transform: uppercase;
   font-size: 2.3rem;
 }
@@ -85,7 +85,7 @@
 }
 
 .UpdateCharacter .suggest h2 input {
-  color: #61d79e;
+  color: #67ffb6;
   text-transform: uppercase;
   font-size: 2.3rem;
   margin-bottom: 1rem;
@@ -93,19 +93,19 @@
 
 .UpdateCharacter .suggest ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #61d79e;
+  color: #67ffb6;
   font-family: "Lato", sans-serif;
   opacity: 1; /* Firefox */
 }
 
 .UpdateCharacter .suggest :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #61d79e;
+  color: #67ffb6;
 }
 
 .UpdateCharacter .suggest ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #61d79e;
+  color: #67ffb6;
 }
 
 .UpdateCharacter .buttons {
@@ -115,7 +115,7 @@
 
 .UpdateCharacter button {
   border: none;
-  background: #61d79e;
+  background: #67ffb6;
   color: white;
   text-transform: uppercase;
   padding: 0.5rem 2rem;

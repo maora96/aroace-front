@@ -9,7 +9,7 @@
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  color: #61d79e;
+  color: #67ffb6;
   margin-bottom: 2rem;
 }
 
@@ -42,7 +42,7 @@
   font-size: 25px;
   line-height: 36px;
   text-transform: uppercase;
-  color: #61d79e;
+  color: #67ffb6;
 }
 
 .RecentSuggested .character-card .line .chunk span {
@@ -66,7 +66,7 @@
   line-height: 45px;
   text-transform: uppercase;
   color: #ffffff;
-  background: #61d79e;
+  background: #67ffb6;
   border-radius: 10px;
   text-decoration: none;
   width: 160px;

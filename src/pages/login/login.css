@@ -1,6 +1,6 @@
 .Login {
   display: flex;
-  background-color: #61d79e;
+  background-color: #67ffb6;
   height: 100vh;
 }
 
@@ -33,7 +33,7 @@
 .Login .login-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #61d79e;
+  background-color: #67ffb6;
 }
 
 .Login .login-box {
@@ -46,7 +46,7 @@
 }
 
 .Login .login-box h2 {
-  color: #61d79e;
+  color: #67ffb6;
   text-transform: uppercase;
   font-size: 2.3rem;
 }
@@ -75,7 +75,7 @@
 }
 
 .Login .login-box button {
-  background: #61d79e;
+  background: #67ffb6;
   border: none;
   color: white;
   font-weight: bold;
