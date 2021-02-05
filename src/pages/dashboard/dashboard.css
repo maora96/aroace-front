@@ -1,6 +1,6 @@
 .Dashboard {
   display: flex;
-  background-color: #0fefc9;
+  background-color: #61d79e;
   height: 100vh;
 }
 
@@ -27,7 +27,7 @@
 .Dashboard .dashboard-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #0fefc9;
+  background-color: #61d79e;
 }
 
 .Dashboard .header {
@@ -41,7 +41,7 @@
   font-size: 50px;
   line-height: 60px;
   text-transform: uppercase;
-  color: #0fefc9;
+  color: #61d79e;
 }
 
 .Dashboard .header a {
@@ -51,7 +51,7 @@
   line-height: 45px;
   text-transform: uppercase;
   color: #ffffff;
-  background: #0fefc9;
+  background: #61d79e;
   border-radius: 10px;
   text-decoration: none;
   width: 160px;

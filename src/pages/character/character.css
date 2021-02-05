@@ -1,6 +1,6 @@
 .Character {
   display: flex;
-  background-color: #0fefc9;
+  background-color: #61d79e;
   height: 100vh;
 }
 
@@ -26,7 +26,7 @@
 
 .Character .character-container::-webkit-scrollbar-thumb {
   border: none;
-  background-color: #0fefc9;
+  background-color: #61d79e;
 }
 
 @media only screen and (max-width: 416px) {

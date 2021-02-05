@@ -1,6 +1,6 @@
 .Home {
   display: flex;
-  background-color: #0fefc9;
+  background-color: #61d79e;
   height: 100vh;
 }
 
@@ -27,7 +27,7 @@
 .Home .home-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #0fefc9;
+  background-color: #61d79e;
 }
 
 .Home .home-container form {
@@ -43,7 +43,7 @@
   border: none;
   height: 50px;
   border-radius: 10px;
-  color: #0fefc9;
+  color: #61d79e;
   padding-left: 1rem;
 }
 
@@ -52,7 +52,7 @@
   top: 48px;
   right: 0;
   border-radius: 0 5px 5px 0;
-  background-color: #0fefc9;
+  background-color: #61d79e;
   border: none;
   height: 50px;
   width: 75px;
@@ -85,7 +85,7 @@
 .Home .char-btn button {
   color: white;
   text-transform: uppercase;
-  background-color: #0fefc9;
+  background-color: #61d79e;
   border: none;
   border-radius: 5px;
   font-weight: bold;

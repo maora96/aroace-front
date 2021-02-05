@@ -1,6 +1,6 @@
 .About {
   display: flex;
-  background-color: #0fefc9;
+  background-color: #61d79e;
   height: 100vh;
 }
 
@@ -27,7 +27,7 @@
 .About .about-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #0fefc9;
+  background-color: #61d79e;
 }
 
 .About .about {
@@ -44,7 +44,7 @@
 .About h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
-  color: #0fefc9;
+  color: #61d79e;
   margin-bottom: 1rem;
 }
 
@@ -64,7 +64,7 @@
 .About .kofi-link {
   width: 250px;
   background: #2b193d;
-  color: #0fefc9;
+  color: #61d79e;
   border: none;
   padding: 1rem;
   border-radius: 10px;
