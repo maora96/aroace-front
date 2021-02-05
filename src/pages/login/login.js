@@ -32,10 +32,14 @@ function Login() {
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
 
-              fetchWithBody("http://aroacedb-back.herokuapp.com/auth", "POST", {
-                email: values.email,
-                password: values.password,
-              })
+              fetchWithBody(
+                "https://aroacedb-back.herokuapp.com/auth",
+                "POST",
+                {
+                  email: values.email,
+                  password: values.password,
+                }
+              )
                 .then((res) => res.json())
                 .then((resJson) => {
                   const data = resJson.data;
