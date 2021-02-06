@@ -112,29 +112,131 @@ function Dashboard() {
             </span>
             <label class="switch">
               Character Suggestions
-              <div onChange={onChangeValueC}>
+              <div>
                 Enable
-                <input type="radio" name="character" value={true} />
+                <input
+                  type="radio"
+                  name="character"
+                  value={true}
+                  checked={characterCheck ? "checked" : ""}
+                  onClick={() => {
+                    setCharacterCheck(true);
+                    fetchWithBody(
+                      "https://aroacedb-back.herokuapp.com/permissions/character",
+                      "POST",
+                      { checked: true }
+                    )
+                      .then((res) => res.json())
+                      .then((resJson) => {
+                        console.log(resJson);
+                      });
+                  }}
+                />
                 Disable
-                <input type="radio" name="character" value={false} />
+                <input
+                  type="radio"
+                  name="character"
+                  value={false}
+                  checked={characterCheck ? "" : "checked"}
+                  onClick={() => {
+                    setCharacterCheck(false);
+                    fetchWithBody(
+                      "https://aroacedb-back.herokuapp.com/permissions/character",
+                      "POST",
+                      { checked: false }
+                    )
+                      .then((res) => res.json())
+                      .then((resJson) => {
+                        console.log(resJson);
+                      });
+                  }}
+                />
               </div>
             </label>
             <label class="switch">
               Review Suggestions
-              <div onChange={onChangeValue}>
+              <div>
                 Enable
-                <input type="radio" name="review" value={true} />
+                <input
+                  type="radio"
+                  name="review"
+                  value={true}
+                  checked={reviewCheck ? "checked" : ""}
+                  onClick={() => {
+                    setReviewCheck(true);
+                    fetchWithBody(
+                      "https://aroacedb-back.herokuapp.com/permissions/review",
+                      "POST",
+                      { checked: true }
+                    )
+                      .then((res) => res.json())
+                      .then((resJson) => {
+                        console.log(resJson);
+                      });
+                  }}
+                />
                 Disable
-                <input type="radio" name="review" value={false} />
+                <input
+                  type="radio"
+                  name="review"
+                  value={false}
+                  checked={reviewCheck ? "" : "checked"}
+                  onClick={() => {
+                    setReviewCheck(false);
+                    fetchWithBody(
+                      "https://aroacedb-back.herokuapp.com/permissions/review",
+                      "POST",
+                      { checked: false }
+                    )
+                      .then((res) => res.json())
+                      .then((resJson) => {
+                        console.log(resJson);
+                      });
+                  }}
+                />
               </div>
             </label>
             <label class="switch">
               Story Suggestions
-              <div onChange={onChangeValueS}>
+              <div>
                 Enable
-                <input type="radio" name="story" value={true} />
+                <input
+                  type="radio"
+                  name="story"
+                  value={true}
+                  checked={storyCheck ? "checked" : ""}
+                  onClick={() => {
+                    setStoryCheck(true);
+                    fetchWithBody(
+                      "https://aroacedb-back.herokuapp.com/permissions/story",
+                      "POST",
+                      { checked: true }
+                    )
+                      .then((res) => res.json())
+                      .then((resJson) => {
+                        console.log(resJson);
+                      });
+                  }}
+                />
                 Disable
-                <input type="radio" name="story" value={false} />
+                <input
+                  type="radio"
+                  name="story"
+                  value={false}
+                  checked={storyCheck ? "" : "checked"}
+                  onClick={() => {
+                    setStoryCheck(false);
+                    fetchWithBody(
+                      "https://aroacedb-back.herokuapp.com/permissions/story",
+                      "POST",
+                      { checked: false }
+                    )
+                      .then((res) => res.json())
+                      .then((resJson) => {
+                        console.log(resJson);
+                      });
+                  }}
+                />
               </div>
             </label>
           </div>
