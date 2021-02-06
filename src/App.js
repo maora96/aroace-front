@@ -24,40 +24,59 @@ import AddStory from "./pages/add-story/add-story";
 import SuggestedReview from "./pages/suggested-review/suggested-review";
 import AddReview from "./pages/add-review/add-review";
 import Results from "./components/results/results";
+import DataContext from "./utils/data";
 
 function App() {
+  const [characterCheck, setCharacterCheck] = React.useState(true);
+  const [reviewCheck, setReviewCheck] = React.useState(true);
+  const [storyCheck, setStoryCheck] = React.useState(true);
+
   return (
     <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/character/:id" component={Character} />
-          <Route path="/suggest-character" component={SuggestCharacter} />
-          <Route path="/success" component={Success} />
-          <Route path="/about" component={About} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/suggested-characters" component={SuggestedCharacters} />
-          <Route
-            path="/suggested-character/:id"
-            component={SuggestedCharacter}
-          />
-          <Route path="/all-characters" component={AllCharacters} />
-          <Route path="/update-character/:id" component={UpdateCharacter} />
-          <Route path="/suggest-story/:id" component={SuggestStory} />
-          <Route path="/update-story/:id" component={UpdateStory} />
-          <Route path="/suggest-review/:id" component={SuggestReview} />
-          <Route path="/suggested-stories" component={SuggestedStories} />
-          <Route path="/suggested-reviews" component={SuggestedReviews} />
-          <Route path="/add-character" component={AddCharacter} />
-          <Route path="/update-review/:id" component={UpdateReview} />
-          <Route path="/suggested-story/:id" component={SuggestedStory} />
-          <Route path="/suggested-review/:id" component={SuggestedReview} />
-          <Route path="/add-story/:id" component={AddStory} />
-          <Route path="/add-review/:id" component={AddReview} />
-          <Route path="/success" component={Success} />
-        </Switch>
-      </div>
+      <DataContext.Provider
+        value={{
+          characterCheck,
+          setCharacterCheck,
+          storyCheck,
+          setStoryCheck,
+          reviewCheck,
+          setReviewCheck,
+        }}
+      >
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/character/:id" component={Character} />
+            <Route path="/suggest-character" component={SuggestCharacter} />
+            <Route path="/success" component={Success} />
+            <Route path="/about" component={About} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route
+              path="/suggested-characters"
+              component={SuggestedCharacters}
+            />
+            <Route
+              path="/suggested-character/:id"
+              component={SuggestedCharacter}
+            />
+            <Route path="/all-characters" component={AllCharacters} />
+            <Route path="/update-character/:id" component={UpdateCharacter} />
+            <Route path="/suggest-story/:id" component={SuggestStory} />
+            <Route path="/update-story/:id" component={UpdateStory} />
+            <Route path="/suggest-review/:id" component={SuggestReview} />
+            <Route path="/suggested-stories" component={SuggestedStories} />
+            <Route path="/suggested-reviews" component={SuggestedReviews} />
+            <Route path="/add-character" component={AddCharacter} />
+            <Route path="/update-review/:id" component={UpdateReview} />
+            <Route path="/suggested-story/:id" component={SuggestedStory} />
+            <Route path="/suggested-review/:id" component={SuggestedReview} />
+            <Route path="/add-story/:id" component={AddStory} />
+            <Route path="/add-review/:id" component={AddReview} />
+            <Route path="/success" component={Success} />
+          </Switch>
+        </div>
+      </DataContext.Provider>
     </BrowserRouter>
   );
 }

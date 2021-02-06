@@ -35,6 +35,7 @@
   margin: 0 auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  display: block;
 }
 
 .Dashboard h2 {
@@ -45,7 +46,6 @@
 }
 
 .Dashboard .header a {
-  float: right;
   font-weight: bold;
   font-size: 18px;
   line-height: 45px;
@@ -54,9 +54,32 @@
   background: #67ffb6;
   border-radius: 10px;
   text-decoration: none;
-  width: 160px;
-  height: 45px;
+  padding: 1rem;
   text-align: center;
+}
+
+.Dashboard .toggle-input {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.Dashboard .toggle-container {
+  width: 100%;
+}
+
+.Dashboard .toggle-input label {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.Dashboard .toggle-input input {
+  margin-right: 1rem;
 }
 
 @media only screen and (max-width: 768px) {

@@ -9,11 +9,23 @@ import { ReactComponent as LoginIcon } from "../../assets/user-cog-solid.svg";
 export default function Sidebar() {
   const [token, setToken] = React.useState("");
 
+  const [characterCheck, setCharacterCheck] = React.useState("");
+  const [storyCheck, setStoryCheck] = React.useState("");
+  const [reviewCheck, setReviewCheck] = React.useState("");
   React.useEffect(() => {
     const newToken = localStorage.getItem("token");
     setToken(newToken);
     console.log(token);
-  }, []);
+
+    fetch("https://aroacedb-back.herokuapp.com/permissions")
+      .then((res) => res.json())
+      .then((resJson) => {
+        console.log(resJson);
+        setCharacterCheck(resJson.data.character.checked);
+        setStoryCheck(resJson.data.story.checked);
+        setReviewCheck(resJson.data.review.checked);
+      });
+  }, [characterCheck]);
   return (
     <div className="SidebarAdmin">
       <div className="sidebar-container">
@@ -46,12 +58,16 @@ export default function Sidebar() {
                 <span>About the database</span>
               </a>
             </div>
-            <div className="link-container">
-              <a href="/suggest-character">
-                <FeatherIcon fill="white" height="20px" width="30px" />
-                <span>Suggest a character</span>
-              </a>
-            </div>
+            {characterCheck ? (
+              <div className="link-container">
+                <a href="/suggest-character">
+                  <FeatherIcon fill="white" height="20px" width="30px" />
+                  <span>Suggest a character</span>
+                </a>
+              </div>
+            ) : (
+              ""
+            )}
 
             {token ? (
               <div className="div-container">

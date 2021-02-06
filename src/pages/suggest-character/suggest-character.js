@@ -41,6 +41,7 @@ function SuggestCharacter() {
               relationships: "",
               rep_noteswarnings: "",
               cover: "",
+              reference: "",
             }}
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
@@ -211,6 +212,20 @@ function SuggestCharacter() {
                         placeholder="Insert Representation Notes & Warnings"
                         type="text"
                         value={values.rep_noteswarnings}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+
+                    <div clasName="square">
+                      <p>
+                        <span>References to mention of representation</span>
+                      </p>
+                      <textarea
+                        id="reference"
+                        placeholder="Insert references"
+                        type="text"
+                        value={values.reference}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />

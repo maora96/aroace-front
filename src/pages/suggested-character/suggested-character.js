@@ -52,6 +52,7 @@ export default function SuggestedCharacter() {
               relationships: character.relationships,
               rep_noteswarnings: character.rep_noteswarnings,
               cover: character.cover,
+              reference: character.reference,
             }}
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
@@ -232,6 +233,20 @@ export default function SuggestedCharacter() {
                         placeholder={character.rep_noteswarnings}
                         type="text"
                         value={values.rep_noteswarnings}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
+
+                    <div clasName="square">
+                      <p>
+                        <span>References to mention of representation</span>
+                      </p>
+                      <textarea
+                        id="reference"
+                        placeholder="Insert references"
+                        type="text"
+                        value={values.reference}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
