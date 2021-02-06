@@ -29,6 +29,7 @@ function Dashboard() {
   };
 
   const onChangeValueC = (event) => {
+    setCharacterCheck(event.target.value);
     fetchWithBody(
       "https://aroacedb-back.herokuapp.com/permissions/character",
       "POST",
@@ -102,6 +103,13 @@ function Dashboard() {
 
         <div className="toggle-container">
           <div className="toggle-input">
+            <span>
+              Currently character suggestions are
+              <b> {characterCheck ? "enabled" : "disabled"}</b>, story
+              suggestions are<b> {storyCheck ? "enabled" : "disabled"}</b> and
+              review suggestions are{" "}
+              <b>{reviewCheck ? "enabled" : "disabled"}</b>.
+            </span>
             <label class="switch">
               Character Suggestions
               <div onChange={onChangeValueC}>
@@ -111,7 +119,6 @@ function Dashboard() {
                 <input type="radio" name="character" value={false} />
               </div>
             </label>
-
             <label class="switch">
               Review Suggestions
               <div onChange={onChangeValue}>
@@ -121,7 +128,6 @@ function Dashboard() {
                 <input type="radio" name="review" value={false} />
               </div>
             </label>
-
             <label class="switch">
               Story Suggestions
               <div onChange={onChangeValueS}>
