@@ -132,6 +132,10 @@
   border-radius: 10px;
 }
 
+.SuggestCharacter .suggest {
+  color: white;
+}
+
 .SuggestCharacter .title {
   margin-bottom: 2rem !important;
 }
