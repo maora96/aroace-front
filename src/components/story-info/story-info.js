@@ -29,13 +29,6 @@ export default function StoryInfo(props) {
           <span>
             <span>{story.story_length}</span>
           </span>
-          {/* <span>
-            {story.character_importance === null ? (
-              "No info on character importance"
-            ) : (
-              <span>{story.character_importance} Character</span>
-            )}
-          </span> */}
         </div>
         <div className="line">
           {story.series_or_anthology === null ? (
@@ -52,6 +45,16 @@ export default function StoryInfo(props) {
           </span>
           <span>
             <span className="to-capitalize">{story.type_of_rep} Rep</span>
+          </span>
+        </div>
+
+        <div className="line">
+          <span>
+            {story.character_importance === null ? (
+              "No info on character importance"
+            ) : (
+              <span>{story.character_importance} Character</span>
+            )}
           </span>
         </div>
         <p>

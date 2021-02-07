@@ -42,6 +42,10 @@ export default function CharacterInfo(props) {
         <div className="chunk">
           <span>Type of Rep</span> {character.type_of_rep}
         </div>
+
+        <div className="chunk">
+          <span>Importance</span> {character.importance}
+        </div>
       </div>
 
       <div className="line">
