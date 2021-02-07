@@ -77,14 +77,25 @@ export default function AddCharacter() {
                           onBlur={handleBlur}
                         />
                       </h2>
-                      <input
+                      {/* <input
                         id="importance"
                         placeholder={character.importance}
                         type="text"
                         value={values.importance}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                      />
+                      /> */}
+                      <select
+                        name="importance"
+                        value={values.importance}
+                        onChange={handleChange}
+                        onBlur={handleChange}
+                      >
+                        <option value="" label="Select one" />
+                        <option value="Lead" label="Lead" />
+                        <option value="Main" label="Main" />
+                        <option value="Side" label="Side" />
+                      </select>
                     </div>
                     <div className="line">
                       <div className="chunk">
@@ -100,14 +111,25 @@ export default function AddCharacter() {
                       </div>
                       <div className="chunk">
                         <span>Gender</span>{" "}
-                        <input
+                        {/* <input
                           id="gender"
                           placeholder={character.gender}
                           type="text"
                           value={values.gender}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                        />
+                        /> */}
+                        <select
+                          name="gender"
+                          value={values.gender}
+                          onChange={handleChange}
+                          onBlur={handleChange}
+                        >
+                          <option value="" label="Select gender" />
+                          <option value="M" label="M" />
+                          <option value="F" label="F" />
+                          <option value="Enby" label="Enby" />
+                        </select>
                       </div>
                       <div className="chunk">
                         <span>Pairing</span>
@@ -136,39 +158,91 @@ export default function AddCharacter() {
                       </div>
                       <div className="chunk">
                         <span>Type of Rep</span>
-                        <input
+                        {/* <input
                           id="type_of_rep"
                           placeholder={character.type_of_rep}
                           type="text"
                           value={values.type_of_rep}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                        />
+                        /> */}
+                        <select
+                          name="type_of_rep"
+                          value={values.type_of_rep}
+                          onChange={handleChange}
+                          onBlur={handleChange}
+                        >
+                          <option value="" label="Select one" />
+                          <option value="Word of God" label="Word of God" />
+                          <option value="On Page" label="On Page" />
+                          <option value="Word Used" label="Word Used" />
+                        </select>
                       </div>
                     </div>
 
                     <div className="line">
                       <div className="chunk">
                         <span>Romantic orientation</span>
-                        <input
+                        {/* <input
                           id="romantic_orientation"
                           placeholder={character.romantic_orientation}
                           type="text"
                           value={values.romantic_orientation}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                        />
+                        /> */}
+                        <select
+                          name="romantic_orientation"
+                          value={values.romantic_orientation}
+                          onChange={handleChange}
+                          onBlur={handleChange}
+                        >
+                          <option value="" label="Select one" />
+                          <option value="Alloromantic" label="Alloromantic" />
+                          <option value="Aroflux" label="Aroflux" />
+                          <option value="Aromantic" label="Aromantic" />
+                          <option value="Arospec" label="Arospec" />
+                          <option value="Biromantic" label="Biromantic" />
+                          <option value="Greyromantic" label="Grayromantic" />
+                          <option value="Demiromantic" label="Demiromantic" />
+                          <option
+                            value="Heteroromantic"
+                            label="Heteroromantic"
+                          />
+                          <option value="Homoromantic" label="Homoromantic" />
+                          <option value="Panromantic" label="Panromantic" />
+                          <option value="Queer" label="Queer" />
+                          <option value="WTFRomantic" label="WTFRomantic" />
+                        </select>
                       </div>
                       <div className="chunk">
                         <span>Sexual Orientation</span>
-                        <input
+                        {/* <input
                           id="sexual_orientation"
                           placeholder={character.sexual_orientation}
                           type="text"
                           value={values.sexual_orientation}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                        />
+                        /> */}
+                        <select
+                          name="sexual_orientation"
+                          value={values.sexual_orientation}
+                          onChange={handleChange}
+                          onBlur={handleChange}
+                        >
+                          <option value="" label="Select one" />
+                          <option value="Allosexual" label="Allosexual" />
+                          <option value="Asexual" label="Asexual" />
+                          <option value="Acespec" label="Acespec" />
+                          <option value="Demisexual" label="Demisexual" />
+                          <option value="Bisexual" label="Bisexual" />
+                          <option value="Gay" label="Gay" />
+                          <option value="Gray-asexual" label="Graysexual" />
+                          <option value="Heterosexual" label="Heterosexual" />
+                          <option value="Pansexual" label="Pansexual" />
+                          <option value="Queer" label="Queer" />
+                        </select>
                       </div>
                     </div>
 

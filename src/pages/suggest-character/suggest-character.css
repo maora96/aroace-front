@@ -153,6 +153,28 @@
   margin-top: 2rem;
 }
 
+.SuggestCharacter .chunk select {
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #2b193d;
+  width: 100% !important;
+}
+
+.SuggestCharacter .line select {
+  width: 30%;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #2b193d;
+}
+
+.SuggestCharacter .chunk {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
 @media only screen and (max-width: 768px) {
   .suggest-container .suggest {
     width: 80%;

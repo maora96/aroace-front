@@ -120,14 +120,17 @@ export default function SuggestedStory() {
                       </span>
                       <span>
                         <label>Character importance</label>
-                        <input
-                          id="chracter_importance"
-                          type="text"
-                          placeholder="Character importance"
-                          value={values.character_importance}
+                        <select
+                          name="importance"
+                          value={values.importance}
                           onChange={handleChange}
-                          onBlur={handleBlur}
-                        />
+                          onBlur={handleChange}
+                        >
+                          <option value="" label="Select one" />
+                          <option value="Lead" label="Lead" />
+                          <option value="Main" label="Main" />
+                          <option value="Side" label="Side" />
+                        </select>
                       </span>
                     </div>
                     <div className="line">
@@ -158,14 +161,17 @@ export default function SuggestedStory() {
                       <span>
                         <label>Type of Rep</label>
                         <span className="to-capitalize">
-                          <input
-                            id="type_of_rep"
-                            type="text"
-                            placeholder="type of rep"
+                          <select
+                            name="type_of_rep"
                             value={values.type_of_rep}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                          />
+                            onBlur={handleChange}
+                          >
+                            <option value="" label="Select one" />
+                            <option value="Word of God" label="Word of God" />
+                            <option value="On Page" label="On Page" />
+                            <option value="Word Used" label="Word Used" />
+                          </select>
                         </span>
                       </span>
                     </div>

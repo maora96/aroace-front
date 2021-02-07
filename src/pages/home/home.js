@@ -32,8 +32,6 @@ function Home() {
         <form
           onSubmit={(event) => {
             console.log(search);
-            const newSearch = search.split(" ");
-            console.log(search);
 
             event.preventDefault();
             fetch(
@@ -41,6 +39,7 @@ function Home() {
             )
               .then((res) => res.json())
               .then((resJson) => {
+                console.log(search);
                 console.log(resJson.data);
 
                 if (resJson.data) {

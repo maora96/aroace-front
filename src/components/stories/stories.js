@@ -27,11 +27,11 @@ export default function Stories(props) {
 
   const showButtons = () => {
     if (token) {
-      return <a href={`/add-review/${character_id}`}>Add Story</a>;
+      return <a href={`/add-story/${character_id}`}>Add Story</a>;
     } else {
       if (storyCheck) {
         console.log("aaaaa");
-        return <a href={`/suggest-review/${character_id}`}>Suggest Story</a>;
+        return <a href={`/suggest-story/${character_id}`}>Suggest Story</a>;
       }
     }
   };

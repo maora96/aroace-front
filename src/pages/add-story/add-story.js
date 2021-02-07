@@ -1,20 +1,15 @@
 import React from "react";
 import "./add-story.css";
 import { useRouteMatch, useHistory } from "react-router-dom";
-import CharacterInfo from "../../components/character-info/character-info";
 import Sidebar from "../../components/sidebar/sidebar";
 import { fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
-import * as Yup from "yup";
-import StoryInfo from "../../components/story-info/story-info";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function AddStory() {
-  const [character, setCharacter] = React.useState({});
   const [token, setToken] = React.useState("");
   const { params } = useRouteMatch();
   const history = useHistory();
-  const [file, setFile] = React.useState("");
 
   React.useEffect(() => {
     const newToken = localStorage.getItem("token");
@@ -99,14 +94,17 @@ export default function AddStory() {
                       </span>
                       <span>
                         <label>Character importance</label>
-                        <input
-                          id="chracter_importance"
-                          type="text"
-                          placeholder="Character importance"
-                          value={values.character_importance}
+                        <select
+                          name="importance"
+                          value={values.importance}
                           onChange={handleChange}
-                          onBlur={handleBlur}
-                        />
+                          onBlur={handleChange}
+                        >
+                          <option value="" label="Select one" />
+                          <option value="Lead" label="Lead" />
+                          <option value="Main" label="Main" />
+                          <option value="Side" label="Side" />
+                        </select>
                       </span>
                     </div>
                     <div className="line">
@@ -137,14 +135,17 @@ export default function AddStory() {
                       <span>
                         <label>Type of Rep</label>
                         <span className="to-capitalize">
-                          <input
-                            id="type_of_rep"
-                            type="text"
-                            placeholder="type of rep"
+                          <select
+                            name="type_of_rep"
                             value={values.type_of_rep}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                          />
+                            onBlur={handleChange}
+                          >
+                            <option value="" label="Select one" />
+                            <option value="Word of God" label="Word of God" />
+                            <option value="On Page" label="On Page" />
+                            <option value="Word Used" label="Word Used" />
+                          </select>
                         </span>
                       </span>
                     </div>

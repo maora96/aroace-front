@@ -119,6 +119,14 @@
   padding-bottom: 0.5rem;
 }
 
+.SuggestStory select {
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  width: 100%;
+  border-bottom: 1px solid #2b193d;
+}
+
 .SuggestStory textarea {
   display: block;
   margin-top: 1rem;
