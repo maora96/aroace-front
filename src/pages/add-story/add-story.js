@@ -55,7 +55,7 @@ export default function AddStory() {
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
-                  history.push("/success");
+                  history.push(`/add-review/${params.id}`);
                 });
             }}
           >
