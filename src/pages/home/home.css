@@ -94,7 +94,7 @@
   margin-top: 1rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1040px) {
   .Home .char-btn {
     width: 80%;
   }
@@ -105,7 +105,7 @@
   }
 }
 
-@media only screen and (max-width: 416px) {
+@media only screen and (max-width: 690px) {
   .Home {
     display: flex;
     flex-direction: column;
