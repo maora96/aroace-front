@@ -98,7 +98,7 @@
   }
 }
 
-@media only screen and (max-width: 416px) {
+@media only screen and (max-width: 690px) {
   .Dashboard {
     flex-direction: column;
   }

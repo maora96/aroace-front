@@ -86,7 +86,7 @@
   flex-direction: column;
 }
 
-@media only screen and (max-width: 416px) {
+@media only screen and (max-width: 690px) {
   .Mobile {
     display: block;
     z-index: 1;

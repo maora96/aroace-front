@@ -1,6 +1,7 @@
 import React from "react";
 import "./add-character.css";
-import { useRouteMatch, useHistory } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
+import { useHistory } from "react-router-dom";
 import CharacterInfo from "../../components/character-info/character-info";
 import Sidebar from "../../components/sidebar/sidebar";
 import { fetchWithToken } from "../../utils/fetch";
@@ -110,15 +111,8 @@ export default function AddCharacter() {
                         />
                       </div>
                       <div className="chunk">
-                        <span>Gender</span>{" "}
-                        {/* <input
-                          id="gender"
-                          placeholder={character.gender}
-                          type="text"
-                          value={values.gender}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        /> */}
+                        <span>Gender</span>
+
                         <select
                           name="gender"
                           value={values.gender}
@@ -158,14 +152,7 @@ export default function AddCharacter() {
                       </div>
                       <div className="chunk">
                         <span>Type of Rep</span>
-                        {/* <input
-                          id="type_of_rep"
-                          placeholder={character.type_of_rep}
-                          type="text"
-                          value={values.type_of_rep}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        /> */}
+
                         <select
                           name="type_of_rep"
                           value={values.type_of_rep}
@@ -183,14 +170,7 @@ export default function AddCharacter() {
                     <div className="line">
                       <div className="chunk">
                         <span>Romantic orientation</span>
-                        {/* <input
-                          id="romantic_orientation"
-                          placeholder={character.romantic_orientation}
-                          type="text"
-                          value={values.romantic_orientation}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        /> */}
+
                         <select
                           name="romantic_orientation"
                           value={values.romantic_orientation}
@@ -217,14 +197,7 @@ export default function AddCharacter() {
                       </div>
                       <div className="chunk">
                         <span>Sexual Orientation</span>
-                        {/* <input
-                          id="sexual_orientation"
-                          placeholder={character.sexual_orientation}
-                          type="text"
-                          value={values.sexual_orientation}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        /> */}
+
                         <select
                           name="sexual_orientation"
                           value={values.sexual_orientation}
@@ -261,9 +234,24 @@ export default function AddCharacter() {
                     </div>
 
                     <div clasName="square">
-                      <p>
-                        <span>Relationships</span>
-                      </p>
+                      <div className="group">
+                        <span
+                          className="hover"
+                          data-for="relationships"
+                          data-tip="this is a tooltip for the relationships fields. it might be very long. it might not."
+                        >
+                          ?
+                        </span>
+                        <ReactTooltip
+                          id="relationships"
+                          effect="solid"
+                          place="top"
+                          type="dark"
+                        />
+                        <p>
+                          <span>Relationships</span>
+                        </p>
+                      </div>
                       <textarea
                         id="relationships"
                         placeholder={character.relationships}
@@ -275,9 +263,24 @@ export default function AddCharacter() {
                     </div>
 
                     <div clasName="square">
-                      <p>
-                        <span>Notes & Warnings</span>
-                      </p>
+                      <div className="group">
+                        <span
+                          className="hover"
+                          data-for="noteswarnings"
+                          data-tip="this is a tooltip for the notes & warnings field. it might be very long. it might not."
+                        >
+                          ?
+                        </span>
+                        <ReactTooltip
+                          id="noteswarnings"
+                          effect="solid"
+                          place="top"
+                          type="dark"
+                        />
+                        <p>
+                          <span>Notes & Warnings</span>
+                        </p>
+                      </div>
                       <textarea
                         id="rep_noteswarnings"
                         placeholder={character.rep_noteswarnings}

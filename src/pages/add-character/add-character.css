@@ -158,7 +158,24 @@
   align-items: start;
 }
 
-@media only screen and (max-width: 768px) {
+.Character .group {
+  display: flex;
+  align-items: center;
+}
+
+.Character .group .hover {
+  background: #2b193d;
+  border-radius: 50%;
+  height: 20px;
+  font-size: 0.8rem;
+  width: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1400px) {
   .character-container .suggest {
     width: 80%;
     padding: 1rem 0;
@@ -175,7 +192,7 @@
   }
 }
 
-@media only screen and (max-width: 416px) {
+@media only screen and (max-width: 690px) {
   .Character .character-container {
     width: 90%;
   }

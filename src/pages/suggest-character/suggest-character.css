@@ -175,7 +175,7 @@
   align-items: start;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1400px) {
   .suggest-container .suggest {
     width: 80%;
     padding: 1rem 0;
@@ -190,9 +190,13 @@
   .SuggestCharacter .suggest h2 input {
     width: 100%;
   }
+
+  .chunk {
+    margin-bottom: 1rem;
+  }
 }
 
-@media only screen and (max-width: 416px) {
+@media only screen and (max-width: 690px) {
   .SuggestCharacter {
     display: flex;
     flex-direction: column;
