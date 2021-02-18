@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { fetchWithBody } from "../../utils/fetch";
 import "./suggest-character.css";
-
+import ReactTooltip from "react-tooltip";
 import { useHistory } from "react-router-dom";
 import Sidebar from "../../components/sidebar/sidebar";
 
@@ -82,6 +82,23 @@ function SuggestCharacter() {
                       <p>Suggestions are not being received yet!</p>
                       <div className="line">
                         <h2>
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-for="tooltip-name"
+                              data-tip
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="tooltip-name"
+                              effect="solid"
+                              place="top"
+                              type="dark"
+                            >
+                              <div className="tooltip">Text on tooltip</div>
+                            </ReactTooltip>
+                          </div>
                           <input
                             id="character_name"
                             placeholder="Insert Character Name"
@@ -91,6 +108,23 @@ function SuggestCharacter() {
                             onBlur={handleBlur}
                           />
                         </h2>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-importance"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-importance"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">importance</div>
+                          </ReactTooltip>
+                        </div>
                         <select
                           name="importance"
                           value={values.importance}
@@ -102,18 +136,27 @@ function SuggestCharacter() {
                           <option value="Main" label="Main" />
                           <option value="Side" label="Side" />
                         </select>
-                        {/* <input
-                          id="importance"
-                          placeholder="Insert Character Importance"
-                          type="text"
-                          value={values.importance}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        /> */}
                       </div>
                       <div className="line">
                         <div className="chunk">
-                          <span>Author</span>
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-for="tooltip-author"
+                              data-tip
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="tooltip-author"
+                              effect="solid"
+                              place="top"
+                              type="dark"
+                            >
+                              <div className="tooltip">author</div>
+                            </ReactTooltip>
+                            <span>Author</span>
+                          </div>
                           <input
                             id="author"
                             placeholder="Author"
@@ -124,15 +167,25 @@ function SuggestCharacter() {
                           />
                         </div>
                         <div className="chunk">
-                          <span>Gender</span>{" "}
-                          {/* <input
-                            id="gender"
-                            placeholder="Insert Character Gender"
-                            type="text"
-                            value={values.gender}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                          /> */}
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-tip
+                              data-for="tooltip-gender"
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="tooltip-gender"
+                              effect="solid"
+                              place="top"
+                              type="dark"
+                            >
+                              <div className="tooltip">gender</div>
+                            </ReactTooltip>
+                            <span>Gender</span>
+                          </div>
+
                           <select
                             name="gender"
                             value={values.gender}
@@ -146,7 +199,24 @@ function SuggestCharacter() {
                           </select>
                         </div>
                         <div className="chunk">
-                          <span>Pairing</span>
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-for="tooltip-pairing"
+                              data-tip
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="tooltip-pairing"
+                              effect="solid"
+                              place="top"
+                              type="dark"
+                            >
+                              <div className="tooltip">pairing</div>
+                            </ReactTooltip>
+                            <span>Pairing</span>
+                          </div>
                           <input
                             id="pairing_qpp_or_romantic"
                             placeholder="Insert Pairing"
@@ -160,7 +230,24 @@ function SuggestCharacter() {
 
                       <div className="line">
                         <div className="chunk">
-                          <span>Series</span>
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-for="tooltip-main-storyseries"
+                              data-tip
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="tooltip-main-storyseries"
+                              effect="solid"
+                              place="top"
+                              type="dark"
+                            >
+                              <div className="tooltip">series</div>
+                            </ReactTooltip>
+                            <span>Series</span>
+                          </div>
                           <input
                             id="main_storyseries"
                             placeholder="Insert Series"
@@ -171,15 +258,25 @@ function SuggestCharacter() {
                           />
                         </div>
                         <div className="chunk">
-                          <span>Type of Rep</span>
-                          {/* <input
-                            id="type_of_rep"
-                            placeholder="Insert Type of Rep"
-                            type="text"
-                            value={values.type_of_rep}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                          /> */}
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-for="tooltip-type"
+                              data-tip
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="tooltip-type"
+                              effect="solid"
+                              place="top"
+                              type="dark"
+                            >
+                              <div className="tooltip">type</div>
+                            </ReactTooltip>
+                            <span>Type of Rep</span>
+                          </div>
+
                           <select
                             name="type_of_rep"
                             value={values.type_of_rep}
@@ -196,15 +293,24 @@ function SuggestCharacter() {
 
                       <div className="line">
                         <div className="chunk">
-                          <span>Romantic orientation</span>
-                          {/* <input
-                            id="romantic_orientation"
-                            placeholder="Insert Romantic Orientation"
-                            type="text"
-                            value={values.romantic_orientation}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                          /> */}
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-for="tooltip-romantic"
+                              data-tip
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="tooltip-romantic"
+                              effect="solid"
+                              place="top"
+                              type="dark"
+                            >
+                              <div className="tooltip">romantic</div>
+                            </ReactTooltip>
+                            <span>Romantic orientation</span>
+                          </div>
 
                           <select
                             name="romantic_orientation"
@@ -231,7 +337,24 @@ function SuggestCharacter() {
                           </select>
                         </div>
                         <div className="chunk">
-                          <span>Sexual Orientation</span>
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-for="tooltip-sexual"
+                              data-tip
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="tooltip-sexual"
+                              effect="solid"
+                              place="top"
+                              type="dark"
+                            >
+                              <div className="tooltip">sexual field</div>
+                            </ReactTooltip>
+                            <span>Sexual Orientation</span>
+                          </div>
                           <select
                             name="sexual_orientation"
                             value={values.sexual_orientation}
@@ -263,7 +386,22 @@ function SuggestCharacter() {
 
                       <div className="line">
                         <div className="chunk">
-                          <span>Genre</span>
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-for="genre-field"
+                              data-tip="this is a tooltip for the relationships fields. it might be very long. it might not."
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="genre-field"
+                              effect="solid"
+                              place="top"
+                              type="dark"
+                            />
+                            <span>Genre</span>
+                          </div>
                           <input
                             id="genre"
                             placeholder="Insert Genres"
@@ -276,9 +414,24 @@ function SuggestCharacter() {
                       </div>
 
                       <div clasName="square">
-                        <p>
-                          <span>Relationships</span>
-                        </p>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="relationships"
+                            data-tip="this is a tooltip for the relationships fields. it might be very long. it might not."
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="relationships"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          />
+                          <p>
+                            <span>Relationships</span>
+                          </p>
+                        </div>
                         <textarea
                           id="relationships"
                           placeholder="Insert Relationships"
@@ -290,9 +443,24 @@ function SuggestCharacter() {
                       </div>
 
                       <div clasName="square">
-                        <p>
-                          <span>Notes & Warnings</span>
-                        </p>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="noteswarnings"
+                            data-tip="this is a tooltip for the notes & warnings field. it might be very long. it might not."
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="noteswarnings"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          />
+                          <p>
+                            <span>Notes & Warnings</span>
+                          </p>
+                        </div>
                         <textarea
                           id="rep_noteswarnings"
                           placeholder="Insert Representation Notes & Warnings"
@@ -304,9 +472,25 @@ function SuggestCharacter() {
                       </div>
 
                       <div clasName="square">
-                        <p>
-                          <span>References to mention of representation</span>
-                        </p>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-ref"
+                            data-tip="tooltip-ref"
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-ref"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          />
+                          <p>
+                            <span>References to mention of representation</span>
+                          </p>
+                        </div>
+
                         <textarea
                           id="reference"
                           placeholder="Insert references"
@@ -318,9 +502,24 @@ function SuggestCharacter() {
                       </div>
 
                       <div clasName="square">
-                        <p>
-                          <span>Cover</span>
-                        </p>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="cover"
+                            data-tip="this is a tooltip for the notes & warnings field. it might be very long. it might not."
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="cover"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          />
+                          <p>
+                            <span>Cover</span>
+                          </p>
+                        </div>
                         <input
                           id="cover"
                           placeholder="cover"

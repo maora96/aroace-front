@@ -138,6 +138,29 @@
   align-self: flex-end;
 }
 
+.SuggestStory .group {
+  display: flex;
+  align-items: center;
+}
+
+.SuggestStory .group .hover {
+  background: #2b193d;
+  border-radius: 50%;
+  height: 20px;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+  width: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SuggestStory .tooltip {
+  color: white;
+  text-transform: none;
+}
+
 @media only screen and (max-width: 690px) {
   .SuggestStory {
     display: flex;

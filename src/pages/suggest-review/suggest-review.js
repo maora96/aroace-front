@@ -8,6 +8,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import StoryInfo from "../../components/story-info/story-info";
 import { useHistory } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function SuggestReview() {
@@ -63,7 +64,25 @@ export default function SuggestReview() {
                       <div className="content-hundred">
                         <div className="block">
                           <label>
-                            Review for
+                            <div className="group">
+                              <span
+                                className="hover"
+                                data-for="tooltip-review-for"
+                                data-tip
+                              >
+                                ?
+                              </span>
+                              <ReactTooltip
+                                id="tooltip-review-for"
+                                effect="solid"
+                                place="top"
+                                type="dark"
+                              >
+                                <div className="tooltip">review for</div>
+                              </ReactTooltip>
+                              <span>Review for</span>
+                            </div>
+
                             <input
                               id="review_for"
                               type="text"
@@ -75,7 +94,24 @@ export default function SuggestReview() {
                           </label>
 
                           <label>
-                            Link
+                            <div className="group">
+                              <span
+                                className="hover"
+                                data-for="tooltip-link"
+                                data-tip
+                              >
+                                ?
+                              </span>
+                              <ReactTooltip
+                                id="tooltip-link"
+                                effect="solid"
+                                place="top"
+                                type="dark"
+                              >
+                                <div className="tooltip">link</div>
+                              </ReactTooltip>
+                              <span>Link</span>
+                            </div>
                             <input
                               id="link"
                               type="text"
@@ -88,7 +124,24 @@ export default function SuggestReview() {
                         </div>
                         <span className="block">
                           <label>
-                            Reviewer
+                            <div className="group">
+                              <span
+                                className="hover"
+                                data-for="tooltip-reviewer"
+                                data-tip
+                              >
+                                ?
+                              </span>
+                              <ReactTooltip
+                                id="tooltip-reviewer"
+                                effect="solid"
+                                place="top"
+                                type="dark"
+                              >
+                                <div className="tooltip">reviewer</div>
+                              </ReactTooltip>
+                              <span>Reviewer</span>
+                            </div>
                             <input
                               id="reviewer"
                               type="text"
@@ -99,7 +152,24 @@ export default function SuggestReview() {
                             />
                           </label>
                           <label>
-                            Ownvoices for
+                            <div className="group">
+                              <span
+                                className="hover"
+                                data-for="tooltip-ownvoice-for"
+                                data-tip
+                              >
+                                ?
+                              </span>
+                              <ReactTooltip
+                                id="tooltip-ownvoice-for"
+                                effect="solid"
+                                place="top"
+                                type="dark"
+                              >
+                                <div className="tooltip">ownvoice for</div>
+                              </ReactTooltip>
+                              <span>Ownvoice for</span>
+                            </div>
                             <input
                               id="ownvoice_for"
                               type="text"

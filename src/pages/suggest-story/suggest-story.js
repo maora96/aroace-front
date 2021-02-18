@@ -8,6 +8,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import StoryInfo from "../../components/story-info/story-info";
 import MobileHeader from "../../components/mobile-header/mobile-header";
+import ReactTooltip from "react-tooltip";
 
 export default function SuggestStory() {
   const [character, setCharacter] = React.useState({});
@@ -74,7 +75,25 @@ export default function SuggestStory() {
                   <div className="StoryInfo">
                     <div className="line">
                       <h4>
-                        <label>Story title</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-story-title"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-story-title"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">title</div>
+                          </ReactTooltip>
+                          <label>Story title</label>
+                        </div>
+
                         <input
                           id="story_title"
                           type="text"
@@ -85,7 +104,24 @@ export default function SuggestStory() {
                         />
                       </h4>
                       <span>
-                        <label>Story length</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-story-length"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-story-length"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">length</div>
+                          </ReactTooltip>
+                          <label>Story length</label>
+                        </div>
                         <span>
                           <input
                             id="story_length"
@@ -98,7 +134,24 @@ export default function SuggestStory() {
                         </span>
                       </span>
                       <span>
-                        <label>Character importance</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-character-importance"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-character-importance"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">character importance</div>
+                          </ReactTooltip>
+                          <label>Character importance</label>
+                        </div>
                         <select
                           name="importance"
                           value={values.importance}
@@ -114,7 +167,24 @@ export default function SuggestStory() {
                     </div>
                     <div className="line">
                       <span>
-                        <label>Series title</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-series"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-series"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">series</div>
+                          </ReactTooltip>
+                          <label>Series title</label>
+                        </div>
                         <input
                           id="series_or_anthology"
                           type="text"
@@ -125,7 +195,24 @@ export default function SuggestStory() {
                         />
                       </span>
                       <span>
-                        <label>Genres</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-genres"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-genres"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">genres</div>
+                          </ReactTooltip>
+                          <label>Genres</label>
+                        </div>
                         <span>
                           <input
                             id="genre"
@@ -138,7 +225,24 @@ export default function SuggestStory() {
                         </span>
                       </span>
                       <span>
-                        <label>Type of Rep</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-type"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-type"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">type</div>
+                          </ReactTooltip>
+                          <label>Type of Rep</label>
+                        </div>
                         <span className="to-capitalize">
                           <select
                             name="type_of_rep"
@@ -155,7 +259,24 @@ export default function SuggestStory() {
                       </span>
                     </div>
                     <p>
-                      <span>Rep Notes & Warnings</span>
+                      <div className="group">
+                        <span
+                          className="hover"
+                          data-for="tooltip-repnoteswarnings"
+                          data-tip
+                        >
+                          ?
+                        </span>
+                        <ReactTooltip
+                          id="tooltip-repnoteswarnings"
+                          effect="solid"
+                          place="top"
+                          type="dark"
+                        >
+                          <div className="tooltip">rep notes warnings</div>
+                        </ReactTooltip>
+                        <label>Rep Notes & Warnings</label>
+                      </div>
                       <textarea
                         id="rep_noteswarnings"
                         placeholder="representation notes and warnings"
@@ -165,7 +286,24 @@ export default function SuggestStory() {
                       />
                     </p>
                     <p>
-                      <span>Other Notes & Warnings</span>
+                      <div className="group">
+                        <span
+                          className="hover"
+                          data-for="tooltip-othernoteswarnings"
+                          data-tip
+                        >
+                          ?
+                        </span>
+                        <ReactTooltip
+                          id="tooltip-othernoteswarnings"
+                          effect="solid"
+                          place="top"
+                          type="dark"
+                        >
+                          <div className="tooltip">other notes warnings</div>
+                        </ReactTooltip>
+                        <label>Other Notes & Warnings</label>
+                      </div>
                       <textarea
                         id="other_noteswarnings"
                         placeholder="other notes and warnings"
@@ -175,7 +313,24 @@ export default function SuggestStory() {
                       />
                     </p>
                     <p>
-                      <span>Cover</span>
+                      <div className="group">
+                        <span
+                          className="hover"
+                          data-for="tooltip-cover"
+                          data-tip
+                        >
+                          ?
+                        </span>
+                        <ReactTooltip
+                          id="tooltip-cover"
+                          effect="solid"
+                          place="top"
+                          type="dark"
+                        >
+                          <div className="tooltip">cover</div>
+                        </ReactTooltip>
+                        <label>Cover</label>
+                      </div>
                       <input
                         id="cover"
                         type="text"

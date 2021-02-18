@@ -175,6 +175,11 @@
   align-items: center;
 }
 
+.Character .tooltip {
+  color: white;
+  text-transform: none;
+}
+
 @media only screen and (max-width: 1400px) {
   .character-container .suggest {
     width: 80%;
