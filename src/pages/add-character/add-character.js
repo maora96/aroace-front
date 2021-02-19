@@ -1,8 +1,7 @@
 import React from "react";
 import "./add-character.css";
-import ReactTooltip from "react-tooltip";
+
 import { useHistory } from "react-router-dom";
-import CharacterInfo from "../../components/character-info/character-info";
 import Sidebar from "../../components/sidebar/sidebar";
 import { fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
@@ -69,23 +68,6 @@ export default function AddCharacter() {
                   <div className="suggest-character-info">
                     <div className="line">
                       <h2>
-                        <div className="group">
-                          <span
-                            className="hover"
-                            data-for="tooltip-name"
-                            data-tip
-                          >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="tooltip-name"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          >
-                            <div className="tooltip">Text on tooltip</div>
-                          </ReactTooltip>
-                        </div>
                         <input
                           id="character_name"
                           placeholder={character.character_name}
@@ -95,23 +77,7 @@ export default function AddCharacter() {
                           onBlur={handleBlur}
                         />
                       </h2>
-                      <div className="group">
-                        <span
-                          className="hover"
-                          data-for="tooltip-importance"
-                          data-tip
-                        >
-                          ?
-                        </span>
-                        <ReactTooltip
-                          id="tooltip-importance"
-                          effect="solid"
-                          place="top"
-                          type="dark"
-                        >
-                          <div className="tooltip">importance</div>
-                        </ReactTooltip>
-                      </div>
+                      <div className="group"></div>
                       <select
                         name="importance"
                         value={values.importance}
@@ -127,21 +93,6 @@ export default function AddCharacter() {
                     <div className="line">
                       <div className="chunk">
                         <div className="group">
-                          <span
-                            className="hover"
-                            data-for="tooltip-author"
-                            data-tip
-                          >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="tooltip-author"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          >
-                            <div className="tooltip">author</div>
-                          </ReactTooltip>
                           <span>Author</span>
                         </div>
                         <input
@@ -155,21 +106,6 @@ export default function AddCharacter() {
                       </div>
                       <div className="chunk">
                         <div className="group">
-                          <span
-                            className="hover"
-                            data-tip
-                            data-for="tooltip-gender"
-                          >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="tooltip-gender"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          >
-                            <div className="tooltip">gender</div>
-                          </ReactTooltip>
                           <span>Gender</span>
                         </div>
 
@@ -187,21 +123,6 @@ export default function AddCharacter() {
                       </div>
                       <div className="chunk">
                         <div className="group">
-                          <span
-                            className="hover"
-                            data-for="tooltip-pairing"
-                            data-tip
-                          >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="tooltip-pairing"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          >
-                            <div className="tooltip">pairing</div>
-                          </ReactTooltip>
                           <span>Pairing</span>
                         </div>
                         <input
@@ -218,21 +139,6 @@ export default function AddCharacter() {
                     <div className="line">
                       <div className="chunk">
                         <div className="group">
-                          <span
-                            className="hover"
-                            data-for="tooltip-main-storyseries"
-                            data-tip
-                          >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="tooltip-main-storyseries"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          >
-                            <div className="tooltip">series</div>
-                          </ReactTooltip>
                           <span>Series</span>
                         </div>
                         <input
@@ -246,21 +152,6 @@ export default function AddCharacter() {
                       </div>
                       <div className="chunk">
                         <div className="group">
-                          <span
-                            className="hover"
-                            data-for="tooltip-type"
-                            data-tip
-                          >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="tooltip-type"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          >
-                            <div className="tooltip">type</div>
-                          </ReactTooltip>
                           <span>Type of Rep</span>
                         </div>
 
@@ -281,21 +172,6 @@ export default function AddCharacter() {
                     <div className="line">
                       <div className="chunk">
                         <div className="group">
-                          <span
-                            className="hover"
-                            data-for="tooltip-romantic"
-                            data-tip
-                          >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="tooltip-romantic"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          >
-                            <div className="tooltip">romantic</div>
-                          </ReactTooltip>
                           <span>Romantic orientation</span>
                         </div>
                         <select
@@ -324,21 +200,6 @@ export default function AddCharacter() {
                       </div>
                       <div className="chunk">
                         <div className="group">
-                          <span
-                            className="hover"
-                            data-for="tooltip-sexual"
-                            data-tip
-                          >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="tooltip-sexual"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          >
-                            <div className="tooltip">sexual field</div>
-                          </ReactTooltip>
                           <span>Sexual Orientation</span>
                         </div>
 
@@ -366,19 +227,6 @@ export default function AddCharacter() {
                     <div className="line">
                       <div className="chunk">
                         <div className="group">
-                          <span
-                            className="hover"
-                            data-for="genre-field"
-                            data-tip="this is a tooltip for the relationships fields. it might be very long. it might not."
-                          >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="genre-field"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          />
                           <span>Genre</span>
                         </div>
                         <input
@@ -394,19 +242,6 @@ export default function AddCharacter() {
 
                     <div clasName="square">
                       <div className="group">
-                        <span
-                          className="hover"
-                          data-for="relationships"
-                          data-tip="this is a tooltip for the relationships fields. it might be very long. it might not."
-                        >
-                          ?
-                        </span>
-                        <ReactTooltip
-                          id="relationships"
-                          effect="solid"
-                          place="top"
-                          type="dark"
-                        />
                         <p>
                           <span>Relationships</span>
                         </p>
@@ -423,19 +258,6 @@ export default function AddCharacter() {
 
                     <div clasName="square">
                       <div className="group">
-                        <span
-                          className="hover"
-                          data-for="noteswarnings"
-                          data-tip="this is a tooltip for the notes & warnings field. it might be very long. it might not."
-                        >
-                          ?
-                        </span>
-                        <ReactTooltip
-                          id="noteswarnings"
-                          effect="solid"
-                          place="top"
-                          type="dark"
-                        />
                         <p>
                           <span>Notes & Warnings</span>
                         </p>
@@ -452,19 +274,6 @@ export default function AddCharacter() {
 
                     <div clasName="square">
                       <div className="group">
-                        <span
-                          className="hover"
-                          data-for="cover"
-                          data-tip="this is a tooltip for the notes & warnings field. it might be very long. it might not."
-                        >
-                          ?
-                        </span>
-                        <ReactTooltip
-                          id="cover"
-                          effect="solid"
-                          place="top"
-                          type="dark"
-                        />
                         <p>
                           <span>Cover</span>
                         </p>
