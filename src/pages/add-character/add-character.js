@@ -19,7 +19,7 @@ export default function AddCharacter() {
       <MobileHeader />
       <div className="character-container">
         <div className="suggest">
-          <h2 class="title">Add a character</h2>
+          <h2 className="title">Add a character</h2>
 
           <Formik
             enableReinitialize={true}

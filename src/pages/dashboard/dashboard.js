@@ -110,7 +110,7 @@ function Dashboard() {
               review suggestions are{" "}
               <b>{reviewCheck ? "enabled" : "disabled"}</b>.
             </span>
-            <label class="switch">
+            <label className="switch">
               Character Suggestions
               <div>
                 Enable
@@ -153,7 +153,7 @@ function Dashboard() {
                 />
               </div>
             </label>
-            <label class="switch">
+            <label className="switch">
               Review Suggestions
               <div>
                 Enable
@@ -196,7 +196,7 @@ function Dashboard() {
                 />
               </div>
             </label>
-            <label class="switch">
+            <label className="switch">
               Story Suggestions
               <div>
                 Enable

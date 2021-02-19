@@ -5,7 +5,7 @@ export default function RowStory(props) {
   const { content, type, id } = props;
 
   return (
-    <tr class="tbody">
+    <tr className="tbody">
       <td>{content.story_title}</td>
       <td>{content.author}</td>
       <td>

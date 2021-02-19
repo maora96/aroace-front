@@ -198,6 +198,22 @@
   text-transform: none;
 }
 
+.SuggestCharacter .content {
+  color: black;
+  margin-bottom: 1.5rem;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.SuggestCharacter .content li {
+  list-style-type: circle;
+}
+
+.SuggestCharacter .content ul {
+  padding: 1rem 2rem;
+}
+
 @media only screen and (max-width: 1400px) {
   .suggest-container .suggest {
     width: 80%;

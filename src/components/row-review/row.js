@@ -5,7 +5,7 @@ export default function RowReview(props) {
   const { content, type, id } = props;
 
   return (
-    <tr class="tbody">
+    <tr className="tbody">
       <td>{content.review_for}</td>
       <td>{content.reviewer}</td>
       <td>

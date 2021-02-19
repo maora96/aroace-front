@@ -8,7 +8,7 @@ function TableReview(props) {
   const { content, type, id } = props;
 
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         {id === "character" ? (
           <tr>

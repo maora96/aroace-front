@@ -30,7 +30,7 @@ export default function UpdateCharacter() {
       <MobileHeader />
       <div className="character-container">
         <div className="suggest">
-          <h2 class="title">Update character</h2>
+          <h2 className="title">Update character</h2>
 
           <Formik
             enableReinitialize={true}

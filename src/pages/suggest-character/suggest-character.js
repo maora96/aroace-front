@@ -35,7 +35,7 @@ function SuggestCharacter() {
       <MobileHeader />
       <div className="suggest-container">
         <div className="suggest">
-          <h2 class="title">Suggest a character</h2>
+          <h2 className="title">Suggest a character</h2>
           {characterCheck ? (
             <Formik
               initialValues={{
@@ -78,8 +78,30 @@ function SuggestCharacter() {
                 } = props;
                 return (
                   <form onSubmit={handleSubmit}>
+                    <div className="content">
+                      <p>
+                        Welcome to the “Suggest a Character” page. Before you
+                        fill out the form, please remember all entries meet
+                        these criterias:
+                      </p>
+                      <ul>
+                        <li>
+                          Prose only (no films, tv series, (web)comics, etc.)
+                        </li>
+                        <li>
+                          Currently published original fiction (online, digital,
+                          in print)
+                        </li>
+                        <li>Confirmed characters only</li>
+                      </ul>
+
+                      <p>
+                        Every field has a tooltip, so check those out if you’re
+                        unsure what to fill in! With all of that said, thank you
+                        so much for your suggestion and help.
+                      </p>
+                    </div>
                     <div className="suggest-character-info">
-                      <p>Suggestions are not being received yet!</p>
                       <div className="line">
                         <h2>
                           <div className="group">

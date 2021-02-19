@@ -35,7 +35,7 @@ export default function SuggestedCharacter() {
       <MobileHeader />
       <div className="character-container">
         <div className="suggest">
-          <h2 class="title">Suggested character</h2>
+          <h2 className="title">Suggested character</h2>
 
           <Formik
             enableReinitialize={true}

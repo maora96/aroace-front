@@ -50,11 +50,13 @@
 
 .About .about p {
   line-height: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .About .social-media {
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .About .social-media img {
@@ -73,6 +75,109 @@
   text-align: center;
   text-decoration: none;
   margin: 1.5rem auto 1.2rem auto;
+}
+
+.About h3 {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.About a {
+  color: #67ffb6;
+  font-weight: bold;
+}
+
+.About table {
+  border-collapse: collapse;
+}
+
+.About tbody {
+  border: 2px solid #2b193d;
+}
+
+.About tr,
+.About td {
+  border: 2px solid #2b193d;
+}
+
+.About .terminology {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.About .terminology .single {
+  display: flex;
+  width: 100%;
+}
+
+.About .terminology .single:nth-child(odd) {
+  display: flex;
+  background: lightgrey;
+  width: 100%;
+}
+
+.About .terminology .single div {
+  width: 70%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.About .terminology .single div:first-child {
+  width: 30%;
+}
+
+.About .terminology .multi {
+  display: flex;
+  background-color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.About .terminology .multi div {
+  width: 70%;
+}
+
+.About .terminology .multi div:first-child {
+  width: 30%;
+  padding: 1rem;
+}
+
+.About .terminology .multi div:last-child {
+  border-bottom: none;
+}
+
+.About .terminology .multi div .info {
+  width: 100%;
+  display: flex;
+}
+
+.About .terminology .multi div .side {
+  width: 100%;
+  display: flex;
+}
+
+.About .terminology .multi div .side div {
+  padding: 1rem;
+}
+
+.About .terminology .multi .title {
+  display: flex;
+  justify-content: center;
+  background-color: gainsboro;
+  align-items: center;
+}
+
+.About .terminology .multi .side-container > div:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.About .terminology .multi .side-container .info {
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -96,5 +201,30 @@
 
   .About h2 {
     font-size: 1.5rem;
+  }
+
+  .About .single {
+    flex-direction: column;
+  }
+
+  .About .terminology .single div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .About .terminology .single div:first-child {
+    width: 100%;
+  }
+
+  .About .terminology .multi .side {
+    flex-direction: column;
+  }
+
+  .About .terminology .multi .side div {
+    width: 100%;
+  }
+
+  .About .terminology .multi div:first-child {
+    overflow-wrap: anywhere;
   }
 }
