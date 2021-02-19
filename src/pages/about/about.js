@@ -35,7 +35,7 @@ export default function About() {
             Each character has a single entry, to which is attached information
             on individual stories and reviews, when available. Entries are
             separated in three sections: the character, the stories they feature
-            in, and the reviews.{" "}
+            in, and the reviews.
           </p>
 
           <p>
@@ -72,6 +72,7 @@ export default function About() {
               <div>Genre</div>
               <div>The story's literary genre(s) and age category</div>
             </div>
+
             <div className="multi">
               <div className="title">Length</div>
               <div className="side-container">
@@ -176,7 +177,7 @@ export default function About() {
 
             <div className="single">
               <div>Romantic Orientation</div>
-              <div>The character’s romantic orientation</div>
+              <div>The character’s romantic orientation </div>
             </div>
 
             <div className="single">

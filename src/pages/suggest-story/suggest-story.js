@@ -89,7 +89,7 @@ export default function SuggestStory() {
                             place="top"
                             type="dark"
                           >
-                            <div className="tooltip">title</div>
+                            <div className="tooltip">Story or book title</div>
                           </ReactTooltip>
                           <label>Story title</label>
                         </div>
@@ -118,7 +118,38 @@ export default function SuggestStory() {
                             place="top"
                             type="dark"
                           >
-                            <div className="tooltip">length</div>
+                            <div className="tooltip">
+                              {" "}
+                              <ul>
+                                <li>
+                                  <strong>Short story:</strong>The character is
+                                  at the heart of the story’s central storyline
+                                </li>
+                                <li>
+                                  <strong>Novella:</strong>The character plays
+                                  an important role in the story and is
+                                  frequently on page
+                                </li>
+                                <li>
+                                  <strong>Novel (short):</strong>The character
+                                  plays a minor role in the story
+                                </li>
+
+                                <li>
+                                  <strong>Novel (long):</strong>More than 80,000
+                                  words
+                                </li>
+                                <li>
+                                  <strong>Anthology:</strong>Short story is part
+                                  of an anthology
+                                </li>
+                                <li>
+                                  <strong>Webseries:</strong>
+                                  Published in several installments on the
+                                  internet (blog, Wattpad, etc.)
+                                </li>
+                              </ul>
+                            </div>
                           </ReactTooltip>
                           <label>Story length</label>
                         </div>
@@ -148,7 +179,23 @@ export default function SuggestStory() {
                             place="top"
                             type="dark"
                           >
-                            <div className="tooltip">character importance</div>
+                            <div className="tooltip">
+                              <ul>
+                                <li>
+                                  <strong>Lead:</strong>The character is at the
+                                  heart of the story’s central storyline
+                                </li>
+                                <li>
+                                  <strong>Main:</strong>The character plays an
+                                  important role in the story and is frequently
+                                  on page
+                                </li>
+                                <li>
+                                  <strong>Lead:</strong>The character plays a
+                                  minor role in the story
+                                </li>
+                              </ul>
+                            </div>
                           </ReactTooltip>
                           <label>Character importance</label>
                         </div>
@@ -181,7 +228,10 @@ export default function SuggestStory() {
                             place="top"
                             type="dark"
                           >
-                            <div className="tooltip">series</div>
+                            <div className="tooltip">
+                              Name of the series (if applicable). Short stories
+                              in an anthology can list the anthology name here.
+                            </div>
                           </ReactTooltip>
                           <label>Series title</label>
                         </div>
@@ -209,7 +259,7 @@ export default function SuggestStory() {
                             place="top"
                             type="dark"
                           >
-                            <div className="tooltip">genres</div>
+                            <div className="tooltip">{`Story's literary genre. List in alphabetical order, i.e. "Contemporary, Romance, Young Adult".`}</div>
                           </ReactTooltip>
                           <label>Genres</label>
                         </div>
@@ -239,7 +289,26 @@ export default function SuggestStory() {
                             place="top"
                             type="dark"
                           >
-                            <div className="tooltip">type</div>
+                            <div className="tooltip">
+                              <ul>
+                                <li>
+                                  <strong>Word of God:</strong>The character’s
+                                  sexuality is not explicit on page, but the
+                                  author has confirmed it.
+                                </li>
+                                <li>
+                                  <strong>On page:</strong>The character’s
+                                  sexuality is explicitly demonstrated within
+                                  the text. It should be showed or discussed to
+                                  an extent that makes it clear to the readers.
+                                </li>
+                                <li>
+                                  <strong>Word used:</strong>The identity is
+                                  stated using the actual word (usually also On
+                                  Page)
+                                </li>
+                              </ul>
+                            </div>
                           </ReactTooltip>
                           <label>Type of Rep</label>
                         </div>
@@ -273,7 +342,12 @@ export default function SuggestStory() {
                           place="top"
                           type="dark"
                         >
-                          <div className="tooltip">rep notes warnings</div>
+                          <div className="tooltip">
+                            Any noteworthy information about the representation,
+                            whether it is tropes (exile or dead ace, allo
+                            saviour, etc.) or facets of it (sex
+                            repulsed/averse/positive, touch averse, etc.).
+                          </div>
                         </ReactTooltip>
                         <label>Rep Notes & Warnings</label>
                       </div>
@@ -300,7 +374,12 @@ export default function SuggestStory() {
                           place="top"
                           type="dark"
                         >
-                          <div className="tooltip">other notes warnings</div>
+                          <div className="tooltip">
+                            Any noteworthy information about the representation,
+                            whether it is tropes (exile or dead ace, allo
+                            saviour, etc.) or facets of it (sex
+                            repulsed/averse/positive, touch averse, etc.)
+                          </div>
                         </ReactTooltip>
                         <label>Other Notes & Warnings</label>
                       </div>
@@ -327,7 +406,7 @@ export default function SuggestStory() {
                           place="top"
                           type="dark"
                         >
-                          <div className="tooltip">cover</div>
+                          <div className="tooltip">URL to cover image.</div>
                         </ReactTooltip>
                         <label>Cover</label>
                       </div>

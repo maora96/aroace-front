@@ -180,6 +180,10 @@
   justify-content: center;
 }
 
+.About .tooltip {
+  width: auto !important;
+}
+
 @media only screen and (max-width: 768px) {
   .About .about {
     width: 80%;

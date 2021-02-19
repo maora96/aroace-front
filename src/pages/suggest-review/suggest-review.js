@@ -78,7 +78,9 @@ export default function SuggestReview() {
                                 place="top"
                                 type="dark"
                               >
-                                <div className="tooltip">review for</div>
+                                <div className="tooltip">
+                                  Story the review was written about.
+                                </div>
                               </ReactTooltip>
                               <span>Review for</span>
                             </div>
@@ -108,7 +110,9 @@ export default function SuggestReview() {
                                 place="top"
                                 type="dark"
                               >
-                                <div className="tooltip">link</div>
+                                <div className="tooltip">
+                                  A link to where the review is hosted.
+                                </div>
                               </ReactTooltip>
                               <span>Link</span>
                             </div>
@@ -138,7 +142,9 @@ export default function SuggestReview() {
                                 place="top"
                                 type="dark"
                               >
-                                <div className="tooltip">reviewer</div>
+                                <div className="tooltip">
+                                  The person who reviewed the story.
+                                </div>
                               </ReactTooltip>
                               <span>Reviewer</span>
                             </div>
@@ -166,7 +172,9 @@ export default function SuggestReview() {
                                 place="top"
                                 type="dark"
                               >
-                                <div className="tooltip">ownvoice for</div>
+                                <div className="tooltip">
+                                  Ownvoices aspects of the review.
+                                </div>
                               </ReactTooltip>
                               <span>Ownvoice for</span>
                             </div>
