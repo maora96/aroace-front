@@ -18,12 +18,7 @@ function Login() {
       <div className="login-container">
         <div className="login-box">
           <h2>Login</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eum
-            in sequi debitis quia accusantium deserunt ex, id praesentium libero
-            similique delectus aliquam molestiae eius iste cum adipisci dolorem
-            corporis?
-          </p>
+          <p>Admin login for the database. Non-admin users can't be created.</p>
           <Formik
             initialValues={{
               email: "",
@@ -55,6 +50,12 @@ function Login() {
                   if (newToken) {
                     history.push("/dashboard");
                   }
+                })
+                .catch((err) => {
+                  console.log(err);
+                  alert(
+                    "Error loging in. Are you sure your credentials are correct?"
+                  );
                 });
             }}
             validationSchema={Yup.object().shape({
@@ -99,11 +100,7 @@ function Login() {
                     onBlur={handleBlur}
                   />
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="submit"
-                  >
+                  <button type="submit" className="submit">
                     Login
                   </button>
                 </form>
