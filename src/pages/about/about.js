@@ -262,7 +262,14 @@ export default function About() {
           </p>
 
           <h3>The Dev</h3>
-          <p>it is me!!</p>
+          <p>
+            Ren Oliveira is an a-spec nonbinary writer by night and a web
+            developer by day. Their short story <em>Half a Heart</em> was
+            published in{" "}
+            <em>Common Bonds: an Aromantic Speculative Anthology</em>. You can
+            find them on <a href="https://twitter.com/nyphren">twitter</a> and
+            support them on <a href="https://ko-fi.com/nyphren">ko-fi</a>.
+          </p>
         </div>
       </div>
     </div>
