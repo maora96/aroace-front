@@ -87,6 +87,26 @@
   margin-right: 1rem;
 }
 
+.Dashboard .export {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 2rem 0;
+  width: 60%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Dashboard .export a {
+  text-decoration: none;
+  background: #67ffb6;
+  padding: 1rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 768px) {
   .Stats .big-box {
     flex-direction: column;

@@ -28,3 +28,13 @@ export function fetchWithTokenNoBody(url, metodo, token) {
     },
   });
 }
+
+export function fetchNoTokenNobody(url, method) {
+  return fetch(url, {
+    method: method,
+    headers: {
+      "Content-Type": "application/csv",
+      Accept: "application/csv",
+    },
+  });
+}

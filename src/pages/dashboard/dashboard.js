@@ -5,7 +5,7 @@ import Stats from "../../components/stats/stats";
 import RecentSuggested from "../../components/recent-suggested/recent-suggested";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 import DataContext from "../../utils/data";
-import { fetchWithBody } from "../../utils/fetch";
+import { fetchWithBody, fetchWithTokenNoBody } from "../../utils/fetch";
 
 function Dashboard() {
   const [recentlyAdded, setRecentlyAdded] = React.useState([]);
@@ -99,6 +99,20 @@ function Dashboard() {
 
         <div className="header">
           <a href="/suggested-characters">View All</a>
+        </div>
+
+        <div className="export">
+          <a href="https://aroacedb-back.herokuapp.com/download/characters">
+            Export Characters
+          </a>
+
+          <a href="https://aroacedb-back.herokuapp.com/download/stories">
+            Export Stories
+          </a>
+
+          <a href="https://aroacedb-back.herokuapp.com/download/reviews">
+            Export Reviews
+          </a>
         </div>
 
         <div className="toggle-container">
