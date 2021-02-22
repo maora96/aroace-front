@@ -58,6 +58,7 @@ export default function SuggestedCharacter() {
             onSubmit={(values) => {
               console.log(JSON.stringify(values, null, 2));
               fetchWithToken(
+                //add character to database
                 "https://aroacedb-back.herokuapp.com/characters",
                 "POST",
                 values,
@@ -66,17 +67,55 @@ export default function SuggestedCharacter() {
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
-                });
+                  let character_id = resJson.data.dbCharacter[0].id;
 
-              fetchWithTokenNoBody(
-                `https://aroacedb-back.herokuapp.com/suggest/characters/${params.id}`,
-                "DELETE",
-                token
-              )
-                .then((res) => res.json())
-                .then((resJson) => {
-                  console.log(resJson);
-                  history.push("/success");
+                  fetch(
+                    //get character stories from st_sc_suggestions
+                    `https://aroacedb-back.herokuapp.com/suggest/sc/character/stories/${params.id}`
+                  )
+                    .then((res) => res.json())
+                    .then((resJson) => {
+                      console.log(resJson);
+                      const stories = resJson.data.stories;
+
+                      stories.forEach((story) => {
+                        story.character_id = character_id;
+                        console.log(story);
+                        fetchWithToken(
+                          // add to real story database
+                          `https://aroacedb-back.herokuapp.com/stories`,
+                          "POST",
+                          story,
+                          token
+                        )
+                          .then((res) => res.json())
+                          .then((resJson) => {
+                            console.log(resJson);
+
+                            fetchWithTokenNoBody(
+                              //delete from sc suggested stories
+                              `https://aroacedb-back.herokuapp.com/suggest/sc/character/stories/${params.id}`,
+                              "DELETE",
+                              token
+                            )
+                              .then((res) => res.json())
+                              .then((resJson) => {
+                                console.log(resJson);
+                                fetchWithTokenNoBody(
+                                  //delete character from suggestions
+                                  `https://aroacedb-back.herokuapp.com/suggest/characters/${params.id}`,
+                                  "DELETE",
+                                  token
+                                )
+                                  .then((res) => res.json())
+                                  .then((resJson) => {
+                                    console.log(resJson);
+                                    history.push("/success");
+                                  });
+                              });
+                          });
+                      });
+                    });
                 });
             }}
           >
@@ -102,14 +141,7 @@ export default function SuggestedCharacter() {
                           onBlur={handleBlur}
                         />
                       </h2>
-                      {/* <input
-                        id="importance"
-                        placeholder={character.importance}
-                        type="text"
-                        value={values.importance}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      /> */}
+
                       <select
                         name="importance"
                         value={values.importance}
@@ -136,14 +168,6 @@ export default function SuggestedCharacter() {
                       </div>
                       <div className="chunk">
                         <span>Gender</span>{" "}
-                        {/* <input
-                          id="gender"
-                          placeholder={character.gender}
-                          type="text"
-                          value={values.gender}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        /> */}
                         <select
                           name="gender"
                           value={values.gender}
@@ -200,14 +224,7 @@ export default function SuggestedCharacter() {
                     <div className="line">
                       <div className="chunk">
                         <span>Romantic orientation</span>
-                        {/* <input
-                          id="romantic_orientation"
-                          placeholder={character.romantic_orientation}
-                          type="text"
-                          value={values.romantic_orientation}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        /> */}
+
                         <select
                           name="romantic_orientation"
                           value={values.romantic_orientation}
@@ -234,14 +251,6 @@ export default function SuggestedCharacter() {
                       </div>
                       <div className="chunk">
                         <span>Sexual Orientation</span>
-                        {/* <input
-                          id="sexual_orientation"
-                          placeholder={character.sexual_orientation}
-                          type="text"
-                          value={values.sexual_orientation}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        /> */}
                         <select
                           name="sexual_orientation"
                           value={values.sexual_orientation}
