@@ -6,6 +6,7 @@
 .tbody:nth-child(even) {
   background: rgba(174, 195, 209, 0.2);
   border: 2px solid rgba(71, 137, 173, 0.1);
+  color: white;
 }
 
 td {

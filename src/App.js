@@ -23,8 +23,13 @@ import SuggestedStory from "./pages/suggested-story/suggested-story";
 import AddStory from "./pages/add-story/add-story";
 import SuggestedReview from "./pages/suggested-review/suggested-review";
 import AddReview from "./pages/add-review/add-review";
-import Results from "./components/results/results";
+
 import DataContext from "./utils/data";
+import AboutTeam from "./pages/about-team/about";
+import SuggestStorySC from "./pages/suggest-story-sc/suggest-story";
+import SuccessSTSC from "./pages/success-st-sc/success";
+import SuggestedStoriesSC from "./pages/sc-suggested-stories/suggested-stories";
+import SCSuggestedStory from "./pages/sc-suggested-story/suggested-story";
 
 function App() {
   const [characterCheck, setCharacterCheck] = React.useState(true);
@@ -63,6 +68,7 @@ function App() {
             <Route path="/all-characters" component={AllCharacters} />
             <Route path="/update-character/:id" component={UpdateCharacter} />
             <Route path="/suggest-story/:id" component={SuggestStory} />
+            <Route path="/suggest-story-sc/:id" component={SuggestStorySC} />
             <Route path="/update-story/:id" component={UpdateStory} />
             <Route path="/suggest-review/:id" component={SuggestReview} />
             <Route path="/suggested-stories" component={SuggestedStories} />
@@ -74,6 +80,17 @@ function App() {
             <Route path="/add-story/:id" component={AddStory} />
             <Route path="/add-review/:id" component={AddReview} />
             <Route path="/success" component={Success} />
+            <Route path="/success-stsc/:id" component={SuccessSTSC} />
+            <Route path="/about-the-team" component={AboutTeam} />
+            <Route
+              path="/sc-suggested-stories"
+              component={SuggestedStoriesSC}
+            />
+
+            <Route
+              path="/sc-suggested-story/:id"
+              component={SCSuggestedStory}
+            />
           </Switch>
         </div>
       </DataContext.Provider>

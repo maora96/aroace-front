@@ -1,10 +1,11 @@
-import RowCharacter from "../row-character/row";
+import RowCharacter from "../row-review/row";
 import Row from "../row-review/row";
 import RowReview from "../row-review/row";
 import RowStory from "../row-story/row";
+import RowSCStory from "../row-sc-story/row";
 import "./table.css";
 
-function TableCharacter(props) {
+function TableSCStory(props) {
   const { content, type, id } = props;
 
   return (
@@ -13,8 +14,10 @@ function TableCharacter(props) {
         {id === "character" ? (
           <tr>
             <th>Character Name</th>
-            <th>Genre</th>
+            <th>Author</th>
             <th>Importance</th>
+            <th>Romantic Orientation</th>
+            <th>Sexual Orientation</th>
             <th>More</th>
           </tr>
         ) : id === "story" ? (
@@ -32,11 +35,11 @@ function TableCharacter(props) {
 
       <tbody>
         {content.map((c) => {
-          return <RowCharacter content={c} type={type} id={id} />;
+          return <RowSCStory content={c} type={type} id={id} />;
         })}
       </tbody>
     </table>
   );
 }
 
-export default TableCharacter;
+export default TableSCStory;

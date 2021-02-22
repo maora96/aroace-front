@@ -6,19 +6,9 @@ import { Formik } from "formik";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 import ReactTooltip from "react-tooltip";
 
-export default function SuggestStory() {
-  const [character, setCharacter] = React.useState({});
+export default function SuggestStorySC() {
   const { params } = useRouteMatch();
   const history = useHistory();
-
-  React.useEffect(() => {
-    fetch(`https://aroacedb-back.herokuapp.com/stories/${params.id}`)
-      .then((res) => res.json())
-      .then((resJson) => {
-        console.log(resJson);
-        //setCharacter(resJson.data.character[0]);
-      });
-  }, []);
 
   return (
     <div className="SuggestStory">
@@ -42,7 +32,7 @@ export default function SuggestStory() {
             onSubmit={(values) => {
               values.character_id = params.id;
               console.log(JSON.stringify(values, null, 2));
-              fetch("https://aroacedb-back.herokuapp.com/suggest/stories", {
+              fetch("https://aroacedb-back.herokuapp.com/suggest/sc/stories", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -52,7 +42,7 @@ export default function SuggestStory() {
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
-                  history.push("/success");
+                  history.push(`/success-stsc/${params.id}`);
                 });
             }}
           >

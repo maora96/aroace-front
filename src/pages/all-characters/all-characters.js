@@ -10,8 +10,11 @@ export default function AllCharacters() {
   const [characters, setCharacters] = React.useState([]);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [totalPages, setTotalPages] = React.useState(0);
+  const [token, setToken] = React.useState("");
 
   React.useEffect(() => {
+    const newToken = localStorage.getItem("token");
+    setToken(newToken);
     fetch(
       `https://aroacedb-back.herokuapp.com/characters?offset=${
         currentPage * 20 - 20
@@ -36,18 +39,10 @@ export default function AllCharacters() {
       <div className="all-characters-container">
         <div className="title">
           <h2>All Characters</h2>
-          <a href="/add-character">Add character</a>
+          {token ? <a href="/add-character">Add character</a> : ""}
         </div>
         <TableCharacter content={characters} type="regular" id="character" />
 
-        {/* <ReactPaginate
-          pageCount={totalPages}
-          pageRangeDisplayed={5}
-          marginPagesDisplayed={2}
-          previousLabel="Previous"
-          nextLabel="Next"
-          onPageChange={handlePageClick}
-        /> */}
         <Pagination
           totalPages={totalPages}
           setCurrentPage={setCurrentPage}

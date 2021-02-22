@@ -5,9 +5,11 @@ import Sidebar from "../../components/sidebar/sidebar";
 import { fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
 import MobileHeader from "../../components/mobile-header/mobile-header";
+import ReactTooltip from "react-tooltip";
 
 export default function AddStory() {
   const [token, setToken] = React.useState("");
+  const [name, setName] = React.useState("");
   const { params } = useRouteMatch();
   const history = useHistory();
 
@@ -15,6 +17,13 @@ export default function AddStory() {
     const newToken = localStorage.getItem("token");
     setToken(newToken);
     console.log(token);
+
+    fetch(`https://aroacedb-back.herokuapp.com/characters/${params.id}`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        console.log(resJson);
+        setName(resJson.data.character[0].character_name);
+      });
   }, []);
 
   return (
@@ -24,7 +33,7 @@ export default function AddStory() {
       <div className="story-container">
         <div className="stories">
           <h3>Add Story</h3>
-
+          <h4>Character: {name}</h4>
           <Formik
             enableReinitialize={true}
             initialValues={{
@@ -69,7 +78,24 @@ export default function AddStory() {
                   <div className="StoryInfo">
                     <div className="line">
                       <h4>
-                        <label>Story title</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-story-title"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-story-title"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">Story or book title</div>
+                          </ReactTooltip>
+                          <label>Story title</label>
+                        </div>
                         <input
                           id="story_title"
                           type="text"
@@ -80,7 +106,55 @@ export default function AddStory() {
                         />
                       </h4>
                       <span>
-                        <label>Story length</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-story-length"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-story-length"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">
+                              {" "}
+                              <ul>
+                                <li>
+                                  <strong>Short story:</strong>The character is
+                                  at the heart of the story’s central storyline
+                                </li>
+                                <li>
+                                  <strong>Novella:</strong>The character plays
+                                  an important role in the story and is
+                                  frequently on page
+                                </li>
+                                <li>
+                                  <strong>Novel (short):</strong>The character
+                                  plays a minor role in the story
+                                </li>
+
+                                <li>
+                                  <strong>Novel (long):</strong>More than 80,000
+                                  words
+                                </li>
+                                <li>
+                                  <strong>Anthology:</strong>Short story is part
+                                  of an anthology
+                                </li>
+                                <li>
+                                  <strong>Webseries:</strong>
+                                  Published in several installments on the
+                                  internet (blog, Wattpad, etc.)
+                                </li>
+                              </ul>
+                            </div>
+                          </ReactTooltip>
+                          <label>Story length</label>
+                        </div>
                         <span>
                           <input
                             id="story_length"
@@ -93,7 +167,40 @@ export default function AddStory() {
                         </span>
                       </span>
                       <span>
-                        <label>Character importance</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-character-importance"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-character-importance"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">
+                              <ul>
+                                <li>
+                                  <strong>Lead:</strong>The character is at the
+                                  heart of the story’s central storyline
+                                </li>
+                                <li>
+                                  <strong>Main:</strong>The character plays an
+                                  important role in the story and is frequently
+                                  on page
+                                </li>
+                                <li>
+                                  <strong>Lead:</strong>The character plays a
+                                  minor role in the story
+                                </li>
+                              </ul>
+                            </div>
+                          </ReactTooltip>
+                          <label>Character importance</label>
+                        </div>
                         <select
                           name="importance"
                           value={values.importance}
@@ -109,7 +216,27 @@ export default function AddStory() {
                     </div>
                     <div className="line">
                       <span>
-                        <label>Series title</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-series"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-series"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">
+                              Name of the series (if applicable). Short stories
+                              in an anthology can list the anthology name here.
+                            </div>
+                          </ReactTooltip>
+                          <label>Series title</label>
+                        </div>
                         <input
                           id="series_or_anthology"
                           type="text"
@@ -120,7 +247,24 @@ export default function AddStory() {
                         />
                       </span>
                       <span>
-                        <label>Genres</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-genres"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-genres"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">{`Story's literary genre. List in alphabetical order, i.e. "Contemporary, Romance, Young Adult".`}</div>
+                          </ReactTooltip>
+                          <label>Genres</label>
+                        </div>
                         <span>
                           <input
                             id="genre"
@@ -133,7 +277,43 @@ export default function AddStory() {
                         </span>
                       </span>
                       <span>
-                        <label>Type of Rep</label>
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-type"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-type"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">
+                              <ul>
+                                <li>
+                                  <strong>Word of God:</strong>The character’s
+                                  sexuality is not explicit on page, but the
+                                  author has confirmed it.
+                                </li>
+                                <li>
+                                  <strong>On page:</strong>The character’s
+                                  sexuality is explicitly demonstrated within
+                                  the text. It should be showed or discussed to
+                                  an extent that makes it clear to the readers.
+                                </li>
+                                <li>
+                                  <strong>Word used:</strong>The identity is
+                                  stated using the actual word (usually also On
+                                  Page)
+                                </li>
+                              </ul>
+                            </div>
+                          </ReactTooltip>
+                          <label>Type of Rep</label>
+                        </div>
                         <span className="to-capitalize">
                           <select
                             name="type_of_rep"
@@ -150,7 +330,29 @@ export default function AddStory() {
                       </span>
                     </div>
                     <p>
-                      <span>Rep Notes & Warnings</span>
+                      <div className="group">
+                        <span
+                          className="hover"
+                          data-for="tooltip-repnoteswarnings"
+                          data-tip
+                        >
+                          ?
+                        </span>
+                        <ReactTooltip
+                          id="tooltip-repnoteswarnings"
+                          effect="solid"
+                          place="top"
+                          type="dark"
+                        >
+                          <div className="tooltip">
+                            Any noteworthy information about the representation,
+                            whether it is tropes (exile or dead ace, allo
+                            saviour, etc.) or facets of it (sex
+                            repulsed/averse/positive, touch averse, etc.).
+                          </div>
+                        </ReactTooltip>
+                        <label>Rep Notes & Warnings</label>
+                      </div>
                       <textarea
                         id="rep_noteswarnings"
                         placeholder="representation notes and warnings"
@@ -160,7 +362,29 @@ export default function AddStory() {
                       />
                     </p>
                     <p>
-                      <span>Other Notes & Warnings</span>
+                      <div className="group">
+                        <span
+                          className="hover"
+                          data-for="tooltip-othernoteswarnings"
+                          data-tip
+                        >
+                          ?
+                        </span>
+                        <ReactTooltip
+                          id="tooltip-othernoteswarnings"
+                          effect="solid"
+                          place="top"
+                          type="dark"
+                        >
+                          <div className="tooltip">
+                            Any noteworthy information about the representation,
+                            whether it is tropes (exile or dead ace, allo
+                            saviour, etc.) or facets of it (sex
+                            repulsed/averse/positive, touch averse, etc.)
+                          </div>
+                        </ReactTooltip>
+                        <label>Other Notes & Warnings</label>
+                      </div>
                       <textarea
                         id="other_noteswarnings"
                         placeholder="other notes and warnings"
@@ -170,7 +394,24 @@ export default function AddStory() {
                       />
                     </p>
                     <p>
-                      <span>Cover</span>
+                      <div className="group">
+                        <span
+                          className="hover"
+                          data-for="tooltip-cover"
+                          data-tip
+                        >
+                          ?
+                        </span>
+                        <ReactTooltip
+                          id="tooltip-cover"
+                          effect="solid"
+                          place="top"
+                          type="dark"
+                        >
+                          <div className="tooltip">URL to cover image.</div>
+                        </ReactTooltip>
+                        <label>Cover</label>
+                      </div>
                       <input
                         id="cover"
                         type="text"

@@ -58,6 +58,18 @@ export default function Sidebar() {
                 <span>About the database</span>
               </a>
             </div>
+            <div className="link-container">
+              <a href="/about-the-team">
+                <DatabaseIcon fill="white" height="20px" width="30px" />
+                <span>About the team</span>
+              </a>
+            </div>
+            <div className="link-container">
+              <a href="/all-characters">
+                <DatabaseIcon fill="white" height="20px" width="30px" />
+                <span>All characters</span>
+              </a>
+            </div>
             {characterCheck ? (
               <div className="link-container">
                 <a href="/suggest-character">
@@ -72,12 +84,6 @@ export default function Sidebar() {
             {token ? (
               <div className="div-container">
                 <div className="link-container">
-                  <a href="/all-characters">
-                    <DatabaseIcon fill="white" height="20px" width="30px" />
-                    <span>All characters</span>
-                  </a>
-                </div>
-                <div className="link-container">
                   <a href="/suggested-characters">
                     <FeatherIcon fill="white" height="20px" width="30px" />
                     <span>Suggested characters</span>
@@ -88,6 +94,13 @@ export default function Sidebar() {
                   <a href="/suggested-stories">
                     <FeatherIcon fill="white" height="20px" width="30px" />
                     <span>Suggested stories</span>
+                  </a>
+                </div>
+
+                <div className="link-container">
+                  <a href="/sc-suggested-stories">
+                    <FeatherIcon fill="white" height="20px" width="30px" />
+                    <span>SC Suggested stories</span>
                   </a>
                 </div>
 

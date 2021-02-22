@@ -6,7 +6,8 @@ export default function RowCharacter(props) {
   return (
     <tr className="tbody">
       <td>{content.character_name}</td>
-      <td>{content.author}</td>
+      <td>{content.genre}</td>
+      <td>{content.importance}</td>
       <td>
         {type === "regular" ? (
           <a href={`/character/${content.id}`}>

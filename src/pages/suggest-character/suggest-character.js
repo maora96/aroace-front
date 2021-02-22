@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 import Sidebar from "../../components/sidebar/sidebar";
 
 import { Formik } from "formik";
-import * as Yup from "yup";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 
 function SuggestCharacter() {
@@ -15,6 +14,17 @@ function SuggestCharacter() {
   const [characterCheck, setCharacterCheck] = React.useState("");
   const [storyCheck, setStoryCheck] = React.useState("");
   const [reviewCheck, setReviewCheck] = React.useState("");
+  const [stories, setStories] = React.useState({
+    story_title: [],
+    series_or_anthology: [],
+    story_length: [],
+    genre: [],
+    type_of_rep: [],
+    character_importance: [],
+    rep_noteswarnings: [],
+    other_noteswarnings: [],
+    cover: [],
+  });
 
   React.useEffect(() => {
     const newToken = localStorage.getItem("token");
@@ -63,8 +73,9 @@ function SuggestCharacter() {
                 )
                   .then((res) => res.json())
                   .then((resJson) => {
-                    console.log(resJson);
-                    history.push("/success");
+                    console.log(resJson.data.dbCharacter[0].id);
+                    let id = resJson.data.dbCharacter[0].id;
+                    history.push(`/suggest-story-sc/${id}`);
                   });
               }}
             >
@@ -115,7 +126,7 @@ function SuggestCharacter() {
                             <ReactTooltip
                               id="tooltip-name"
                               effect="solid"
-                              place="top"
+                              palce="right"
                               type="dark"
                             >
                               <div className="tooltip">Character’s name</div>
@@ -130,50 +141,57 @@ function SuggestCharacter() {
                             onBlur={handleBlur}
                           />
                         </h2>
-                        <div className="group">
-                          <span
-                            className="hover"
-                            data-for="tooltip-importance"
-                            data-tip
+                        <div className="importance-container">
+                          <div className="group">
+                            <span
+                              className="hover"
+                              data-for="tooltip-importance"
+                              data-tip
+                            >
+                              ?
+                            </span>
+                            <ReactTooltip
+                              id="tooltip-importance"
+                              effect="solid"
+                              place="right"
+                              type="dark"
+                            >
+                              <div className="tooltip">
+                                <ul>
+                                  <li>
+                                    <strong>Lead: </strong>The character is at
+                                    the heart{" "}
+                                    <p>of the story’s central storyline</p>
+                                  </li>
+                                  <li>
+                                    <strong>Main: </strong>The character plays
+                                    an important{" "}
+                                    <p>
+                                      role in the story and is frequently on
+                                      page
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <strong>Lead: </strong>The character plays a
+                                    <p> minor role in the story</p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </ReactTooltip>
+                            <span>Importance</span>
+                          </div>
+                          <select
+                            name="importance"
+                            value={values.importance}
+                            onChange={handleChange}
+                            onBlur={handleChange}
                           >
-                            ?
-                          </span>
-                          <ReactTooltip
-                            id="tooltip-importance"
-                            effect="solid"
-                            place="top"
-                            type="dark"
-                          >
-                            <div className="tooltip">
-                              <ul>
-                                <li>
-                                  <strong>Lead:</strong>The character is at the
-                                  heart of the story’s central storyline
-                                </li>
-                                <li>
-                                  <strong>Main:</strong>The character plays an
-                                  important role in the story and is frequently
-                                  on page
-                                </li>
-                                <li>
-                                  <strong>Lead:</strong>The character plays a
-                                  minor role in the story
-                                </li>
-                              </ul>
-                            </div>
-                          </ReactTooltip>
+                            <option value="" label="Select one" />
+                            <option value="Lead" label="Lead" />
+                            <option value="Main" label="Main" />
+                            <option value="Side" label="Side" />
+                          </select>
                         </div>
-                        <select
-                          name="importance"
-                          value={values.importance}
-                          onChange={handleChange}
-                          onBlur={handleChange}
-                        >
-                          <option value="" label="Select one" />
-                          <option value="Lead" label="Lead" />
-                          <option value="Main" label="Main" />
-                          <option value="Side" label="Side" />
-                        </select>
                       </div>
                       <div className="line">
                         <div className="chunk">
@@ -188,7 +206,7 @@ function SuggestCharacter() {
                             <ReactTooltip
                               id="tooltip-author"
                               effect="solid"
-                              place="top"
+                              palce="right"
                               type="dark"
                             >
                               <div className="tooltip">Author’s name</div>
@@ -216,7 +234,7 @@ function SuggestCharacter() {
                             <ReactTooltip
                               id="tooltip-gender"
                               effect="solid"
-                              place="top"
+                              palce="right"
                               type="dark"
                             >
                               <div className="tooltip">
@@ -251,13 +269,18 @@ function SuggestCharacter() {
                             <ReactTooltip
                               id="tooltip-pairing"
                               effect="solid"
-                              place="top"
+                              place="right"
                               type="dark"
                             >
                               <div className="tooltip">
-                                Write only the letters of the genders involved,
-                                in the order of M, then F, then NB, i.e. F/NB or
-                                M/F/F
+                                <p>
+                                  Write only the letters of the genders
+                                  involved,
+                                </p>
+                                <p>
+                                  in the order of M, then F, then NB, i.e. F/NB
+                                  or M/F/F
+                                </p>
                               </div>
                             </ReactTooltip>
                             <span>Pairing</span>
@@ -290,9 +313,11 @@ function SuggestCharacter() {
                               type="dark"
                             >
                               <div className="tooltip">
-                                Name of the series (if applicable). Short
-                                stories in an anthology can list the anthology
-                                name here.
+                                <p>
+                                  Name of the series (if applicable). Short
+                                  stories in an anthology
+                                </p>{" "}
+                                <p>can list the anthology name here.</p>
                               </div>
                             </ReactTooltip>
                             <span>Series</span>
@@ -324,21 +349,29 @@ function SuggestCharacter() {
                               <div className="tooltip">
                                 <ul>
                                   <li>
-                                    <strong>Word of God:</strong>The character’s
-                                    sexuality is not explicit on page, but the
-                                    author has confirmed it.
+                                    <strong>Word of God: </strong>The
+                                    character’s sexuality{" "}
+                                    <p>
+                                      is not explicit on page, but the author
+                                      has confirmed it.
+                                    </p>
                                   </li>
                                   <li>
-                                    <strong>On page:</strong>The character’s
-                                    sexuality is explicitly demonstrated within
-                                    the text. It should be showed or discussed
-                                    to an extent that makes it clear to the
-                                    readers.
+                                    <strong>On page:</strong> The character’s
+                                    sexuality is explicitly
+                                    <p>
+                                      demonstrated within the text. It should be
+                                      showed or
+                                    </p>
+                                    <p>
+                                      discussed to an extent that makes it clear
+                                      to the readers.
+                                    </p>
                                   </li>
                                   <li>
-                                    <strong>Word used:</strong>The identity is
-                                    stated using the actual word (usually also
-                                    On Page)
+                                    <strong>Word used: </strong>The identity is
+                                    stated using the{" "}
+                                    <p> actual word (usually also On Page)</p>
                                   </li>
                                 </ul>
                               </div>
@@ -373,14 +406,17 @@ function SuggestCharacter() {
                             <ReactTooltip
                               id="tooltip-romantic"
                               effect="solid"
-                              place="top"
+                              palce="right"
                               type="dark"
                             >
                               <div className="tooltip">
-                                Leave blank if you're unsure. If a specific
-                                aromantic label is used but not listed here,
-                                pick "Arospec" and write us the label in the Rep
-                                Notes & Warnings section
+                                <p> Leave blank if you're unsure. </p>
+                                <p>If a specific aromantic label is used</p>
+
+                                <p>but not listed here, pick "Arospec" and</p>
+
+                                <p>write us the label in the Rep Notes &</p>
+                                <p>Warnings sections</p>
                               </div>
                             </ReactTooltip>
                             <span>Romantic orientation</span>
@@ -422,14 +458,17 @@ function SuggestCharacter() {
                             <ReactTooltip
                               id="tooltip-sexual"
                               effect="solid"
-                              place="top"
+                              palce="right"
                               type="dark"
                             >
                               <div className="tooltip">
-                                Leave blank if you're unsure. If a specific
-                                asexual label is used but not listed here, pick
-                                "Acespec" and write us the label in the Rep
-                                Notes & Warnings section
+                                <p> Leave blank if you're unsure. </p>
+                                <p>If a specific asexual label is used</p>
+
+                                <p>but not listed here, pick "Acepec" and</p>
+
+                                <p>write us the label in the Rep Notes &</p>
+                                <p>Warnings sections</p>
                               </div>
                             </ReactTooltip>
                             <span>Sexual Orientation</span>
@@ -461,16 +500,22 @@ function SuggestCharacter() {
                             <span
                               className="hover"
                               data-for="genre-field"
-                              data-tip={`Story's literary genre. List in alphabetical order, i.e. "Contemporary, Romance, Young Adult".`}
+                              data-tip
                             >
                               ?
                             </span>
                             <ReactTooltip
                               id="genre-field"
                               effect="solid"
-                              place="right"
+                              palce="right"
                               type="dark"
-                            />
+                            >
+                              <div className="tooltip">
+                                Story's literary genre.{" "}
+                                <p>List in alphabetical order, i.e.</p>{" "}
+                                "Contemporary, Romance, Young Adult".
+                              </div>
+                            </ReactTooltip>
                             <span>Genre</span>
                           </div>
                           <input
@@ -489,16 +534,24 @@ function SuggestCharacter() {
                           <span
                             className="hover"
                             data-for="relationships"
-                            data-tip={`Please list general terms, such as "Friendship", "Mentor", or "Family", "Romance" that describe the most important relationships to the character.`}
+                            data-tip
                           >
                             ?
                           </span>
                           <ReactTooltip
                             id="relationships"
                             effect="solid"
-                            place="top"
+                            palce="right"
                             type="dark"
-                          />
+                          >
+                            <div className="tooltip">
+                              Please list general terms, such as "Friendship",{" "}
+                              <p>
+                                "Mentor", or "Family", "Romance" that describe
+                              </p>{" "}
+                              the most important relationships to the character.
+                            </div>
+                          </ReactTooltip>
                           <p>
                             <span>Relationships</span>
                           </p>
@@ -518,16 +571,28 @@ function SuggestCharacter() {
                           <span
                             className="hover"
                             data-for="noteswarnings"
-                            data-tip="Any noteworthy information about the representation, whether it is tropes (exile or dead ace, allo saviour, etc.) or facets of it (sex repulsed/averse/positive, touch averse, etc.)."
+                            data-tip
                           >
                             ?
                           </span>
                           <ReactTooltip
-                            id="noteswarnings"
+                            id="relationships"
                             effect="solid"
-                            place="top"
+                            palce="right"
                             type="dark"
-                          />
+                          >
+                            <div className="tooltip">
+                              Any noteworthy information about the
+                              representation,
+                              <p>
+                                {" "}
+                                whether it is tropes (exile or dead ace, allo
+                                saviour, etc.)
+                              </p>{" "}
+                              or facets of it (sex repulsed/averse/positive,
+                              touch averse, etc.).
+                            </div>
+                          </ReactTooltip>
                           <p>
                             <span>Notes & Warnings</span>
                           </p>
@@ -547,16 +612,22 @@ function SuggestCharacter() {
                           <span
                             className="hover"
                             data-for="tooltip-ref"
-                            data-tip="If there is an author’s post/tweet, a review, or a list where you heard of this character being aspec, please link to it!"
+                            data-tip
                           >
                             ?
                           </span>
                           <ReactTooltip
                             id="tooltip-ref"
                             effect="solid"
-                            place="top"
+                            palce="right"
                             type="dark"
-                          />
+                          >
+                            <div className="tooltip">
+                              If there is an author’s post/tweet,{" "}
+                              <p>a review, or a list where you heard of this</p>{" "}
+                              character being aspec, please link to it!
+                            </div>
+                          </ReactTooltip>
                           <p>
                             <span>References to mention of representation</span>
                           </p>
@@ -584,7 +655,7 @@ function SuggestCharacter() {
                           <ReactTooltip
                             id="cover"
                             effect="solid"
-                            place="top"
+                            palce="right"
                             type="dark"
                           />
                           <p>

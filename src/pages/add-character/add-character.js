@@ -7,6 +7,7 @@ import { fetchWithToken } from "../../utils/fetch";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import MobileHeader from "../../components/mobile-header/mobile-header";
+import ReactTooltip from "react-tooltip";
 
 export default function AddCharacter() {
   const [character, setCharacter] = React.useState({});
@@ -77,18 +78,53 @@ export default function AddCharacter() {
                           onBlur={handleBlur}
                         />
                       </h2>
-                      <div className="group"></div>
-                      <select
-                        name="importance"
-                        value={values.importance}
-                        onChange={handleChange}
-                        onBlur={handleChange}
-                      >
-                        <option value="" label="Select one" />
-                        <option value="Lead" label="Lead" />
-                        <option value="Main" label="Main" />
-                        <option value="Side" label="Side" />
-                      </select>
+                      <div className="importance-container">
+                        <div className="group">
+                          <span
+                            className="hover"
+                            data-for="tooltip-importance"
+                            data-tip
+                          >
+                            ?
+                          </span>
+                          <ReactTooltip
+                            id="tooltip-importance"
+                            effect="solid"
+                            place="top"
+                            type="dark"
+                          >
+                            <div className="tooltip">
+                              <ul>
+                                <li>
+                                  <strong>Lead:</strong>The character is at the
+                                  heart of the story’s central storyline
+                                </li>
+                                <li>
+                                  <strong>Main:</strong>The character plays an
+                                  important role in the story and is frequently
+                                  on page
+                                </li>
+                                <li>
+                                  <strong>Lead:</strong>The character plays a
+                                  minor role in the story
+                                </li>
+                              </ul>
+                            </div>
+                          </ReactTooltip>
+                          <span>Importance</span>
+                        </div>
+                        <select
+                          name="importance"
+                          value={values.importance}
+                          onChange={handleChange}
+                          onBlur={handleChange}
+                        >
+                          <option value="" label="Select one" />
+                          <option value="Lead" label="Lead" />
+                          <option value="Main" label="Main" />
+                          <option value="Side" label="Side" />
+                        </select>
+                      </div>
                     </div>
                     <div className="line">
                       <div className="chunk">

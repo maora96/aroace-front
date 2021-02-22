@@ -5,6 +5,10 @@
 .placeholder {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  max-width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .placeholder span {

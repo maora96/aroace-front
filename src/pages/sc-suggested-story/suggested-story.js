@@ -1,23 +1,17 @@
 import React from "react";
 import "./suggested-story.css";
 import { useRouteMatch, useHistory } from "react-router-dom";
-import CharacterInfo from "../../components/character-info/character-info";
 import Sidebar from "../../components/sidebar/sidebar";
-import {
-  fazerRequisicaoComBody,
-  fetchWithToken,
-  fetchWithTokenNoBody,
-} from "../../utils/fetch";
+import { fetchWithToken, fetchWithTokenNoBody } from "../../utils/fetch";
 import { Formik } from "formik";
-import * as Yup from "yup";
-import StoryInfo from "../../components/story-info/story-info";
+
 import MobileHeader from "../../components/mobile-header/mobile-header";
 
-export default function SuggestedStory() {
+export default function SCSuggestedStory() {
   const [story, setStory] = React.useState({});
   const [token, setToken] = React.useState("");
-  const [cover, setCover] = React.useState("");
   const [name, setName] = React.useState("");
+  const [cover, setCover] = React.useState("");
   const { params } = useRouteMatch();
   const history = useHistory();
 
@@ -25,15 +19,18 @@ export default function SuggestedStory() {
     const newToken = localStorage.getItem("token");
 
     setToken(newToken);
-    fetch(`https://aroacedb-back.herokuapp.com/suggest/stories/${params.id}`)
+    fetch(`https://aroacedb-back.herokuapp.com/suggest/sc/stories/${params.id}`)
       .then((res) => res.json())
       .then((resJson) => {
         console.log(resJson.data.story[0]);
+
         setStory(resJson.data.story[0]);
         console.log(resJson.data.story[0].cover);
         setCover(resJson.data.story[0].cover);
         let character_id = resJson.data.story[0].character_id;
-        fetch(`https://aroacedb-back.herokuapp.com/characters/${character_id}`)
+        fetch(
+          `https://aroacedb-back.herokuapp.com/suggest/characters/${character_id}`
+        )
           .then((res) => res.json())
           .then((resJson) => {
             console.log(resJson);
@@ -77,7 +74,7 @@ export default function SuggestedStory() {
                   console.log(resJson);
                 });
               fetchWithTokenNoBody(
-                `https://aroacedb-back.herokuapp.com/suggest/stories/${story.id}`,
+                `https://aroacedb-back.herokuapp.com/suggest/sc/stories/${story.id}`,
                 "DELETE",
                 token
               )
