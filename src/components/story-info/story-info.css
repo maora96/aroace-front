@@ -57,11 +57,9 @@
 }
 
 .StoryInfo img {
-  /* width: 200px;
-  height: 300px;
   margin-right: 2rem;
-  object-fit: cover; */
-  margin-right: 2rem;
+  max-width: 250px;
+  object-fit: contain;
 }
 
 .StoryInfo .story-container {

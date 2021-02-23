@@ -576,7 +576,7 @@ function SuggestCharacter() {
                             ?
                           </span>
                           <ReactTooltip
-                            id="relationships"
+                            id="noteswarnings"
                             effect="solid"
                             palce="right"
                             type="dark"
