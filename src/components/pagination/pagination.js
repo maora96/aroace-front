@@ -19,6 +19,7 @@ export default function Pagination(props) {
           {pages.map((page) => {
             return (
               <span
+                className={page === currentPage ? "page-active" : ""}
                 onClick={() => {
                   setCurrentPage(page);
                 }}
