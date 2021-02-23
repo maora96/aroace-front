@@ -62,9 +62,12 @@ export default function AboutTeam() {
             developer by day. Their short story <em>Half a Heart</em> was
             published in{" "}
             <em>Common Bonds: an Aromantic Speculative Anthology</em>. You can
-            find them on <a href="https://twitter.com/nyphren">twitter</a> and
-            support them on <a href="https://ko-fi.com/nyphren">ko-fi</a>.
+            find them on <a href="https://twitter.com/nyphren">twitter</a>.
           </p>
+
+          <a href="https://ko-fi.com/nyphren" className="kofi-link">
+            Buy Ren a Ko-fi!
+          </a>
         </div>
       </div>
     </div>
