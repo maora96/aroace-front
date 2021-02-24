@@ -1,0 +1,146 @@
+.Contact {
+  display: flex;
+  background-color: #67ffb6;
+  height: 100vh;
+}
+
+.Contact .contact-container {
+  width: 73%;
+  margin: 0.35rem auto;
+  background: #2b193d;
+  overflow-y: auto;
+  height: 99vh;
+  border-radius: 15px;
+}
+
+.Contact .contact-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.Contact .contact-container::-webkit-scrollbar {
+  width: 20px;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+
+.Contact .contact-container::-webkit-scrollbar-thumb {
+  border: none;
+
+  background-color: #67ffb6;
+}
+
+.Contact .contact {
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.Contact h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #67ffb6;
+  margin-bottom: 1rem;
+}
+
+.Contact .contact p {
+  line-height: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.Contact .social-media {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.Contact .social-media img {
+  margin-right: 1.5rem;
+}
+
+.Contact .kofi-link {
+  width: 250px;
+  background: #2b193d;
+  color: #67ffb6;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  margin: 1.5rem auto 1.2rem auto;
+}
+
+.Contact a {
+  color: #67ffb6;
+  font-weight: bold;
+}
+
+.Contact form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #2b193d;
+}
+
+.Contact input {
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #2b193d;
+  outline: none;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.Contact textarea {
+  padding: 0.5rem;
+  height: 250px;
+  border: none;
+  border-bottom: 1px solid #2b193d;
+  outline: none;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.Contact ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #67ffb6;
+  font-family: "Lato", sans-serif;
+  opacity: 1; /* Firefox */
+}
+
+.Contact :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #67ffb6;
+}
+
+.Contact ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #67ffb6;
+}
+
+.Contact button {
+  border: none;
+  background: #67ffb6;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  width: 50%;
+  align-self: center;
+}

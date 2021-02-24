@@ -24,10 +24,9 @@ export default function AboutTeam() {
             <a href="http://www.krakencollectivebooks.com/">
               The Kraken Collective
             </a>
-            , an team of queer specfic self-published writers. Otherwise,
-            Claudie tends to be known for her love of croissants and squids.
-            Find out more on her{" "}
-            <a href="http://claudiearseneault.com/">website</a>!
+            , a team of queer specfic self-published writers. Otherwise, Claudie
+            tends to be known for her love of croissants and squids. Find out
+            more on her <a href="http://claudiearseneault.com/">website</a>!
           </p>
 
           <a href="https://ko-fi.com/claudie" className="kofi-link">

@@ -81,6 +81,13 @@ export default function Sidebar() {
               ""
             )}
 
+            <div className="link-container">
+              <a href="/contact">
+                <FeatherIcon fill="white" height="20px" width="30px" />
+                <span>Contact</span>
+              </a>
+            </div>
+
             {token ? (
               <div className="div-container">
                 <div className="link-container">
