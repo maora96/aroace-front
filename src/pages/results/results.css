@@ -1,0 +1,76 @@
+.Results {
+  display: flex;
+  background-color: #67ffb6;
+  height: 100vh;
+}
+
+.Results .results-container {
+  width: 73%;
+  margin: 0.35rem auto;
+  background: #2b193d;
+  overflow-y: auto;
+  height: 99vh;
+  border-radius: 15px;
+}
+
+.Results .result-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.Results .result-container::-webkit-scrollbar {
+  width: 20px;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+
+.Results .result-container::-webkit-scrollbar-thumb {
+  border: none;
+
+  background-color: #67ffb6;
+}
+
+.Results .results-container form {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.Results .results-container form input {
+  margin-top: 3rem;
+  width: 100%;
+  border: none;
+  height: 50px;
+  border-radius: 10px;
+  color: #67ffb6;
+  padding-left: 1rem;
+}
+
+.Results .results-container form button {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  border-radius: 0 5px 5px 0;
+  background-color: #67ffb6;
+  border: none;
+  height: 50px;
+  width: 75px;
+}
+
+.Results::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #bab5b5;
+  font-family: "Lato", sans-serif;
+  opacity: 1; /* Firefox */
+}
+
+.Results:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #bab5b5;
+}
+
+.Results::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #bab5b5;
+}
