@@ -4,6 +4,8 @@ import Sidebar from "../../components/sidebar/sidebar";
 import Globe from "../../assets/globe.png";
 import Twitter from "../../assets/twitter.png";
 import MobileHeader from "../../components/mobile-header/mobile-header";
+import { Formik } from "formik";
+import { fetchNoTokenNobody, fetchWithBody } from "../../utils/fetch";
 
 export default function Contact() {
   return (
@@ -26,24 +28,67 @@ export default function Contact() {
             </a>
           </div>
 
-          <form>
-            <label>
-              Name
-              <input type="text" placeholder="Name" />
-            </label>
-            <label>
-              E-mail
-              <input type="text" placeholder="E-mail" />
-            </label>
-            <label>
-              Message
-              <textarea
-                name=""
-                placeholder="Insert your message here"
-              ></textarea>
-            </label>
-            <button type="submit">Submit</button>
-          </form>
+          <Formik
+            initialValues={{
+              name: "",
+              email: "",
+              message: "",
+            }}
+            onSubmit={(values) => {
+              fetchWithBody(
+                "https://aroacedb-back.herokuapp.com/email",
+                "POST",
+                values
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(resJson);
+                  console.log(JSON.stringify(values, null, 2));
+                  // redirect to success page
+                });
+            }}
+          >
+            {(props) => {
+              const { values, handleChange, handleBlur, handleSubmit } = props;
+              return (
+                <form onSubmit={handleSubmit}>
+                  <label>
+                    Name
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      id="name"
+                      value={values.name}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                  </label>
+                  <label>
+                    E-mail
+                    <input
+                      type="text"
+                      placeholder="E-mail"
+                      id="email"
+                      value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                  </label>
+                  <label>
+                    Message
+                    <textarea
+                      placeholder="Insert your message here"
+                      id="message"
+                      value={values.message}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    ></textarea>
+                  </label>
+                  <button type="submit">Submit</button>
+                </form>
+              );
+            }}
+          </Formik>
         </div>
       </div>
     </div>
