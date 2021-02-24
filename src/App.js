@@ -31,6 +31,7 @@ import SuccessSTSC from "./pages/success-st-sc/success";
 import SuggestedStoriesSC from "./pages/sc-suggested-stories/suggested-stories";
 import SCSuggestedStory from "./pages/sc-suggested-story/suggested-story";
 import Contact from "./pages/contact/contact";
+import Results from "./pages/results/results";
 
 function App() {
   const [characterCheck, setCharacterCheck] = React.useState(true);
@@ -93,6 +94,7 @@ function App() {
               component={SCSuggestedStory}
             />
             <Route path="/contact" component={Contact} />
+            <Route path="/results" component={Results} />
           </Switch>
         </div>
       </DataContext.Provider>

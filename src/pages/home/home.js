@@ -4,12 +4,14 @@ import Sidebar from "../../components/sidebar/sidebar";
 import SingleCharacter from "../../components/single-character/single-character";
 import { ReactComponent as ButtonIcon } from "../../assets/chevron-right-solid.svg";
 import MobileHeader from "../../components/mobile-header/mobile-header";
+import { useHistory } from "react-router-dom";
 
 function Home() {
   const [random, setRandom] = React.useState([]);
   const [stories, setStories] = React.useState([]);
   const [search, setSearch] = React.useState([]);
   const [filteredResults, setFilteredResults] = React.useState([]);
+  const history = useHistory();
 
   React.useEffect(() => {
     fetch("https://aroacedb-back.herokuapp.com/character")
@@ -29,11 +31,27 @@ function Home() {
       <MobileHeader />
 
       <div className="home-container">
+        <div className="welcome">
+          <h2>Welcome to the database</h2>
+          <p>
+            Enter a few keywords in the search bar below to find an aromantic or
+            asexual character in the database! These can be orientations
+            (demisexual, grayromantic, etc.), story genres (fantasy,
+            contemporary), or many more—and you can use more than one.
+          </p>
+          <p>
+            Not sure what to enter? Check out the{" "}
+            <a href="/about">About the Database</a> page for the list of
+            categories and terms used, or hit the “Give me a new character”
+            button for inspiration!
+          </p>
+        </div>
         <form
           onSubmit={(event) => {
             console.log(search);
 
             event.preventDefault();
+            history.push(`/results?search=${search}`);
             fetch(
               `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
             )
@@ -52,7 +70,7 @@ function Home() {
         >
           <input
             type="text"
-            placeholder="search..."
+            placeholder="Enter your keywords here to search"
             onChange={(event) => {
               setSearch(event.target.value);
             }}
@@ -74,6 +92,7 @@ function Home() {
             <div></div>
           ) : (
             <div className="random">
+              <h2>Your random character</h2>
               <SingleCharacter character={random} />
               <div className="char-btn">
                 <button
