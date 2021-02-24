@@ -6,8 +6,10 @@ import Twitter from "../../assets/twitter.png";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 import { Formik } from "formik";
 import { fetchWithBody } from "../../utils/fetch";
+import { useHistory } from "react-router-dom";
 
 export default function Contact() {
+  const history = useHistory();
   return (
     <div className="Contact">
       <Sidebar />
@@ -48,22 +50,9 @@ export default function Contact() {
                   console.log(resJson);
 
                   console.log(JSON.stringify(values, null, 2));
-
+                  history.push("/success");
                   // redirect to success page
                 });
-              //   fetchWithBody(
-              //     "https://aroacedb-back.herokuapp.com/email",
-              //     "POST",
-              //     values
-              //   )
-              //     .then((res) => res.json())
-              //     .then((resJson) => {
-              //       console.log(resJson);
-
-              //       console.log(JSON.stringify(values, null, 2));
-
-              //       // redirect to success page
-              //     });
             }}
           >
             {(props) => {
