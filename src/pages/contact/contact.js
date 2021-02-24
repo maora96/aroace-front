@@ -35,11 +35,14 @@ export default function Contact() {
               message: "",
             }}
             onSubmit={(values) => {
-              fetchWithBody(
-                "https://aroacedb-back.herokuapp.com/email",
-                "POST",
-                values
-              )
+              fetch("https://aroacedb-back.herokuapp.com/email", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                },
+                body: JSON.stringify(values),
+              })
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
@@ -48,6 +51,19 @@ export default function Contact() {
 
                   // redirect to success page
                 });
+              //   fetchWithBody(
+              //     "https://aroacedb-back.herokuapp.com/email",
+              //     "POST",
+              //     values
+              //   )
+              //     .then((res) => res.json())
+              //     .then((resJson) => {
+              //       console.log(resJson);
+
+              //       console.log(JSON.stringify(values, null, 2));
+
+              //       // redirect to success page
+              //     });
             }}
           >
             {(props) => {
