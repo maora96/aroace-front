@@ -4,6 +4,46 @@
   height: 100vh;
 }
 
+.Home .welcome {
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.Home .welcome h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #67ffb6;
+  margin-bottom: 1rem;
+}
+
+.Home .welcome p {
+  line-height: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.Home .random {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.Home .random .SingleCharacter {
+  width: 100%;
+}
+
+.Home .random h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #67ffb6;
+  margin-bottom: 1rem;
+}
+
 .Home .home-container {
   width: 73%;
   margin: 0.35rem auto;
@@ -76,7 +116,6 @@
 }
 
 .Home .char-btn {
-  width: 60%;
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;
