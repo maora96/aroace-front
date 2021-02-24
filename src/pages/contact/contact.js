@@ -5,11 +5,7 @@ import Globe from "../../assets/globe.png";
 import Twitter from "../../assets/twitter.png";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 import { Formik } from "formik";
-<<<<<<< HEAD
-import { fetchNoTokenNobody, fetchWithBody } from "../../utils/fetch";
-=======
-import { fetchNoTokenNobody } from "../../utils/fetch";
->>>>>>> 9359e47614c5478bf7409077bb31c89d7dd9c809
+import { fetchWithBody } from "../../utils/fetch";
 
 export default function Contact() {
   return (
@@ -39,12 +35,7 @@ export default function Contact() {
               message: "",
             }}
             onSubmit={(values) => {
-<<<<<<< HEAD
               fetchWithBody(
-=======
-              console.log(JSON.stringify(values, null, 2));
-              fetchNoTokenNobody(
->>>>>>> 9359e47614c5478bf7409077bb31c89d7dd9c809
                 "https://aroacedb-back.herokuapp.com/email",
                 "POST",
                 values
@@ -52,10 +43,9 @@ export default function Contact() {
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
-<<<<<<< HEAD
+
                   console.log(JSON.stringify(values, null, 2));
-=======
->>>>>>> 9359e47614c5478bf7409077bb31c89d7dd9c809
+
                   // redirect to success page
                 });
             }}
