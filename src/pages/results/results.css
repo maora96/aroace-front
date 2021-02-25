@@ -30,14 +30,14 @@
   background-color: #67ffb6;
 }
 
-.Results .results-container form {
+.Results .results-container .old form {
   width: 60%;
   margin: 0 auto;
   margin-bottom: 3rem;
   position: relative;
 }
 
-.Results .results-container form input {
+.Results .results-container .old form input {
   margin-top: 3rem;
   width: 100%;
   border: none;
@@ -47,7 +47,7 @@
   padding-left: 1rem;
 }
 
-.Results .results-container form button {
+.Results .results-container .old form button {
   position: absolute;
   top: 48px;
   right: 0;
@@ -73,4 +73,8 @@
 .Results::-ms-input-placeholder {
   /* Microsoft Edge */
   color: #bab5b5;
+}
+
+.Results .results {
+  margin-top: 2rem;
 }

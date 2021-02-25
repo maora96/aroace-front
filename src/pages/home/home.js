@@ -5,6 +5,7 @@ import SingleCharacter from "../../components/single-character/single-character"
 import { ReactComponent as ButtonIcon } from "../../assets/chevron-right-solid.svg";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 import { useHistory } from "react-router-dom";
+import SearchBar from "../../components/search-bar/search-bar";
 
 function Home() {
   const [random, setRandom] = React.useState([]);
@@ -46,39 +47,43 @@ function Home() {
             button for inspiration!
           </p>
         </div>
-        <form
-          onSubmit={(event) => {
-            console.log(search);
 
-            event.preventDefault();
-            history.push(`/results?search=${search}`);
-            fetch(
-              `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
-            )
-              .then((res) => res.json())
-              .then((resJson) => {
-                console.log(search);
-                console.log(resJson.data);
+        <SearchBar />
+        {/* <div className="free-search">
+          <form
+          // onSubmit={(event) => {
+          //   console.log(search);
 
-                if (resJson.data) {
-                  const newResults = resJson.data.characters;
-                  setFilteredResults(newResults);
-                  console.log(filteredResults);
-                }
-              });
-          }}
-        >
-          <input
-            type="text"
-            placeholder="Enter your keywords here to search"
-            onChange={(event) => {
-              setSearch(event.target.value);
-            }}
-          ></input>
-          <button>
-            <ButtonIcon fill="white" height="20px" width="30px" />
-          </button>
-        </form>
+          //   event.preventDefault();
+          //   history.push(`/results?search=${search}`);
+          //   fetch(
+          //     `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
+          //   )
+          //     .then((res) => res.json())
+          //     .then((resJson) => {
+          //       console.log(search);
+          //       console.log(resJson.data);
+
+          //       if (resJson.data) {
+          //         const newResults = resJson.data.characters;
+          //         setFilteredResults(newResults);
+          //         console.log(filteredResults);
+          //       }
+          //     });
+          // }}
+          >
+            <input
+              type="text"
+              placeholder="Enter your keywords here to search"
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
+            ></input>
+            <button>
+              <ButtonIcon fill="white" height="20px" width="30px" />
+            </button>
+          </form>
+        </div> */}
         <div className="results">
           {filteredResults.map((i) => {
             return (

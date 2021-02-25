@@ -1,0 +1,78 @@
+.SearchBar {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.SearchBar form {
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchBar form .fields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.SearchBar form input {
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #2b193d;
+  border-radius: 5px;
+  margin-top: 1rem;
+  color: #bab5b5;
+}
+
+.SearchBar form select {
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #2b193d;
+  border-radius: 5px;
+  margin-top: 1rem;
+  color: #bab5b5;
+}
+
+.SearchBar form label {
+  width: 25%;
+  margin: 2px;
+}
+
+.SearchBar form label span {
+  text-transform: uppercase;
+  color: #67ffb6;
+  font-weight: bold;
+}
+
+.SearchBar form button {
+  border-radius: 5px;
+  background-color: #67ffb6;
+  border: none;
+  height: 40px;
+  width: 175px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  margin-top: 2rem;
+  align-self: flex-end;
+}
+
+.SearchBar::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #bab5b5;
+  font-family: "Lato", sans-serif;
+  opacity: 1; /* Firefox */
+}
+
+.SearchBar:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #bab5b5;
+}
+
+.SearchBar::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #bab5b5;
+}

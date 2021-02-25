@@ -31,6 +31,7 @@
 .Home .random {
   width: 60%;
   margin: 0 auto;
+  margin-top: 2rem;
 }
 
 .Home .random .SingleCharacter {
@@ -70,14 +71,14 @@
   background-color: #67ffb6;
 }
 
-.Home .home-container form {
+.Home .home-container .free-search form {
   width: 60%;
   margin: 0 auto;
   margin-bottom: 3rem;
   position: relative;
 }
 
-.Home .home-container form input {
+.Home .home-container .free-search form input {
   margin-top: 3rem;
   width: 100%;
   border: none;
@@ -87,7 +88,7 @@
   padding-left: 1rem;
 }
 
-.Home .home-container form button {
+.Home .home-container .free-search form button {
   position: absolute;
   top: 48px;
   right: 0;
@@ -138,7 +139,7 @@
     width: 80%;
   }
 
-  .Home .home-container form {
+  .Home .home-container .free-search form {
     width: 80%;
     z-index: 0;
   }
