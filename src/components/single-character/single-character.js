@@ -21,15 +21,18 @@ export default function SingleCharacter(props) {
             <div className="header">
               <h2>{character.character_name}</h2>
               <h3>
-                by {character.author}{" "}
+                by {character.author}
                 <span>
-                  {character.gender}/{character.importance}
+                  {character.gender}/{character.importance} |{" "}
+                  {character.pairing_qpp_or_romantic}
                 </span>
               </h3>
             </div>
           </div>
-
           <span>in the {character.main_storyseries} series</span>
+          <span>
+            {character.genre} | {character.relationships}
+          </span>
           <span>
             A(n){" "}
             <span>
@@ -37,7 +40,6 @@ export default function SingleCharacter(props) {
               character.
             </span>
           </span>
-
           <div className="button-container">
             <a href={`/character/${character.id}`}>Read more</a>
           </div>
