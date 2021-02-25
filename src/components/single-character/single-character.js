@@ -29,6 +29,7 @@ export default function SingleCharacter(props) {
             </div>
           </div>
 
+          <span>in the {character.main_storyseries} series</span>
           <span>
             A(n){" "}
             <span>
