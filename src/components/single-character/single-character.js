@@ -23,8 +23,10 @@ export default function SingleCharacter(props) {
               <h3>
                 by {character.author}
                 <span>
-                  {character.gender}/{character.importance} |{" "}
-                  {character.pairing_qpp_or_romantic}
+                  {character.gender}/{character.importance}{" "}
+                  {character.pairing_qpp_or_romantic
+                    ? character.pairing_qpp_or_romantic
+                    : ""}
                 </span>
               </h3>
             </div>
