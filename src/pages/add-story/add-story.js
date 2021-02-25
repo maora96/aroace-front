@@ -184,17 +184,19 @@ export default function AddStory() {
                             <div className="tooltip">
                               <ul>
                                 <li>
-                                  <strong>Lead:</strong>The character is at the
-                                  heart of the story’s central storyline
+                                  <strong>Lead: </strong>The character is at the
+                                  heart <p>of the story’s central storyline</p>
                                 </li>
                                 <li>
-                                  <strong>Main:</strong>The character plays an
-                                  important role in the story and is frequently
-                                  on page
+                                  <strong>Main: </strong>The character plays an
+                                  important{" "}
+                                  <p>
+                                    role in the story and is frequently on page
+                                  </p>
                                 </li>
                                 <li>
-                                  <strong>Lead:</strong>The character plays a
-                                  minor role in the story
+                                  <strong>Lead: </strong>The character plays a
+                                  <p> minor role in the story</p>
                                 </li>
                               </ul>
                             </div>
@@ -231,8 +233,11 @@ export default function AddStory() {
                             type="dark"
                           >
                             <div className="tooltip">
-                              Name of the series (if applicable). Short stories
-                              in an anthology can list the anthology name here.
+                              <p>
+                                Name of the series (if applicable). Short
+                                stories in an anthology
+                              </p>{" "}
+                              <p>can list the anthology name here.</p>
                             </div>
                           </ReactTooltip>
                           <label>Series title</label>
@@ -261,7 +266,14 @@ export default function AddStory() {
                             place="top"
                             type="dark"
                           >
-                            <div className="tooltip">{`Story's literary genre. List in alphabetical order, i.e. "Contemporary, Romance, Young Adult".`}</div>
+                            <div className="tooltip">
+                              {" "}
+                              <p>Story's literary genre. </p>{" "}
+                              <p>
+                                List in alphabetical order, i.e. "Contemporary,
+                                Romance, Young Adult".
+                              </p>
+                            </div>
                           </ReactTooltip>
                           <label>Genres</label>
                         </div>
@@ -294,20 +306,29 @@ export default function AddStory() {
                             <div className="tooltip">
                               <ul>
                                 <li>
-                                  <strong>Word of God:</strong>The character’s
-                                  sexuality is not explicit on page, but the
-                                  author has confirmed it.
+                                  <strong>Word of God: </strong>The character’s
+                                  sexuality{" "}
+                                  <p>
+                                    is not explicit on page, but the author has
+                                    confirmed it.
+                                  </p>
                                 </li>
                                 <li>
-                                  <strong>On page:</strong>The character’s
-                                  sexuality is explicitly demonstrated within
-                                  the text. It should be showed or discussed to
-                                  an extent that makes it clear to the readers.
+                                  <strong>On page:</strong> The character’s
+                                  sexuality is explicitly
+                                  <p>
+                                    demonstrated within the text. It should be
+                                    showed or
+                                  </p>
+                                  <p>
+                                    discussed to an extent that makes it clear
+                                    to the readers.
+                                  </p>
                                 </li>
                                 <li>
-                                  <strong>Word used:</strong>The identity is
-                                  stated using the actual word (usually also On
-                                  Page)
+                                  <strong>Word used: </strong>The identity is
+                                  stated using the{" "}
+                                  <p> actual word (usually also On Page)</p>
                                 </li>
                               </ul>
                             </div>
@@ -346,9 +367,13 @@ export default function AddStory() {
                         >
                           <div className="tooltip">
                             Any noteworthy information about the representation,
-                            whether it is tropes (exile or dead ace, allo
-                            saviour, etc.) or facets of it (sex
-                            repulsed/averse/positive, touch averse, etc.).
+                            <p>
+                              {" "}
+                              whether it is tropes (exile or dead ace, allo
+                              saviour, etc.)
+                            </p>{" "}
+                            or facets of it (sex repulsed/averse/positive, touch
+                            averse, etc.).
                           </div>
                         </ReactTooltip>
                         <label>Rep Notes & Warnings</label>
@@ -377,10 +402,15 @@ export default function AddStory() {
                           type="dark"
                         >
                           <div className="tooltip">
-                            Any noteworthy information about the representation,
-                            whether it is tropes (exile or dead ace, allo
-                            saviour, etc.) or facets of it (sex
-                            repulsed/averse/positive, touch averse, etc.)
+                            <p>
+                              Any noteworthy information about the
+                              representation,
+                            </p>
+                            <p>whether it is tropes (exile or dead ace, allo</p>
+                            <p>
+                              saviour, etc.) or facets of it (sex
+                              repulsed/averse/positive, touch averse, etc.)
+                            </p>
                           </div>
                         </ReactTooltip>
                         <label>Other Notes & Warnings</label>
