@@ -78,3 +78,50 @@
 .Results .results {
   margin-top: 2rem;
 }
+
+.Results .results-container .free-search form {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.Results .results-container .free-search form input {
+  margin-top: 3rem;
+  width: 100%;
+  border: none;
+  height: 50px;
+  border-radius: 10px;
+  color: #67ffb6;
+  padding-left: 1rem;
+}
+
+.Results .results-container .free-search form button {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  border-radius: 0 5px 5px 0;
+  background-color: #67ffb6;
+  border: none;
+  height: 50px;
+  width: 75px;
+}
+
+.Results .button-container {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Results .button-container button {
+  color: white;
+  text-transform: uppercase;
+  background-color: #67ffb6;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+}

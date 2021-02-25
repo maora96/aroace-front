@@ -12,6 +12,7 @@ function Home() {
   const [stories, setStories] = React.useState([]);
   const [search, setSearch] = React.useState([]);
   const [filteredResults, setFilteredResults] = React.useState([]);
+  const [advancedSearch, setAdvancedSearch] = React.useState(false);
   const history = useHistory();
 
   React.useEffect(() => {
@@ -47,30 +48,28 @@ function Home() {
             button for inspiration!
           </p>
         </div>
-
-        <SearchBar />
-        {/* <div className="free-search">
+        <div className="free-search">
           <form
-          // onSubmit={(event) => {
-          //   console.log(search);
+            onSubmit={(event) => {
+              console.log(search);
 
-          //   event.preventDefault();
-          //   history.push(`/results?search=${search}`);
-          //   fetch(
-          //     `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
-          //   )
-          //     .then((res) => res.json())
-          //     .then((resJson) => {
-          //       console.log(search);
-          //       console.log(resJson.data);
+              event.preventDefault();
+              history.push(`/results?search=${search}`);
+              fetch(
+                `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(search);
+                  console.log(resJson.data);
 
-          //       if (resJson.data) {
-          //         const newResults = resJson.data.characters;
-          //         setFilteredResults(newResults);
-          //         console.log(filteredResults);
-          //       }
-          //     });
-          // }}
+                  if (resJson.data) {
+                    const newResults = resJson.data.characters;
+                    setFilteredResults(newResults);
+                    console.log(filteredResults);
+                  }
+                });
+            }}
           >
             <input
               type="text"
@@ -83,7 +82,19 @@ function Home() {
               <ButtonIcon fill="white" height="20px" width="30px" />
             </button>
           </form>
-        </div> */}
+        </div>
+
+        <div className="button-container">
+          <button
+            onClick={() => {
+              setAdvancedSearch(!advancedSearch);
+            }}
+          >
+            Advanced Search
+          </button>
+        </div>
+        {advancedSearch ? <SearchBar /> : ""}
+
         <div className="results">
           {filteredResults.map((i) => {
             return (

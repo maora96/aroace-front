@@ -99,6 +99,25 @@
   width: 75px;
 }
 
+.Home .button-container {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Home .button-container button {
+  color: white;
+  text-transform: uppercase;
+  background-color: #67ffb6;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+}
+
 .Home::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #bab5b5;

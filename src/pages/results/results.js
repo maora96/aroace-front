@@ -8,17 +8,12 @@ import { useHistory, useRouteMatch, useParams } from "react-router-dom";
 import SearchBar from "../../components/search-bar/search-bar";
 
 function Results({ location }) {
+  const [search, setSearch] = React.useState("");
   const [changed, setChanged] = React.useState(0);
   const [filteredResults, setFilteredResults] = React.useState([]);
+  const [advancedSearch, setAdvancedSearch] = React.useState(false);
   const history = useHistory();
 
-  const updateResults = async (input) => {
-    setFilteredResults(input);
-  };
-
-  //   React.useEffect(() => {
-  //       const params = new URLSearchParams(location.search)
-  //   })
   React.useEffect(() => {
     return history.listen((location) => {
       console.log(`You changed the page to: ${location.pathname}`);
@@ -60,7 +55,52 @@ function Results({ location }) {
       <MobileHeader />
 
       <div className="results-container">
-        <SearchBar />
+        <div className="free-search">
+          <form
+            onSubmit={(event) => {
+              console.log(search);
+
+              event.preventDefault();
+              history.push(`/results?search=${search}`);
+              fetch(
+                `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
+              )
+                .then((res) => res.json())
+                .then((resJson) => {
+                  console.log(search);
+                  console.log(resJson.data);
+
+                  if (resJson.data) {
+                    const newResults = resJson.data.characters;
+                    setFilteredResults(newResults);
+                    console.log(filteredResults);
+                  }
+                });
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Enter your keywords here to search"
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
+            ></input>
+            <button>
+              <ButtonIcon fill="white" height="20px" width="30px" />
+            </button>
+          </form>
+        </div>
+
+        <div className="button-container">
+          <button
+            onClick={() => {
+              setAdvancedSearch(!advancedSearch);
+            }}
+          >
+            Advanced Search
+          </button>
+        </div>
+        {advancedSearch ? <SearchBar /> : ""}
 
         {filteredResults ? (
           <div className="results">
