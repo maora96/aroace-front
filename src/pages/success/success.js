@@ -15,7 +15,7 @@ function Success() {
           <h2>Success!</h2>
           <button
             onClick={() => {
-              history.push("/");
+              history.go(-1);
             }}
           >
             Go back

@@ -5,7 +5,6 @@ import Globe from "../../assets/globe.png";
 import Twitter from "../../assets/twitter.png";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 import { Formik } from "formik";
-import { fetchWithBody } from "../../utils/fetch";
 import { useHistory } from "react-router-dom";
 
 export default function Contact() {
@@ -34,6 +33,7 @@ export default function Contact() {
             initialValues={{
               name: "",
               email: "",
+              subject: "",
               message: "",
             }}
             onSubmit={(values) => {
@@ -77,6 +77,18 @@ export default function Contact() {
                       placeholder="E-mail"
                       id="email"
                       value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                  </label>
+
+                  <label>
+                    Subject
+                    <input
+                      type="text"
+                      placeholder="Subject"
+                      id="subject"
+                      value={values.subject}
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />

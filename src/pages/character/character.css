@@ -11,6 +11,7 @@
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
+  padding-bottom: 2rem;
 }
 
 .Character .character-container::-webkit-scrollbar-track {

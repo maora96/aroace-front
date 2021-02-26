@@ -22,7 +22,7 @@ function SuccessSTSC() {
 
           <button
             onClick={() => {
-              history.push("/");
+              history.go(-1);
             }}
           >
             Go back
