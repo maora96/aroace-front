@@ -12,7 +12,7 @@ export default function RowCharacter(props) {
       <td>{content.pairing_qpp_or_romantic}</td>
       <td>{content.main_storyseries}</td>
       <td>{content.relationships}</td>
-      <td>{content.romantic_orientantion}</td>
+      <td>{content.romantic_orientation}</td>
       <td>{content.sexual_orientation}</td>
       <td>
         {type === "regular" ? (
