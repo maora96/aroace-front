@@ -364,6 +364,24 @@ export default function SuggestedCharacter() {
                       Delete
                     </button>
                     <button
+                      onClick={() => {
+                        // update character but don't add it to database/
+                        fetchWithToken(
+                          `https://aroacedb-back.herokuapp.com/suggest/characters/${params.id}`,
+                          "PUT",
+                          values,
+                          token
+                        )
+                          .then((res) => res.json())
+                          .then((resJson) => {
+                            console.log(resJson);
+                            history.push("/success");
+                          });
+                      }}
+                    >
+                      Update
+                    </button>
+                    <button
                       type="submit"
                       disabled={isSubmitting}
                       className="submit"
