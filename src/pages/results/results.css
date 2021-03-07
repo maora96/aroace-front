@@ -1,13 +1,13 @@
 .Results {
   display: flex;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   height: 100vh;
 }
 
 .Results .results-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #2b193d;
+  background: #f6f6f6;
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -15,19 +15,19 @@
 
 .Results .result-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: white;
+  background-color: #f6f6f6;
 }
 
 .Results .result-container::-webkit-scrollbar {
   width: 20px;
-  background-color: white;
+  background-color: #f6f6f6;
   border-radius: 0 10px 10px 0;
 }
 
 .Results .result-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #67ffb6;
+  background-color: #3f3f44;
 }
 
 .Results .results-container .old form {
@@ -43,7 +43,7 @@
   border: none;
   height: 50px;
   border-radius: 10px;
-  color: #67ffb6;
+  color: #b5de9d;
   padding-left: 1rem;
 }
 
@@ -52,7 +52,7 @@
   top: 48px;
   right: 0;
   border-radius: 0 5px 5px 0;
-  background-color: #67ffb6;
+  background-color: #b5de9d;
   border: none;
   height: 50px;
   width: 75px;
@@ -92,7 +92,7 @@
   border: none;
   height: 50px;
   border-radius: 10px;
-  color: #67ffb6;
+  color: #b5de9d;
   padding-left: 1rem;
 }
 
@@ -101,7 +101,7 @@
   top: 48px;
   right: 0;
   border-radius: 0 5px 5px 0;
-  background-color: #67ffb6;
+  background-color: #b5de9d;
   border: none;
   height: 50px;
   width: 75px;
@@ -115,13 +115,22 @@
 }
 
 .Results .button-container button {
-  color: white;
+  color: #b5de9d;
   text-transform: uppercase;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   font-size: 1rem;
   padding: 0.8rem 2rem;
   text-decoration: none;
+}
+
+.Results .count {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  color: #3f3f44;
+  font-weight: bold;
+  text-align: right;
 }

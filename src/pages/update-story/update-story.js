@@ -104,7 +104,7 @@ export default function UpdateStory() {
                       <span>
                         <label>Character importance</label>
                         <input
-                          id="chracter_importance"
+                          id="character_importance"
                           type="text"
                           placeholder="Character importance"
                           value={values.character_importance}

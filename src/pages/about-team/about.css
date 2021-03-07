@@ -1,13 +1,13 @@
 .About {
   display: flex;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   height: 100vh;
 }
 
 .About .about-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #2b193d;
+  background: #f6f6f6;
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -15,19 +15,19 @@
 
 .About .about-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: white;
+  background-color: #f6f6f6;
 }
 
 .About .about-container::-webkit-scrollbar {
   width: 20px;
-  background-color: white;
+  background-color: #f6f6f6;
   border-radius: 0 10px 10px 0;
 }
 
 .About .about-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #67ffb6;
+  background-color: #3f3f44;
 }
 
 .About .about {
@@ -45,7 +45,7 @@
 .About h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
-  color: #67ffb6;
+  color: #3f3f44;
   margin-bottom: 1rem;
 }
 
@@ -66,8 +66,8 @@
 
 .About .kofi-link {
   width: 250px;
-  background: #2b193d;
-  color: #67ffb6;
+  background: #3f3f44;
+  color: #b5de9d;
   border: none;
   padding: 1rem;
   border-radius: 10px;
@@ -84,7 +84,7 @@
 }
 
 .About a {
-  color: #67ffb6;
+  color: #b5de9d;
   font-weight: bold;
 }
 

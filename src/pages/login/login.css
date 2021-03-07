@@ -1,13 +1,13 @@
 .Login {
   display: flex;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   height: 100vh;
 }
 
 .Login .login-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #2b193d;
+  background: #f6f6f6;
   overflow-y: auto;
   height: 99vh;
   display: flex;
@@ -21,19 +21,19 @@
 
 .Login .login-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: white;
+  background-color: #f6f6f6;
 }
 
 .Login .login-container::-webkit-scrollbar {
   width: 20px;
-  background-color: white;
+  background-color: #f6f6f6;
   border-radius: 0 10px 10px 0;
 }
 
 .Login .login-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #67ffb6;
+  background-color: #3f3f44;
 }
 
 .Login .login-box {
@@ -46,7 +46,7 @@
 }
 
 .Login .login-box h2 {
-  color: #67ffb6;
+  color: #3f3f44;
   text-transform: uppercase;
   font-size: 2.3rem;
 }
@@ -75,9 +75,9 @@
 }
 
 .Login .login-box button {
-  background: #67ffb6;
+  background: #3f3f44;
   border: none;
-  color: white;
+  color: #b5de9d;
   font-weight: bold;
   width: 50%;
   margin: 0 auto;

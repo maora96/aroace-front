@@ -43,18 +43,19 @@
 
 .SearchBar form label span {
   text-transform: uppercase;
-  color: #67ffb6;
+  color: #3f3f44;
   font-weight: bold;
 }
 
 .SearchBar form button {
   border-radius: 5px;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   border: none;
   height: 40px;
   width: 175px;
   text-transform: uppercase;
-  color: white;
+  color: #b5de9d;
+
   font-weight: bold;
   margin-top: 2rem;
   align-self: flex-end;

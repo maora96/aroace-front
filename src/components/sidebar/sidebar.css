@@ -7,7 +7,7 @@
 .SidebarAdmin .sidebar-container {
   width: 100%;
   height: 100%;
-  background: #2b193d;
+  background: #f6f6f6;
   position: fixed;
   display: flex;
   border-radius: 0 15px 15px 0;
@@ -40,7 +40,7 @@
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1rem;
-  color: #67ffb6;
+  color: #3f3f44;
   width: 100%;
   display: flex;
   align-items: center;
@@ -60,7 +60,7 @@
 }
 
 .SidebarAdmin .sidebar-true-content .link-container a span:hover {
-  background-color: white;
+  background-color: #b5de9d;
 }
 
 .SidebarAdmin .sidebar-true-content .title-container {
@@ -73,8 +73,8 @@
   font-size: 1rem;
   line-height: 2rem;
   text-transform: uppercase;
-  color: #67ffb6;
-  border: 1px solid #67ffb6;
+  color: #3f3f44;
+  border: 1px solid #3f3f44;
   border-radius: 10px;
   width: 88%;
   padding: 0.5rem;
@@ -85,7 +85,7 @@
 .SidebarAdmin .icons {
   height: 100%;
   width: 18%;
-  background: #67ffb6;
+  background: #b5de9d;
   border-radius: 0 15px 15px 0;
   padding: 4rem 0.2rem 2.3rem 0.2rem;
 }
