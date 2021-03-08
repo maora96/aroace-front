@@ -1,6 +1,6 @@
 .Home {
   display: flex;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   height: 100vh;
 }
 
@@ -19,13 +19,19 @@
 .Home .welcome h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
-  color: #67ffb6;
+  color: #3f3f44;
   margin-bottom: 1rem;
 }
 
 .Home .welcome p {
   line-height: 1.4rem;
   margin-bottom: 1rem;
+}
+
+.Home .welcome a {
+  color: #b5de9d;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .Home .random {
@@ -42,14 +48,14 @@
 .Home .random h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
-  color: #67ffb6;
+  color: #3f3f44;
   margin-bottom: 1rem;
 }
 
 .Home .home-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #2b193d;
+  background: #f6f6f6;
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -57,19 +63,19 @@
 
 .Home .home-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: white;
+  background-color: #f6f6f6;
 }
 
 .Home .home-container::-webkit-scrollbar {
   width: 20px;
-  background-color: white;
+  background-color: #f6f6f6;
   border-radius: 0 10px 10px 0;
 }
 
 .Home .home-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #67ffb6;
+  background-color: #3f3f44;
 }
 
 .Home .home-container .free-search form {
@@ -85,7 +91,7 @@
   border: none;
   height: 50px;
   border-radius: 10px;
-  color: #67ffb6;
+  color: #3f3f44;
   padding-left: 1rem;
 }
 
@@ -94,23 +100,34 @@
   top: 48px;
   right: 0;
   border-radius: 0 5px 5px 0;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   border: none;
   height: 50px;
   width: 75px;
+}
+
+.Home button:hover {
+  background-color: #b5de9d;
+  color: white;
+}
+
+.Home .button-container button:hover {
+  background-color: #b5de9d;
+  color: white;
 }
 
 .Home .button-container {
   width: 60%;
   margin: 0 auto;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Home .button-container button {
-  color: white;
+  color: #b5de9d;
   text-transform: uppercase;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -143,15 +160,33 @@
 }
 
 .Home .char-btn button {
-  color: white;
+  color: #b5de9d;
   text-transform: uppercase;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   font-size: 1.5rem;
   padding: 0.8rem 2rem;
   margin-top: 1rem;
+}
+
+.Home .char-btn button:hover {
+  background: #b5de9d;
+  color: white;
+}
+
+.Home .button-container .common-searches {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.Home .button-container .common-searches a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #b5de9d;
 }
 
 @media only screen and (max-width: 1040px) {

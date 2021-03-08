@@ -1,13 +1,13 @@
 .SuggestedCharacters {
   display: flex;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   height: 100vh;
 }
 
 .SuggestedCharacters .suggested-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #2b193d;
+  background: #f6f6f6;
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -15,26 +15,26 @@
 
 .SuggestedCharacters .suggested-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: white;
+  background-color: #f6f6f6;
 }
 
 .SuggestedCharacters .suggested-container::-webkit-scrollbar {
   width: 20px;
-  background-color: white;
+  background-color: #f6f6f6;
   border-radius: 0 10px 10px 0;
 }
 
 .SuggestedCharacters .suggested-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #67ffb6;
+  background-color: #3f3f44;
 }
 
 .SuggestedCharacters .title {
   width: 70%;
   margin: 0 auto;
   margin-top: 3rem;
-  color: #67ffb6;
+  color: #3f3f44;
   text-transform: uppercase;
   font-size: 1.8rem;
   margin-bottom: 1rem;

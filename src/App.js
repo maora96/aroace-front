@@ -32,6 +32,8 @@ import SuggestedStoriesSC from "./pages/sc-suggested-stories/suggested-stories";
 import SCSuggestedStory from "./pages/sc-suggested-story/suggested-story";
 import Contact from "./pages/contact/contact";
 import Results from "./pages/results/results";
+import SuccessDelete from "./pages/success-delete/success";
+import SuccessDeleteCharacter from "./pages/success-delete-all/success";
 
 function App() {
   const [characterCheck, setCharacterCheck] = React.useState(true);
@@ -83,6 +85,11 @@ function App() {
             <Route path="/add-review/:id" component={AddReview} />
             <Route path="/success" component={Success} />
             <Route path="/success-stsc/:id" component={SuccessSTSC} />
+            <Route path="/success-deleted" component={SuccessDelete} />
+            <Route
+              path="/success-deleted-ch"
+              component={SuccessDeleteCharacter}
+            />
             <Route path="/about-the-team" component={AboutTeam} />
             <Route
               path="/sc-suggested-stories"

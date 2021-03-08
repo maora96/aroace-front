@@ -355,15 +355,14 @@ export default function SuggestedCharacter() {
                           .then((res) => res.json())
                           .then((resJson) => {
                             console.log(resJson);
-                            history.push("/success");
+                            history.push("/success-deleted");
                           });
-
-                        history.push("/success");
                       }}
                     >
                       Delete
                     </button>
                     <button
+                      type="button"
                       onClick={() => {
                         // update character but don't add it to database/
                         fetchWithToken(
@@ -381,11 +380,7 @@ export default function SuggestedCharacter() {
                     >
                       Update
                     </button>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="submit"
-                    >
+                    <button type="submit" className="submit">
                       Add Character to Database
                     </button>
                   </div>

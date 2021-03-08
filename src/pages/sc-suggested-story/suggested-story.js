@@ -113,14 +113,23 @@ export default function SCSuggestedStory() {
                       <span>
                         <label>Story length</label>
                         <span>
-                          <input
-                            id="story_length"
-                            type="text"
-                            placeholder="Story length"
+                          <select
+                            name="story_length"
                             value={values.story_length}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                          />
+                            onBlur={handleChange}
+                          >
+                            <option value="" label="Select one" />
+                            <option value="Short story" label="Short story" />
+                            <option value="Novella" label="Novella" />
+                            <option
+                              value="Novel (short)"
+                              label="Novel (short)"
+                            />
+                            <option value="Novel (long)" label="Novel (long)" />
+                            <option value="Anthology" label="Anthology" />
+                            <option value="Webseries" label="Webseries" />
+                          </select>
                         </span>
                       </span>
                       <span>
@@ -228,6 +237,25 @@ export default function SCSuggestedStory() {
                         }}
                       >
                         Delete
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          // update story but don't add it to database/
+                          fetchWithToken(
+                            `https://aroacedb-back.herokuapp.com/suggest/sc/stories/${params.id}`,
+                            "PUT",
+                            values,
+                            token
+                          )
+                            .then((res) => res.json())
+                            .then((resJson) => {
+                              console.log(resJson);
+                              history.push("/success");
+                            });
+                        }}
+                      >
+                        Update
                       </button>
                       <button
                         type="submit"

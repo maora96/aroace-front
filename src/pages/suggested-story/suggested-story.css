@@ -1,13 +1,13 @@
 .SuggestStory {
   display: flex;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   height: 100vh;
 }
 
 .SuggestStory .story-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #2b193d;
+  background: #f6f6f6;
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -15,18 +15,18 @@
 
 .SuggestStory .story-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: white;
+  background-color: #f6f6f6;
 }
 
 .SuggestStory .story-container::-webkit-scrollbar {
   width: 20px;
-  background-color: white;
+  background-color: #f6f6f6;
   border-radius: 0 10px 10px 0;
 }
 
 .SuggestStory .story-container::-webkit-scrollbar-thumb {
   border: none;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
 }
 
 .SuggestStory .stories {
@@ -42,15 +42,15 @@
 }
 
 .SuggestStory .stories h3 {
-  color: #67ffb6;
+  color: #3f3f44;
   text-transform: uppercase;
   font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 
 .SuggestStory .stories a {
-  color: white;
-  background: #67ffb6;
+  color: #b5de9d;
+  background: #3f3f44;
   text-transform: uppercase;
   text-decoration: none;
   padding: 1rem 2rem;
@@ -59,7 +59,7 @@
 }
 
 .SuggestStory .StoryInfo {
-  background: #ebfcf8;
+  background: rgba(181, 222, 157, 0.44);
   width: 95%;
   margin: 0 auto;
   padding: 1rem;
@@ -128,8 +128,8 @@
 }
 
 .SuggestStory button {
-  color: white;
-  background: #67ffb6;
+  color: #b5de9d;
+  background: #3f3f44;
   text-transform: uppercase;
   text-decoration: none;
   padding: 1rem 2rem;
