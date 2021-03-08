@@ -57,11 +57,11 @@ export default function AboutTeam() {
 
           <h3>The Dev</h3>
           <p>
-            Ren Oliveira is an a-spec nonbinary writer by night and a web
-            developer by day. Their short story <em>Half a Heart</em> was
-            published in{" "}
-            <em>Common Bonds: an Aromantic Speculative Anthology</em>. You can
-            find them on <a href="https://twitter.com/nyphren">twitter</a>.
+            Nyphren is writer by night and a web developer by day. Their short
+            story <em>Half a Heart</em> was published in{" "}
+            <em>Common Bonds: an Aromantic Speculative Anthology</em>.
+            {/* You can
+            find them on <a href="https://twitter.com/nyphren">twitter</a>. */}
           </p>
 
           <a href="https://ko-fi.com/nyphren" className="kofi-link">
