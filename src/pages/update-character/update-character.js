@@ -28,7 +28,7 @@ export default function UpdateCharacter() {
     <div className="Character">
       <Sidebar />
       <MobileHeader />
-      <div className="character-container">
+      <div className="character-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="suggest">
           <h2 className="title">Update character</h2>
 

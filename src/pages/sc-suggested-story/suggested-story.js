@@ -43,7 +43,7 @@ export default function SCSuggestedStory() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container">
+      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="stories">
           <h3>Suggested Story</h3>
           <h4>Character: {name}</h4>

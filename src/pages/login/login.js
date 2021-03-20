@@ -15,7 +15,7 @@ function Login() {
       <Sidebar />
       <MobileHeader />
 
-      <div className="login-container">
+      <div className="login-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="login-box">
           <h2>Login</h2>
           <p>Admin login for the database. Non-admin users can't be created.</p>

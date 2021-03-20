@@ -27,7 +27,7 @@ export default function SuggestedStories() {
     <div className="SuggestedCharacters">
       <Sidebar />
       <MobileHeader />
-      <div className="suggested-container">
+      <div className="suggested-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="title">
           <h2>Suggested Stories</h2>
         </div>

@@ -36,7 +36,7 @@ export default function AllCharacters() {
       <Sidebar />
 
       <MobileHeader />
-      <div className="all-characters-container">
+      <div className="all-characters-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="title">
           <h2>All Characters</h2>
           {token ? <a href="/add-character">Add character</a> : ""}

@@ -43,7 +43,7 @@ function SuggestCharacter() {
     <div className="SuggestCharacter">
       <Sidebar />
       <MobileHeader />
-      <div className="suggest-container">
+      <div className="suggest-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="suggest">
           <h2 className="title">Suggest a character</h2>
           {characterCheck ? (

@@ -10,7 +10,7 @@ function SuccessDelete() {
     <div className="Home">
       <Sidebar />
       <MobileHeader />
-      <div className="home-container">
+      <div className="home-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="success">
           <h2>Success!</h2>
           <button

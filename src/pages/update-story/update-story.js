@@ -32,7 +32,7 @@ export default function UpdateStory() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container">
+      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="stories">
           <h3>Update Story</h3>
           <Formik

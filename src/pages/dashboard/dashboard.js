@@ -90,41 +90,55 @@ function Dashboard() {
       <Sidebar />
       <MobileHeader />
 
-      <div className="dashboard-container">
+      <div className="dashboard-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="header">
-          <h2>Dashboard</h2>
+          <h2 className="text-secondary dark:text-darksecondary">Dashboard</h2>
         </div>
         <Stats stats={stats} />
         <RecentSuggested characters={recentlyAdded} />
 
         <div className="header">
-          <a href="/suggested-characters">View All</a>
+          <a
+            href="/suggested-characters"
+            className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
+          >
+            View All
+          </a>
         </div>
 
         <div className="export">
-          <a href="https://aroacedb-back.herokuapp.com/download/characters">
+          <a
+            href="https://aroacedb-back.herokuapp.com/download/characters"
+            className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
+          >
             Export Characters
           </a>
 
-          <a href="https://aroacedb-back.herokuapp.com/download/stories">
+          <a
+            href="https://aroacedb-back.herokuapp.com/download/stories"
+            className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
+          >
             Export Stories
           </a>
 
-          <a href="https://aroacedb-back.herokuapp.com/download/reviews">
+          <a
+            href="https://aroacedb-back.herokuapp.com/download/reviews"
+            className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
+          >
             Export Reviews
           </a>
         </div>
 
         <div className="toggle-container">
           <div className="toggle-input">
-            <span>
+            <span className="text-secondary dark:text-darksecondary">
               Currently character suggestions are
               <b> {characterCheck ? "enabled" : "disabled"}</b>, story
               suggestions are<b> {storyCheck ? "enabled" : "disabled"}</b> and
               review suggestions are{" "}
               <b>{reviewCheck ? "enabled" : "disabled"}</b>.
             </span>
-            <label className="switch">
+            <label className="switch text-secondary dark:text-darksecondary">
               Character Suggestions
               <div>
                 Enable
@@ -167,7 +181,7 @@ function Dashboard() {
                 />
               </div>
             </label>
-            <label className="switch">
+            <label className="switch text-secondary dark:text-darksecondary">
               Review Suggestions
               <div>
                 Enable
@@ -210,7 +224,7 @@ function Dashboard() {
                 />
               </div>
             </label>
-            <label className="switch">
+            <label className="switch text-secondary dark:text-darksecondary">
               Story Suggestions
               <div>
                 Enable

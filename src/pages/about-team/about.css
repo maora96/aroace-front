@@ -7,7 +7,7 @@
 .About .about-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #f6f6f6;
+  /* background: #f6f6f6; */
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -66,8 +66,8 @@
 
 .About .kofi-link {
   width: 250px;
-  background: #3f3f44;
-  color: #b5de9d;
+  /* background: #3f3f44;
+  color: #b5de9d; */
   border: none;
   padding: 1rem;
   border-radius: 10px;
@@ -84,7 +84,7 @@
 }
 
 .About a {
-  color: #b5de9d;
+  /* color: #b5de9d; */
   font-weight: bold;
 }
 

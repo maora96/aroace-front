@@ -13,7 +13,7 @@ export default function Contact() {
     <div className="Contact">
       <Sidebar />
       <MobileHeader />
-      <div className="contact-container">
+      <div className="contact-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="contact">
           <h2>Contact</h2>
           <p>

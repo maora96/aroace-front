@@ -34,8 +34,10 @@ import Contact from "./pages/contact/contact";
 import Results from "./pages/results/results";
 import SuccessDelete from "./pages/success-delete/success";
 import SuccessDeleteCharacter from "./pages/success-delete-all/success";
+import useDarkMode from "./utils/theme-context";
 
 function App() {
+  useDarkMode();
   const [characterCheck, setCharacterCheck] = React.useState(true);
   const [reviewCheck, setReviewCheck] = React.useState(true);
   const [storyCheck, setStoryCheck] = React.useState(true);

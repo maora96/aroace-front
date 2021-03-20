@@ -5,7 +5,9 @@ export default function RecentSuggested(props) {
 
   return (
     <div className="RecentSuggested">
-      <h3>Recently Suggested Characters</h3>
+      <h3 className="text-secondary dark:text-darksecondary">
+        Recently Suggested Characters
+      </h3>
 
       <div className="characters">
         {characters.map((character) => {
@@ -30,7 +32,12 @@ export default function RecentSuggested(props) {
                 {character.sexual_orientation} character.
               </p>
 
-              <a href={`/suggested-character/${character.id}`}>Read more</a>
+              <a
+                href={`/suggested-character/${character.id}`}
+                className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+              >
+                Read more
+              </a>
             </div>
           );
         })}

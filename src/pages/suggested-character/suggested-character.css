@@ -7,7 +7,7 @@
 .Character .character-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #f6f6f6;
+  /* background: #f6f6f6; */
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;

@@ -8,7 +8,7 @@
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  color: #3f3f44;
+
   margin-bottom: 2rem;
 }
 
@@ -34,7 +34,7 @@
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
-  color: #3f3f44;
+  /* color: #3f3f44; */
 }
 
 .Stats .stats-box span:first-child {
@@ -42,5 +42,5 @@
   font-size: 35px;
   line-height: 42px;
   text-transform: uppercase;
-  color: #b5de9d;
+  /* color: #b5de9d; */
 }
