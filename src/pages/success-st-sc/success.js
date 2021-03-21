@@ -12,15 +12,21 @@ function SuccessSTSC() {
     <div className="Home">
       <Sidebar />
       <MobileHeader />
-      <div className="home-container">
+      <div className="home-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="success">
-          <h2>Success!</h2>
+          <h2 className="text-secondary dark:text-darksecondary">Success!</h2>
           <div className="container">
             <p>Would you like to suggest another story for this character?</p>
-            <a href={`/suggest-story-sc/${params.id}`}>Suggest another story</a>
+            <a
+              href={`/suggest-story-sc/${params.id}`}
+              className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+            >
+              Suggest another story
+            </a>
           </div>
 
           <button
+            className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
             onClick={() => {
               history.go(-1);
             }}

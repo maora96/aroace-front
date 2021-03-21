@@ -20,7 +20,7 @@ export default function SuggestReview() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container">
+      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="stories">
           <h3>Suggest a Review</h3>
           <Formik
@@ -191,7 +191,10 @@ export default function SuggestReview() {
                       </div>
                     </div>
                   </div>
-                  <button type="submit" className="review-right">
+                  <button
+                    type="submit"
+                    className="review-right bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                  >
                     Suggest
                   </button>
                 </form>

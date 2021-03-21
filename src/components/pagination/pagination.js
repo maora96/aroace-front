@@ -15,7 +15,7 @@ export default function Pagination(props) {
   return (
     <div className="Pagination">
       {totalPages ? (
-        <div className="placeholder">
+        <div className="placeholder text-secondary dark:text-darksecondary">
           {pages.map((page) => {
             return (
               <span

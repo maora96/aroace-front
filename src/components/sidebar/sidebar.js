@@ -5,6 +5,7 @@ import { ReactComponent as DatabaseIcon } from "../../assets/database-solid.svg"
 import { ReactComponent as FeatherIcon } from "../../assets/feather-solid.svg";
 import { ReactComponent as BookmarkIcon } from "../../assets/bookmark-solid.svg";
 import { ReactComponent as LoginIcon } from "../../assets/user-cog-solid.svg";
+import ModeSelector from "../mode-selector/mode-selector";
 
 export default function Sidebar() {
   const [token, setToken] = React.useState("");
@@ -28,53 +29,83 @@ export default function Sidebar() {
   }, [characterCheck]);
   return (
     <div className="SidebarAdmin">
-      <div className="sidebar-container">
-        <div className="icons"></div>
+      <div className="sidebar-container bg-primary dark:bg-darkprimary  transition duration-500">
+        <div className="icons bg-detail dark:bg-darkdetail"></div>
         <div className="sidebar-content"></div>
         <div className="sidebar-true-content">
           <div className="top">
             <div className="title-container">
-              <h1>The Aroace Database</h1>
+              <h1 className="border text-secondary font-bold border-secondary dark:text-darksecondary dark:border-darksecondary">
+                The Aroace Database
+              </h1>
             </div>
+            <ModeSelector />
             <div className="link-container">
-              <a href="/">
+              <a href="/" className="text-secondary dark:text-darksecondary">
                 <HomeIcon fill="white" height="20px" width="30px" />
-                <span>Home</span>
+                <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                  Home
+                </span>
               </a>
             </div>
             {token ? (
               <div className="link-container">
-                <a href="/dashboard">
+                <a
+                  href="/dashboard"
+                  className="text-secondary dark:text-darksecondary"
+                >
                   <BookmarkIcon fill="white" height="20px" width="30px" />
-                  <span>Dashboard</span>
+                  <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                    Dashboard
+                  </span>
                 </a>
               </div>
             ) : (
               ""
             )}
             <div className="link-container">
-              <a href="/about">
+              <a
+                href="/about"
+                className="text-secondary dark:text-darksecondary"
+              >
                 <DatabaseIcon fill="white" height="20px" width="30px" />
-                <span>About the database</span>
+                <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                  About the database
+                </span>
               </a>
             </div>
             <div className="link-container">
-              <a href="/about-the-team">
+              <a
+                href="/about-the-team"
+                className="text-secondary dark:text-darksecondary"
+              >
                 <DatabaseIcon fill="white" height="20px" width="30px" />
-                <span>About the team</span>
+                <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                  About the team
+                </span>
               </a>
             </div>
             <div className="link-container">
-              <a href="/all-characters">
+              <a
+                href="/all-characters"
+                className="text-secondary dark:text-darksecondary"
+              >
                 <DatabaseIcon fill="white" height="20px" width="30px" />
-                <span>All characters</span>
+                <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                  All characters
+                </span>
               </a>
             </div>
             {characterCheck ? (
               <div className="link-container">
-                <a href="/suggest-character">
+                <a
+                  href="/suggest-character"
+                  className="text-secondary dark:text-darksecondary"
+                >
                   <FeatherIcon fill="white" height="20px" width="30px" />
-                  <span>Suggest a character</span>
+                  <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                    Suggest a character
+                  </span>
                 </a>
               </div>
             ) : (
@@ -82,39 +113,64 @@ export default function Sidebar() {
             )}
 
             <div className="link-container">
-              <a href="/contact">
+              <a
+                href="/contact"
+                className="text-secondary dark:text-darksecondary"
+              >
                 <FeatherIcon fill="white" height="20px" width="30px" />
-                <span>Contact</span>
+                <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                  Contact
+                </span>
               </a>
             </div>
 
             {token ? (
               <div className="div-container">
                 <div className="link-container">
-                  <a href="/suggested-characters">
+                  <a
+                    href="/suggested-characters"
+                    className="text-secondary dark:text-darksecondary"
+                  >
                     <FeatherIcon fill="white" height="20px" width="30px" />
-                    <span>Suggested characters</span>
+                    <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                      Suggested characters
+                    </span>
                   </a>
                 </div>
 
                 <div className="link-container">
-                  <a href="/suggested-stories">
+                  <a
+                    href="/suggested-stories"
+                    className="text-secondary dark:text-darksecondary"
+                  >
                     <FeatherIcon fill="white" height="20px" width="30px" />
-                    <span>Suggested stories</span>
+                    <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                      Suggested stories
+                    </span>
                   </a>
                 </div>
 
                 <div className="link-container">
-                  <a href="/sc-suggested-stories">
+                  <a
+                    href="/sc-suggested-stories"
+                    className="text-secondary dark:text-darksecondary"
+                  >
                     <FeatherIcon fill="white" height="20px" width="30px" />
-                    <span>SC Suggested stories</span>
+                    <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                      SC Suggested stories
+                    </span>
                   </a>
                 </div>
 
                 <div className="link-container">
-                  <a href="/suggested-reviews">
+                  <a
+                    href="/suggested-reviews"
+                    className="text-secondary dark:text-darksecondary"
+                  >
                     <FeatherIcon fill="white" height="20px" width="30px" />
-                    <span>Suggested reviews</span>
+                    <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                      Suggested reviews
+                    </span>
                   </a>
                 </div>
               </div>
@@ -126,19 +182,27 @@ export default function Sidebar() {
             <div className="link-container">
               <a
                 href="/"
+                className="text-secondary dark:text-darksecondary"
                 onClick={() => {
                   localStorage.removeItem("token");
                 }}
               >
                 <LoginIcon fill="white" height="20px" width="30px" />
-                <span>Logout</span>
+                <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                  Logout
+                </span>
               </a>
             </div>
           ) : (
             <div className="link-container">
-              <a href="/login">
+              <a
+                href="/login"
+                className="text-secondary dark:text-darksecondary"
+              >
                 <LoginIcon fill="white" height="20px" width="30px" />
-                <span>Admin Login</span>
+                <span className="hover:bg-detail dark:hover:bg-darkdetail">
+                  Admin Login
+                </span>
               </a>
             </div>
           )}

@@ -12,22 +12,34 @@ function TableReview(props) {
       <thead>
         {id === "character" ? (
           <tr>
-            <th>Character Name</th>
-            <th>Author</th>
-            <th>Importance</th>
-            <th>Romantic Orientation</th>
-            <th>Sexual Orientation</th>
-            <th>More</th>
+            <th className="text-secondary dark:text-darksecondary">
+              Character Name
+            </th>
+            <th className="text-secondary dark:text-darksecondary">Author</th>
+            <th className="text-secondary dark:text-darksecondary">
+              Importance
+            </th>
+            <th className="text-secondary dark:text-darksecondary">
+              Romantic Orientation
+            </th>
+            <th className="text-secondary dark:text-darksecondary">
+              Sexual Orientation
+            </th>
+            <th className="text-secondary dark:text-darksecondary">More</th>
           </tr>
         ) : id === "story" ? (
           <tr>
-            <th>Story Title</th>
-            <th>Author</th>
+            <th className="text-secondary dark:text-darksecondary">
+              Story Title
+            </th>
+            <th className="text-secondary dark:text-darksecondary">Author</th>
           </tr>
         ) : (
           <tr>
-            <th>Review for</th>
-            <th>Reviewer</th>
+            <th className="text-secondary dark:text-darksecondary">
+              Review for
+            </th>
+            <th className="text-secondary dark:text-darksecondary">Reviewer</th>
           </tr>
         )}
       </thead>

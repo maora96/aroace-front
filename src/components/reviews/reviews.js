@@ -25,10 +25,24 @@ export default function Reviews(props) {
 
   const showButtons = () => {
     if (token) {
-      return <a href={`/add-review/${character_id}`}>Add Review</a>;
+      return (
+        <a
+          href={`/add-review/${character_id}`}
+          className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+        >
+          Add Review
+        </a>
+      );
     } else {
       if (reviewCheck) {
-        return <a href={`/suggest-review/${character_id}`}>Suggest Review</a>;
+        return (
+          <a
+            href={`/suggest-review/${character_id}`}
+            className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+          >
+            Suggest Review
+          </a>
+        );
       }
     }
   };
