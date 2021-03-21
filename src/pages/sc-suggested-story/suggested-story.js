@@ -43,7 +43,7 @@ export default function SCSuggestedStory() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container">
+      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="stories">
           <h3>Suggested Story</h3>
           <h4>Character: {name}</h4>
@@ -97,7 +97,7 @@ export default function SCSuggestedStory() {
               } = props;
               return (
                 <form onSubmit={handleSubmit}>
-                  <div className="StoryInfo">
+                  <div className="StoryInfo bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary">
                     <div className="line">
                       <h4>
                         <label>Story title</label>
@@ -223,6 +223,7 @@ export default function SCSuggestedStory() {
                     <img src={values.cover} alt="cover" />
                     <div className="buttons">
                       <button
+                        className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                         onClick={() => {
                           fetchWithTokenNoBody(
                             `https://aroacedb-back.herokuapp.com/suggest/stories/${story.id}`,
@@ -239,6 +240,7 @@ export default function SCSuggestedStory() {
                         Delete
                       </button>
                       <button
+                        className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                         type="button"
                         onClick={() => {
                           // update story but don't add it to database/
@@ -260,7 +262,7 @@ export default function SCSuggestedStory() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="submit"
+                        className="submit bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                       >
                         Add Story to Database
                       </button>

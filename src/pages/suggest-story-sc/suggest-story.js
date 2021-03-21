@@ -14,7 +14,7 @@ export default function SuggestStorySC() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container">
+      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="stories">
           <h3>Suggest a Story</h3>
           <Formik
@@ -417,7 +417,7 @@ export default function SuggestStorySC() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="submit"
+                      className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                     >
                       Suggest
                     </button>

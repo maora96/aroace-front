@@ -28,9 +28,11 @@ export default function SuggestedCharacters() {
     <div className="SuggestedCharacters">
       <Sidebar />
       <MobileHeader />
-      <div className="suggested-container">
+      <div className="suggested-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="title">
-          <h2>Suggested Characters</h2>
+          <h2 className="text-secondary dark:text-darksecondary">
+            Suggested Characters
+          </h2>
         </div>
         <div className="table-container">
           <TableCharacter content={characters} type="suggest" id="character" />

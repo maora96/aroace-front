@@ -28,7 +28,7 @@ export default function UpdateCharacter() {
     <div className="Character">
       <Sidebar />
       <MobileHeader />
-      <div className="character-container">
+      <div className="character-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="suggest">
           <h2 className="title">Update character</h2>
 
@@ -241,7 +241,7 @@ export default function UpdateCharacter() {
                   </div>
                   <div className="buttons">
                     <button
-                      type="button"
+                      type="button bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                       onClick={() => {
                         console.log("delete from database");
                         fetch(
@@ -265,7 +265,7 @@ export default function UpdateCharacter() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="submit"
+                      className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                     >
                       Update Character to Database
                     </button>

@@ -7,7 +7,7 @@
 .Dashboard .dashboard-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #f6f6f6;
+
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -50,8 +50,8 @@
   font-size: 18px;
   line-height: 45px;
   text-transform: uppercase;
-  color: #3f3f44;
-  background: #b5de9d;
+  /* color: #3f3f44;
+  background: #b5de9d; */
   border-radius: 10px;
   text-decoration: none;
   padding: 1rem;
@@ -71,7 +71,7 @@
 }
 
 .Dashboard .toggle-input label {
-  color: #3f3f44;
+  /* color: #3f3f44; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,7 +80,7 @@
 }
 
 .Dashboard .toggle-input span {
-  color: #3f3f44;
+  /* color: #3f3f44; */
   margin-bottom: 1rem;
 }
 
@@ -100,9 +100,9 @@
 
 .Dashboard .export a {
   text-decoration: none;
-  background: #b5de9d;
+  /* background: #b5de9d; */
   padding: 1rem;
-  color: #3f3f44;
+  /* color: #3f3f44; */
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 10px;

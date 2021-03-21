@@ -7,7 +7,7 @@
 .SuggestCharacter .suggest-container {
   width: 73%;
   margin: 0.35rem auto;
-  background: #f6f6f6;
+  /* background: #f6f6f6; */
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -47,7 +47,7 @@
 }
 
 .SuggestCharacter .suggest h2 {
-  color: #3f3f44;
+  /* color: #3f3f44; */
   text-transform: uppercase;
   font-size: 2.3rem;
 }
@@ -143,8 +143,8 @@
 
 .SuggestCharacter button {
   border: none;
-  background: #3f3f44;
-  color: #b5de9d;
+  /* background: #3f3f44;
+  color: #b5de9d; */
   text-transform: uppercase;
   padding: 0.5rem 2rem;
   border-radius: 10px;

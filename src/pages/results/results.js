@@ -75,7 +75,7 @@ function Results({ location }) {
       <Sidebar setFilteredResults={setFilteredResults} />
       <MobileHeader />
 
-      <div className="results-container">
+      <div className="results-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="free-search">
           <form
             onSubmit={(event) => {

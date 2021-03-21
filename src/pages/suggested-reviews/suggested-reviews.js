@@ -28,9 +28,11 @@ export default function SuggestedReviews() {
     <div className="SuggestedCharacters">
       <Sidebar />
       <MobileHeader />
-      <div className="suggested-container">
+      <div className="suggested-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="title">
-          <h2>Suggested Reviews</h2>
+          <h2 className="text-secondary dark:text-darksecondary">
+            Suggested Reviews
+          </h2>
         </div>
         <TableReview content={reviews} type="suggest" id="review" />
         <Pagination

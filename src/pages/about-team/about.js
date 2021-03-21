@@ -10,7 +10,7 @@ export default function AboutTeam() {
     <div className="About">
       <Sidebar />
       <MobileHeader />
-      <div className="about-container">
+      <div className="about-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="about">
           <h2>About the team</h2>
           <h3>The Creator</h3>
@@ -29,7 +29,10 @@ export default function AboutTeam() {
             more on her <a href="http://claudiearseneault.com/">website</a>!
           </p>
 
-          <a href="https://ko-fi.com/claudie" className="kofi-link">
+          <a
+            href="https://ko-fi.com/claudie"
+            className="kofi-link bg-secondary dark:bg-darkdetail text-primary dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+          >
             Buy Claudie a Ko-fi!
           </a>
           <div className="social-media">
@@ -64,7 +67,10 @@ export default function AboutTeam() {
             find them on <a href="https://twitter.com/nyphren">twitter</a>. */}
           </p>
 
-          <a href="https://ko-fi.com/nyphren" className="kofi-link">
+          <a
+            href="https://ko-fi.com/nyphren"
+            className="kofi-link bg-secondary dark:bg-darkdetail text-primary dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+          >
             Buy Ren a Ko-fi!
           </a>
         </div>
