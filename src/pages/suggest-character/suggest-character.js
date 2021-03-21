@@ -675,6 +675,13 @@ function SuggestCharacter() {
                       </div>
                     </div>
 
+                    <div className="suggest-review">
+                      <p>
+                        Once the character has been accepted to the database you
+                        will be able to suggest reviews and stories for them!
+                      </p>
+                    </div>
+
                     <button
                       type="submit"
                       disabled={isSubmitting}

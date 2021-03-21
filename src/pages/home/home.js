@@ -84,29 +84,7 @@ function Home() {
           </form>
         </div>
 
-        <div className="button-container text-secondary dark:text-darksecondary">
-          <div className="common-searches">
-            <span>Common searches: </span>
-            <a
-              href="/results?search=acespec"
-              className="text-detail dark:text-darkdetail"
-            >
-              All Aces
-            </a>
-            <a
-              href="/results?search=arospec"
-              className="text-detail dark:text-darkdetail"
-            >
-              All Aros
-            </a>
-            <a
-              href="/results?search=canonleads"
-              className="text-detail dark:text-darkdetail"
-            >
-              In-Canon Aro/Ace leads{" "}
-            </a>
-          </div>
-
+        <div className="button-container">
           <button
             className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
             onClick={() => {

@@ -1,13 +1,13 @@
 .SuggestStory {
   display: flex;
-  background-color: #3f3f44;
+  background-color: #67ffb6;
   height: 100vh;
 }
 
 .SuggestStory .story-container {
   width: 73%;
   margin: 0.35rem auto;
-  /* background: #f6f6f6; */
+  background: #2b193d;
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -15,18 +15,18 @@
 
 .SuggestStory .story-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: #f6f6f6;
+  background-color: white;
 }
 
 .SuggestStory .story-container::-webkit-scrollbar {
   width: 20px;
-  background-color: #f6f6f6;
+  background-color: white;
   border-radius: 0 10px 10px 0;
 }
 
 .SuggestStory .story-container::-webkit-scrollbar-thumb {
   border: none;
-  background-color: #3f3f44;
+  background-color: #67ffb6;
 }
 
 .SuggestStory .stories {
@@ -42,7 +42,7 @@
 }
 
 .SuggestStory .stories h3 {
-  color: #3f3f44;
+  color: #67ffb6;
   text-transform: uppercase;
   font-size: 1.8rem;
   margin-bottom: 2rem;
@@ -51,12 +51,12 @@
 .SuggestStory .stories h4 {
   text-transform: uppercase;
   margin-bottom: 1rem;
-  /* color: #3f3f44; */
+  color: #67ffb6;
 }
 
 .SuggestStory .stories a {
-  color: #b5de9d;
-  background: #3f3f44;
+  color: white;
+  background: #67ffb6;
   text-transform: uppercase;
   text-decoration: none;
   padding: 1rem 2rem;
@@ -65,7 +65,7 @@
 }
 
 .SuggestStory .StoryInfo {
-  /* background: rgba(181, 222, 157, 0.44); */
+  background: #ebfcf8;
   width: 95%;
   margin: 0 auto;
   padding: 1rem;
@@ -134,8 +134,8 @@
 }
 
 .SuggestStory button {
-  /* color: #b5de9d;
-  background: #3f3f44; */
+  color: white;
+  background: #67ffb6;
   text-transform: uppercase;
   text-decoration: none;
   padding: 1rem 2rem;

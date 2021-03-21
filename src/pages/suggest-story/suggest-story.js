@@ -140,23 +140,14 @@ export default function SuggestStory() {
                           <label>Story length</label>
                         </div>
                         <span>
-                          <select
-                            name="story_length"
+                          <input
+                            id="story_length"
+                            type="text"
+                            placeholder="Story length"
                             value={values.story_length}
                             onChange={handleChange}
-                            onBlur={handleChange}
-                          >
-                            <option value="" label="Select one" />
-                            <option value="Short story" label="Short story" />
-                            <option value="Novella" label="Novella" />
-                            <option
-                              value="Novel (short)"
-                              label="Novel (short)"
-                            />
-                            <option value="Novel (long)" label="Novel (long)" />
-                            <option value="Anthology" label="Anthology" />
-                            <option value="Webseries" label="Webseries" />
-                          </select>
+                            onBlur={handleBlur}
+                          />
                         </span>
                       </span>
                       <span>

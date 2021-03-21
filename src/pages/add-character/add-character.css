@@ -1,13 +1,13 @@
 .Character {
   display: flex;
-  background-color: #3f3f44;
+  background-color: #67ffb6;
   height: 100vh;
 }
 
 .Character .character-container {
   width: 73%;
   margin: 0.35rem auto;
-  /* background: #f6f6f6; */
+  background: #2b193d;
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -15,18 +15,18 @@
 
 .Character .character-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: #f6f6f6;
+  background-color: white;
 }
 
 .Character .character-container::-webkit-scrollbar {
   width: 20px;
-  background-color: #f6f6f6;
+  background-color: white;
   border-radius: 0 10px 10px 0;
 }
 
 .Character .character-container::-webkit-scrollbar-thumb {
   border: none;
-  background-color: #3f3f44;
+  background-color: #67ffb6;
 }
 
 .Character .suggest-character-info {
@@ -46,7 +46,7 @@
 }
 
 .Character .suggest h2 {
-  /* color: #3f3f44; */
+  color: #67ffb6;
   text-transform: uppercase;
   font-size: 2.3rem;
 }
@@ -85,7 +85,7 @@
 }
 
 .Character .suggest h2 input {
-  color: #3f3f44;
+  color: #67ffb6;
   text-transform: uppercase;
   font-size: 2.3rem;
   margin-bottom: 1rem;
@@ -93,19 +93,19 @@
 
 .Character .suggest ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #3f3f44;
+  color: #67ffb6;
   font-family: "Lato", sans-serif;
   opacity: 1; /* Firefox */
 }
 
 .Character .suggest :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #3f3f44;
+  color: #67ffb6;
 }
 
 .Character .suggest ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #3f3f44;
+  color: #67ffb6;
 }
 
 .Character .buttons {
@@ -115,7 +115,7 @@
 
 .Character .buttons-add button {
   border: none;
-  background: #3f3f44;
+  background: #67ffb6;
   color: white;
   text-transform: uppercase;
   padding: 0.5rem 2rem;
@@ -131,7 +131,7 @@
 
 .Character textarea {
   width: 100%;
-  border: 1px solid #3f3f44;
+  border: 1px solid #2b193d;
   padding: 1rem;
   border-radius: 10px;
 }
@@ -140,7 +140,7 @@
   padding: 0.5rem;
   border: none;
   background: transparent;
-  border-bottom: 1px solid #3f3f44;
+  border-bottom: 1px solid #2b193d;
   width: 100% !important;
 }
 
@@ -149,7 +149,7 @@
   padding: 0.5rem;
   border: none;
   background: transparent;
-  border-bottom: 1px solid #3f3f44;
+  border-bottom: 1px solid #2b193d;
 }
 
 .Character .chunk {
@@ -164,13 +164,12 @@
 }
 
 .Character .group .hover {
-  background: #3f3f44;
+  background: #2b193d;
   border-radius: 50%;
   height: 20px;
   font-size: 0.8rem;
   width: 20px;
   color: white;
-  /* color: #b5de9d; */
   display: flex;
   justify-content: center;
   align-items: center;

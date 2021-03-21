@@ -1,13 +1,13 @@
 .Contact {
   display: flex;
-  background-color: #3f3f44;
+  background-color: #67ffb6;
   height: 100vh;
 }
 
 .Contact .contact-container {
   width: 73%;
   margin: 0.35rem auto;
-  /* background: #f6f6f6; */
+  background: #2b193d;
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -15,19 +15,19 @@
 
 .Contact .contact-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: #f6f6f6;
+  background-color: white;
 }
 
 .Contact .contact-container::-webkit-scrollbar {
   width: 20px;
-  background-color: #f6f6f6;
+  background-color: white;
   border-radius: 0 10px 10px 0;
 }
 
 .Contact .contact-container::-webkit-scrollbar-thumb {
   border: none;
 
-  background-color: #3f3f44;
+  background-color: #67ffb6;
 }
 
 .Contact .contact {
@@ -45,7 +45,7 @@
 .Contact h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
-  color: #3f3f44;
+  color: #67ffb6;
   margin-bottom: 1rem;
 }
 
@@ -67,7 +67,7 @@
 .Contact .kofi-link {
   width: 250px;
   background: #2b193d;
-  color: #3f3f44;
+  color: #67ffb6;
   border: none;
   padding: 1rem;
   border-radius: 10px;
@@ -79,7 +79,7 @@
 }
 
 .Contact a {
-  color: #3f3f44;
+  color: #67ffb6;
   font-weight: bold;
 }
 
@@ -114,10 +114,27 @@
   margin-top: 1rem;
 }
 
+.Contact ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #67ffb6;
+  font-family: "Lato", sans-serif;
+  opacity: 1; /* Firefox */
+}
+
+.Contact :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #67ffb6;
+}
+
+.Contact ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #67ffb6;
+}
+
 .Contact button {
   border: none;
-  /* background: #3f3f44;
-  color: #b5de9d; */
+  background: #67ffb6;
+  color: white;
   text-transform: uppercase;
   padding: 0.5rem 2rem;
   border-radius: 10px;

@@ -358,15 +358,15 @@ export default function SuggestedCharacter() {
                           .then((res) => res.json())
                           .then((resJson) => {
                             console.log(resJson);
-                            history.push("/success-deleted");
+                            history.push("/success");
                           });
+
+                        history.push("/success");
                       }}
                     >
                       Delete
                     </button>
                     <button
-                      type="button"
-                      className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                       onClick={() => {
                         // update character but don't add it to database/
                         fetchWithToken(
@@ -386,7 +386,8 @@ export default function SuggestedCharacter() {
                     </button>
                     <button
                       type="submit"
-                      className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                      disabled={isSubmitting}
+                      className="submit"
                     >
                       Add Character to Database
                     </button>

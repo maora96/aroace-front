@@ -1,13 +1,13 @@
 .Character {
   display: flex;
-  background-color: #3f3f44;
+  background-color: #67ffb6;
   height: 100vh;
 }
 
 .Character .character-container {
   width: 73%;
   margin: 0.35rem auto;
-  /* background: #f6f6f6; */
+  background: #2b193d;
   overflow-y: auto;
   height: 99vh;
   border-radius: 15px;
@@ -16,18 +16,18 @@
 
 .Character .character-container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: #f6f6f6;
+  background-color: white;
 }
 
 .Character .character-container::-webkit-scrollbar {
   width: 20px;
-  background-color: #f6f6f6;
+  background-color: white;
   border-radius: 0 10px 10px 0;
 }
 
 .Character .character-container::-webkit-scrollbar-thumb {
   border: none;
-  background-color: #3f3f44;
+  background-color: #67ffb6;
 }
 
 @media only screen and (max-width: 690px) {

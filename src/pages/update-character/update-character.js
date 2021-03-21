@@ -254,7 +254,6 @@ export default function UpdateCharacter() {
                           .then((res) => res.json())
                           .then((resJson) => {
                             console.log(resJson);
-                            history.push("/success-deleted-ch");
                           });
 
                         //history.push("/success");
