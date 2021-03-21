@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.4",
-    "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35",
-    "tailwindcss": "^1.9.6",
     "postcss-cli": "^7.1.2",
     "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.6",
@@ -51,8 +48,8 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.4",
-    "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35",
-    "tailwindcss": "^1.9.6"
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.8",
+    "tailwindcss": "^2.0.4"
   }
 }
