@@ -100,7 +100,10 @@ function Login() {
                     onBlur={handleBlur}
                   />
 
-                  <button type="submit" className="submit">
+                  <button
+                    type="submit"
+                    className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                  >
                     Login
                   </button>
                 </form>

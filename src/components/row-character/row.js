@@ -4,7 +4,7 @@ import ExternalLink from "../../assets/external-link.png";
 export default function RowCharacter(props) {
   const { content, type, id } = props;
   return (
-    <tr className="tbody">
+    <tr className="tbody text-secondary dark:text-darksecondary dark:odd:text-darkprimary">
       <td>{content.character_name}</td>
       <td>{content.genre}</td>
       <td>{content.importance}</td>

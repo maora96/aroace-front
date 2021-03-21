@@ -27,11 +27,25 @@ export default function Stories(props) {
 
   const showButtons = () => {
     if (token) {
-      return <a href={`/add-story/${character_id}`}>Add Story</a>;
+      return (
+        <a
+          href={`/add-story/${character_id}`}
+          className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+        >
+          Add Story
+        </a>
+      );
     } else {
       if (storyCheck) {
         console.log("aaaaa");
-        return <a href={`/suggest-story/${character_id}`}>Suggest Story</a>;
+        return (
+          <a
+            href={`/suggest-story/${character_id}`}
+            className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+          >
+            Suggest Story
+          </a>
+        );
       }
     }
   };

@@ -29,7 +29,9 @@ export default function SuggestedStories() {
       <MobileHeader />
       <div className="suggested-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="title">
-          <h2>Suggested Stories</h2>
+          <h2 className="text-secondary dark:text-darksecondary">
+            Suggested Stories
+          </h2>
         </div>
         <div className="table-container">
           <TableStory content={stories} type="suggest" id="story" />

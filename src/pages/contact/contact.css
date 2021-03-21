@@ -114,27 +114,10 @@
   margin-top: 1rem;
 }
 
-.Contact ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #b5de9d;
-  font-family: "Lato", sans-serif;
-  opacity: 1; /* Firefox */
-}
-
-.Contact :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #b5de9d;
-}
-
-.Contact ::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #b5de9d;
-}
-
 .Contact button {
   border: none;
-  background: #3f3f44;
-  color: #b5de9d;
+  /* background: #3f3f44;
+  color: #b5de9d; */
   text-transform: uppercase;
   padding: 0.5rem 2rem;
   border-radius: 10px;

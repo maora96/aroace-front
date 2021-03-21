@@ -226,6 +226,7 @@ export default function SuggestedStory() {
                     <img src={values.cover} alt="cover" />
                     <div className="buttons">
                       <button
+                        className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                         onClick={() => {
                           fetchWithTokenNoBody(
                             `https://aroacedb-back.herokuapp.com/suggest/stories/${story.id}`,
@@ -244,7 +245,7 @@ export default function SuggestedStory() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="submit"
+                        className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                       >
                         Add Story to Database
                       </button>

@@ -35,7 +35,9 @@ export default function SuggestedCharacter() {
       <MobileHeader />
       <div className="character-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="suggest">
-          <h2 className="title">Suggested character</h2>
+          <h2 className="title text-secondary dark:text-darksecondary">
+            Suggested character
+          </h2>
 
           <Formik
             enableReinitialize={true}
@@ -342,9 +344,10 @@ export default function SuggestedCharacter() {
                       />
                     </div>
                   </div>
-                  <div className="buttons">
+                  <div className="buttons ">
                     <button
                       type="button"
+                      className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                       onClick={() => {
                         console.log("delete from database");
                         fetchWithTokenNoBody(
@@ -363,6 +366,7 @@ export default function SuggestedCharacter() {
                     </button>
                     <button
                       type="button"
+                      className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                       onClick={() => {
                         // update character but don't add it to database/
                         fetchWithToken(
@@ -380,7 +384,10 @@ export default function SuggestedCharacter() {
                     >
                       Update
                     </button>
-                    <button type="submit" className="submit">
+                    <button
+                      type="submit"
+                      className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                    >
                       Add Character to Database
                     </button>
                   </div>

@@ -38,8 +38,19 @@ export default function AllCharacters() {
       <MobileHeader />
       <div className="all-characters-container bg-primary dark:bg-darkprimary transition duration-500">
         <div className="title">
-          <h2>All Characters</h2>
-          {token ? <a href="/add-character">Add character</a> : ""}
+          <h2 className="text-secondary dark:text-darksecondary">
+            All Characters
+          </h2>
+          {token ? (
+            <a
+              href="/add-character"
+              className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darksecondary dark:hover:text-darkdetail"
+            >
+              Add character
+            </a>
+          ) : (
+            ""
+          )}
         </div>
         <TableCharacter content={characters} type="regular" id="character" />
 

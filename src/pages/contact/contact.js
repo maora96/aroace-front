@@ -103,7 +103,12 @@ export default function Contact() {
                       onBlur={handleBlur}
                     ></textarea>
                   </label>
-                  <button type="submit">Submit</button>
+                  <button
+                    type="submit"
+                    className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                  >
+                    Submit
+                  </button>
                 </form>
               );
             }}

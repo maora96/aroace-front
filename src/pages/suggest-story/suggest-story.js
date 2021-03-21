@@ -447,7 +447,7 @@ export default function SuggestStory() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="submit"
+                      className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                     >
                       Suggest
                     </button>

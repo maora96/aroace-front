@@ -75,9 +75,9 @@
 }
 
 .Login .login-box button {
-  background: #3f3f44;
+  /* background: #3f3f44; */
   border: none;
-  color: #b5de9d;
+  /* color: #b5de9d; */
   font-weight: bold;
   width: 50%;
   margin: 0 auto;

@@ -59,7 +59,7 @@
 }
 
 .SuggestStory .StoryInfo {
-  background: rgba(181, 222, 157, 0.44);
+  /* background: rgba(181, 222, 157, 0.44); */
   width: 95%;
   margin: 0 auto;
   padding: 1rem;
@@ -80,12 +80,12 @@
 
 .StoryInfo h4 {
   text-transform: uppercase;
-  color: #2b193d;
+  /* color: #2b193d; */
 }
 
 .StoryInfo span span {
   font-weight: bold;
-  color: #2b193d;
+  /* color: #2b193d; */
 }
 
 .StoryInfo p {
@@ -128,8 +128,8 @@
 }
 
 .SuggestStory button {
-  color: #b5de9d;
-  background: #3f3f44;
+  /* color: #b5de9d;
+  background: #3f3f44; */
   text-transform: uppercase;
   text-decoration: none;
   padding: 1rem 2rem;
