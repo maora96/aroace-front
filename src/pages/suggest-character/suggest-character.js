@@ -43,11 +43,9 @@ function SuggestCharacter() {
     <div className="SuggestCharacter">
       <Sidebar />
       <MobileHeader />
-      <div className="suggest-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="suggest-container">
         <div className="suggest">
-          <h2 className="title text-secondary dark:text-darksecondary">
-            Suggest a character
-          </h2>
+          <h2 className="title">Suggest a character</h2>
           {characterCheck ? (
             <Formik
               initialValues={{
@@ -675,17 +673,10 @@ function SuggestCharacter() {
                       </div>
                     </div>
 
-                    <div className="suggest-review">
-                      <p>
-                        Once the character has been accepted to the database you
-                        will be able to suggest reviews and stories for them!
-                      </p>
-                    </div>
-
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                      className="submit"
                     >
                       Suggest Character
                     </button>

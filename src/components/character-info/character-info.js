@@ -89,7 +89,6 @@ export default function CharacterInfo(props) {
       {token ? (
         <div className="buttons-character">
           <button
-            className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
             onClick={() => {
               fetchWithTokenNoBody(
                 `https://aroacedb-back.herokuapp.com/characters/${character.id}`,
@@ -127,7 +126,6 @@ export default function CharacterInfo(props) {
             Delete
           </button>
           <button
-            className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
             onClick={() => {
               history.push("/update-character/" + character.id);
             }}

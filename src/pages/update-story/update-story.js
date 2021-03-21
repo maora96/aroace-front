@@ -32,7 +32,7 @@ export default function UpdateStory() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="story-container">
         <div className="stories">
           <h3>Update Story</h3>
           <Formik
@@ -104,7 +104,7 @@ export default function UpdateStory() {
                       <span>
                         <label>Character importance</label>
                         <input
-                          id="chracter_importance"
+                          id="character_importance"
                           type="text"
                           placeholder="Character importance"
                           value={values.character_importance}

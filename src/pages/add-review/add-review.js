@@ -119,10 +119,7 @@ export default function AddReview() {
                       </div>
                     </div>
                   </div>
-                  <button
-                    type="submit"
-                    className="review-right bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
-                  >
+                  <button type="submit" className="review-right">
                     Add Review to Database
                   </button>
                 </form>

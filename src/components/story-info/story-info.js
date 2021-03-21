@@ -13,7 +13,7 @@ export default function StoryInfo(props) {
     console.log(token);
   }, []);
   return (
-    <div className="StoryInfo dark:bg-darkdetail dark:text-darksecondary">
+    <div className="StoryInfo">
       {story.cover ? (
         <img src={story.cover} alt="cover" />
       ) : (
@@ -25,13 +25,9 @@ export default function StoryInfo(props) {
 
       <div className="story-container">
         <div className="line">
-          <h4 className="dark:bg-darkdetail dark:text-darksecondary">
-            {story.story_title}
-          </h4>
+          <h4>{story.story_title}</h4>
           <span>
-            <span className="dark:bg-darkdetail dark:text-darksecondary">
-              {story.story_length}
-            </span>
+            <span>{story.story_length}</span>
           </span>
         </div>
         <div className="line">
@@ -39,24 +35,16 @@ export default function StoryInfo(props) {
             "No series/anthology"
           ) : (
             <span>
-              in the{" "}
-              <span className="dark:bg-darkdetail dark:text-darksecondary">
-                {story.series_or_anthology}{" "}
-              </span>
-              series
+              in the <span>{story.series_or_anthology} </span>series
             </span>
           )}
         </div>
         <div className="line">
           <span>
-            <span className="dark:bg-darkdetail dark:text-darksecondary">
-              {story.genre}
-            </span>
+            <span>{story.genre}</span>
           </span>
           <span>
-            <span className="to-capitalize dark:bg-darkdetail dark:text-darksecondary">
-              {story.type_of_rep} Rep
-            </span>
+            <span className="to-capitalize">{story.type_of_rep} Rep</span>
           </span>
         </div>
 
@@ -65,9 +53,7 @@ export default function StoryInfo(props) {
             {story.character_importance === null ? (
               "No info on character importance"
             ) : (
-              <span className="dark:bg-darkdetail dark:text-darksecondary">
-                {story.character_importance} Character
-              </span>
+              <span>{story.character_importance} Character</span>
             )}
           </span>
         </div>
@@ -86,7 +72,6 @@ export default function StoryInfo(props) {
         {token ? (
           <div className="buttons-story">
             <button
-              className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
               onClick={() => {
                 fetchWithTokenNoBody(
                   `https://aroacedb-back.herokuapp.com/stories/${story.id}`,
@@ -103,7 +88,6 @@ export default function StoryInfo(props) {
               Delete
             </button>
             <button
-              className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
               onClick={() => {
                 history.push("/update-story/" + story.id);
               }}

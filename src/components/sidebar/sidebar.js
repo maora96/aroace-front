@@ -5,7 +5,6 @@ import { ReactComponent as DatabaseIcon } from "../../assets/database-solid.svg"
 import { ReactComponent as FeatherIcon } from "../../assets/feather-solid.svg";
 import { ReactComponent as BookmarkIcon } from "../../assets/bookmark-solid.svg";
 import { ReactComponent as LoginIcon } from "../../assets/user-cog-solid.svg";
-import ModeSelector from "../mode-selector/mode-selector";
 
 export default function Sidebar() {
   const [token, setToken] = React.useState("");
@@ -39,7 +38,7 @@ export default function Sidebar() {
                 The Aroace Database
               </h1>
             </div>
-            <ModeSelector />
+
             <div className="link-container">
               <a href="/" className="text-secondary dark:text-darksecondary">
                 <HomeIcon fill="white" height="20px" width="30px" />

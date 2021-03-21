@@ -17,11 +17,9 @@ export default function AddCharacter() {
     <div className="Character">
       <Sidebar />
       <MobileHeader />
-      <div className="character-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="character-container">
         <div className="suggest">
-          <h2 className="title text-secondary dark:text-darksecondary">
-            Add a character
-          </h2>
+          <h2 className="title">Add a character</h2>
 
           <Formik
             enableReinitialize={true}
@@ -83,7 +81,7 @@ export default function AddCharacter() {
                       <div className="importance-container">
                         <div className="group">
                           <span
-                            className="hover "
+                            className="hover"
                             data-for="tooltip-importance"
                             data-tip
                           >

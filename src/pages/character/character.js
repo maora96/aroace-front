@@ -50,7 +50,7 @@ export default function SingleCharacter() {
     <div className="Character">
       <Sidebar />
       <MobileHeader />
-      <div className="character-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="character-container">
         <CharacterInfo character={character} />
         {console.log(params.id)}
         <Stories stories={stories} character_id={params.id} />

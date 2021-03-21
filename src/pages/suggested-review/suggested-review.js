@@ -36,7 +36,7 @@ export default function SuggestedReview() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="story-container">
         <div className="stories">
           <h3>Suggested Review</h3>
           <Formik
@@ -142,7 +142,6 @@ export default function SuggestedReview() {
                     </div>
                   </div>
                   <button
-                    className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                     onClick={() => {
                       fetchWithTokenNoBody(
                         `https://aroacedb-back.herokuapp.com/suggest/reviews/${review.id}`,
@@ -158,10 +157,7 @@ export default function SuggestedReview() {
                   >
                     Delete
                   </button>
-                  <button
-                    type="submit"
-                    className="review-right bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
-                  >
+                  <button type="submit" className="review-right">
                     Add to Database
                   </button>
                 </form>

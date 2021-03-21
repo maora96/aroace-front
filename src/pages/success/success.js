@@ -10,11 +10,10 @@ function Success() {
     <div className="Home">
       <Sidebar />
       <MobileHeader />
-      <div className="home-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="home-container">
         <div className="success">
-          <h2 className="text-secondary dark:text-darksecondary">Success!</h2>
+          <h2>Success!</h2>
           <button
-            className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
             onClick={() => {
               history.go(-2);
             }}

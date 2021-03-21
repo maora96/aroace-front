@@ -32,7 +32,7 @@ function Home() {
       <Sidebar />
       <MobileHeader />
 
-      <div className="home-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="home-container">
         <div className="welcome">
           <h2>Welcome to the database</h2>
           <p>
@@ -78,15 +78,21 @@ function Home() {
                 setSearch(event.target.value);
               }}
             ></input>
-            <button className="bg-secondary dark:bg-darkdetail">
+            <button>
               <ButtonIcon fill="white" height="20px" width="30px" />
             </button>
           </form>
         </div>
 
         <div className="button-container">
+          <div className="common-searches">
+            <span>Common searches: </span>
+            <a href="/results?search=acespec">All Aces</a>
+            <a href="/results?search=arospec">All Aros</a>
+            <a href="/results?search=canonleads">In-Canon Aro/Ace leads </a>
+          </div>
+
           <button
-            className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
             onClick={() => {
               setAdvancedSearch(!advancedSearch);
             }}
@@ -109,13 +115,10 @@ function Home() {
             <div></div>
           ) : (
             <div className="random">
-              <h2 className="dark:text-darksecondary text-secondary">
-                Your random character
-              </h2>
+              <h2>Your random character</h2>
               <SingleCharacter character={random} />
               <div className="char-btn">
                 <button
-                  className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
                   onClick={() => {
                     fetch("https://aroacedb-back.herokuapp.com/character")
                       .then((res) => res.json())

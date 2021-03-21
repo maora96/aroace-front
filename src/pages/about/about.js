@@ -22,7 +22,7 @@ export default function About() {
     <div className="About">
       <Sidebar />
       <MobileHeader />
-      <div className="about-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="about-container">
         <div className="about">
           <h2>the database</h2>
           <p>

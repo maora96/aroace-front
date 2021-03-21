@@ -43,7 +43,7 @@ export default function SCSuggestedStory() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="story-container">
         <div className="stories">
           <h3>Suggested Story</h3>
           <h4>Character: {name}</h4>
@@ -97,7 +97,7 @@ export default function SCSuggestedStory() {
               } = props;
               return (
                 <form onSubmit={handleSubmit}>
-                  <div className="StoryInfo bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary">
+                  <div className="StoryInfo">
                     <div className="line">
                       <h4>
                         <label>Story title</label>
@@ -113,14 +113,23 @@ export default function SCSuggestedStory() {
                       <span>
                         <label>Story length</label>
                         <span>
-                          <input
-                            id="story_length"
-                            type="text"
-                            placeholder="Story length"
+                          <select
+                            name="story_length"
                             value={values.story_length}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                          />
+                            onBlur={handleChange}
+                          >
+                            <option value="" label="Select one" />
+                            <option value="Short story" label="Short story" />
+                            <option value="Novella" label="Novella" />
+                            <option
+                              value="Novel (short)"
+                              label="Novel (short)"
+                            />
+                            <option value="Novel (long)" label="Novel (long)" />
+                            <option value="Anthology" label="Anthology" />
+                            <option value="Webseries" label="Webseries" />
+                          </select>
                         </span>
                       </span>
                       <span>
@@ -214,7 +223,6 @@ export default function SCSuggestedStory() {
                     <img src={values.cover} alt="cover" />
                     <div className="buttons">
                       <button
-                        className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                         onClick={() => {
                           fetchWithTokenNoBody(
                             `https://aroacedb-back.herokuapp.com/suggest/stories/${story.id}`,
@@ -231,9 +239,28 @@ export default function SCSuggestedStory() {
                         Delete
                       </button>
                       <button
+                        type="button"
+                        onClick={() => {
+                          // update story but don't add it to database/
+                          fetchWithToken(
+                            `https://aroacedb-back.herokuapp.com/suggest/sc/stories/${params.id}`,
+                            "PUT",
+                            values,
+                            token
+                          )
+                            .then((res) => res.json())
+                            .then((resJson) => {
+                              console.log(resJson);
+                              history.push("/success");
+                            });
+                        }}
+                      >
+                        Update
+                      </button>
+                      <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="submit bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                        className="submit"
                       >
                         Add Story to Database
                       </button>

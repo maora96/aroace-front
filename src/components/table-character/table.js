@@ -12,38 +12,26 @@ function TableCharacter(props) {
       <thead>
         {id === "character" ? (
           <tr>
-            <th className="text-secondary dark:text-darksecondary">
-              Character Name
-            </th>
-            <th className="text-secondary dark:text-darksecondary">Genre</th>
-            <th className="text-secondary dark:text-darksecondary">
-              Importance
-            </th>
-            <th className="text-secondary dark:text-darksecondary">Gender</th>
-            <th className="text-secondary dark:text-darksecondary">Pairing</th>
-            <th className="text-secondary dark:text-darksecondary">Series</th>
-            <th className="text-secondary dark:text-darksecondary">
-              Relationships
-            </th>
-            <th className="text-secondary dark:text-darksecondary">Romantic</th>
-            <th className="text-secondary dark:text-darksecondary">
-              Sexuality
-            </th>
-            <th className="text-secondary dark:text-darksecondary">More</th>
+            <th>Character Name</th>
+            <th>Genre</th>
+            <th>Importance</th>
+            <th>Gender</th>
+            <th>Pairing</th>
+            <th>Series</th>
+            <th>Relationships</th>
+            <th>Romantic</th>
+            <th>Sexuality</th>
+            <th>More</th>
           </tr>
         ) : id === "story" ? (
           <tr>
-            <th className="text-secondary dark:text-darksecondary">
-              Story Title
-            </th>
-            <th className="text-secondary dark:text-darksecondary">Author</th>
+            <th>Story Title</th>
+            <th>Author</th>
           </tr>
         ) : (
           <tr>
-            <th className="text-secondary dark:text-darksecondary">
-              Review for
-            </th>
-            <th className="text-secondary dark:text-darksecondary">Reviewer</th>
+            <th>Review for</th>
+            <th>Reviewer</th>
           </tr>
         )}
       </thead>

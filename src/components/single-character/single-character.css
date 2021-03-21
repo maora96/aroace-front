@@ -10,7 +10,6 @@
 .SingleCharacter img {
   width: 200px;
   margin-right: 2rem;
-  object-fit: contain;
 }
 
 .SingleCharacter .top .header {
@@ -41,7 +40,7 @@
 .SingleCharacter .single-character-container .top h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
-  color: #67ffb6;
+  color: #3f3f44;
 }
 
 .SingleCharacter .single-character-container .top h3 {
@@ -71,15 +70,20 @@
 }
 
 .SingleCharacter .single-character-container a {
-  color: white;
+  color: #b5de9d;
   text-transform: uppercase;
-  background-color: #67ffb6;
+  background-color: #3f3f44;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   font-size: 1.5rem;
   padding: 0.8rem 2rem;
   text-decoration: none;
+}
+
+.SingleCharacter .single-character-container a:hover {
+  background-color: #b5de9d;
+  color: white;
 }
 
 .SingleCharacter .single-character-container .button-container {

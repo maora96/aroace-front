@@ -46,7 +46,7 @@ export default function SuggestedStory() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="story-container">
         <div className="stories">
           <h3>Suggested Story</h3>
           <h4>Character: {name}</h4>
@@ -116,14 +116,23 @@ export default function SuggestedStory() {
                       <span>
                         <label>Story length</label>
                         <span>
-                          <input
-                            id="story_length"
-                            type="text"
-                            placeholder="Story length"
+                          <select
+                            name="story_length"
                             value={values.story_length}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                          />
+                            onBlur={handleChange}
+                          >
+                            <option value="" label="Select one" />
+                            <option value="Short story" label="Short story" />
+                            <option value="Novella" label="Novella" />
+                            <option
+                              value="Novel (short)"
+                              label="Novel (short)"
+                            />
+                            <option value="Novel (long)" label="Novel (long)" />
+                            <option value="Anthology" label="Anthology" />
+                            <option value="Webseries" label="Webseries" />
+                          </select>
                         </span>
                       </span>
                       <span>
@@ -217,7 +226,6 @@ export default function SuggestedStory() {
                     <img src={values.cover} alt="cover" />
                     <div className="buttons">
                       <button
-                        className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
                         onClick={() => {
                           fetchWithTokenNoBody(
                             `https://aroacedb-back.herokuapp.com/suggest/stories/${story.id}`,
@@ -236,7 +244,7 @@ export default function SuggestedStory() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                        className="submit"
                       >
                         Add Story to Database
                       </button>

@@ -12,6 +12,8 @@ function Results({ location }) {
   const [changed, setChanged] = React.useState(0);
   const [filteredResults, setFilteredResults] = React.useState([]);
   const [advancedSearch, setAdvancedSearch] = React.useState(false);
+  const [count, setCount] = React.useState(0);
+
   const history = useHistory();
 
   React.useEffect(() => {
@@ -35,18 +37,37 @@ function Results({ location }) {
       }
     }
     const final = url_params.join("");
-    console.log(
-      `https://aroacedb-back.herokuapp.com/character/infinite?${final}`
-    );
-    fetch(`https://aroacedb-back.herokuapp.com/character/infinite?${final}`)
-      .then((res) => res.json())
-      .then((resJson) => {
-        if (resJson.data) {
-          const newResults = resJson.data.characters;
-          setFilteredResults(newResults);
-          console.log(filteredResults);
-        }
-      });
+    console.log(final);
+    if (final.includes("canonleads")) {
+      console.log("fetch canon leads pls");
+      fetch("https://aroacedb-back.herokuapp.com/characters/search/canonleads")
+        .then((res) => res.json())
+        .then((resJson) => {
+          console.log(resJson);
+          if (resJson.data) {
+            console.log(resJson.data);
+            const newResults = resJson.data.character;
+            setFilteredResults(newResults);
+
+            const newCount = resJson.data.length;
+            console.log(newCount);
+            setCount(newCount);
+          }
+        });
+    } else {
+      fetch(`https://aroacedb-back.herokuapp.com/character/infinite?${final}`)
+        .then((res) => res.json())
+        .then((resJson) => {
+          if (resJson.data) {
+            console.log(resJson.data);
+            const newResults = resJson.data.characters;
+            setFilteredResults(newResults);
+            const newCount = resJson.data.length;
+            console.log(newCount);
+            setCount(newCount);
+          }
+        });
+    }
   }, [location.search]);
 
   return (
@@ -54,7 +75,7 @@ function Results({ location }) {
       <Sidebar setFilteredResults={setFilteredResults} />
       <MobileHeader />
 
-      <div className="results-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="results-container">
         <div className="free-search">
           <form
             onSubmit={(event) => {
@@ -68,7 +89,7 @@ function Results({ location }) {
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(search);
-                  console.log(resJson.data);
+                  console.log(resJson);
 
                   if (resJson.data) {
                     const newResults = resJson.data.characters;
@@ -102,6 +123,7 @@ function Results({ location }) {
         </div>
         {advancedSearch ? <SearchBar /> : ""}
 
+        <div className="count">The database found {count} entries.</div>
         {filteredResults ? (
           <div className="results">
             {filteredResults.map((i) => {

@@ -59,7 +59,7 @@ export default function AddStory() {
                 .then((res) => res.json())
                 .then((resJson) => {
                   console.log(resJson);
-                  history.push(`/add-review/${params.id}`);
+                  history.push(`/character/${params.id}`);
                 });
             }}
           >
@@ -156,14 +156,23 @@ export default function AddStory() {
                           <label>Story length</label>
                         </div>
                         <span>
-                          <input
-                            id="story_length"
-                            type="text"
-                            placeholder="Story length"
+                          <select
+                            name="story_length"
                             value={values.story_length}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                          />
+                            onBlur={handleChange}
+                          >
+                            <option value="" label="Select one" />
+                            <option value="Short story" label="Short story" />
+                            <option value="Novella" label="Novella" />
+                            <option
+                              value="Novel (short)"
+                              label="Novel (short)"
+                            />
+                            <option value="Novel (long)" label="Novel (long)" />
+                            <option value="Anthology" label="Anthology" />
+                            <option value="Webseries" label="Webseries" />
+                          </select>
                         </span>
                       </span>
                       <span>
@@ -454,7 +463,7 @@ export default function AddStory() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                      className="submit"
                     >
                       Add Story to Database
                     </button>

@@ -14,7 +14,7 @@ export default function SuggestStory() {
     <div className="SuggestStory">
       <Sidebar />
       <MobileHeader />
-      <div className="story-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="story-container">
         <div className="stories">
           <h3>Suggest a Story</h3>
           <Formik
@@ -140,14 +140,23 @@ export default function SuggestStory() {
                           <label>Story length</label>
                         </div>
                         <span>
-                          <input
-                            id="story_length"
-                            type="text"
-                            placeholder="Story length"
+                          <select
+                            name="story_length"
                             value={values.story_length}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                          />
+                            onBlur={handleChange}
+                          >
+                            <option value="" label="Select one" />
+                            <option value="Short story" label="Short story" />
+                            <option value="Novella" label="Novella" />
+                            <option
+                              value="Novel (short)"
+                              label="Novel (short)"
+                            />
+                            <option value="Novel (long)" label="Novel (long)" />
+                            <option value="Anthology" label="Anthology" />
+                            <option value="Webseries" label="Webseries" />
+                          </select>
                         </span>
                       </span>
                       <span>
@@ -438,7 +447,7 @@ export default function SuggestStory() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
+                      className="submit"
                     >
                       Suggest
                     </button>

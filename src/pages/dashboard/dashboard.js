@@ -90,55 +90,41 @@ function Dashboard() {
       <Sidebar />
       <MobileHeader />
 
-      <div className="dashboard-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="dashboard-container">
         <div className="header">
-          <h2 className="text-secondary dark:text-darksecondary">Dashboard</h2>
+          <h2>Dashboard</h2>
         </div>
         <Stats stats={stats} />
         <RecentSuggested characters={recentlyAdded} />
 
         <div className="header">
-          <a
-            href="/suggested-characters"
-            className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
-          >
-            View All
-          </a>
+          <a href="/suggested-characters">View All</a>
         </div>
 
         <div className="export">
-          <a
-            href="https://aroacedb-back.herokuapp.com/download/characters"
-            className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
-          >
+          <a href="https://aroacedb-back.herokuapp.com/download/characters">
             Export Characters
           </a>
 
-          <a
-            href="https://aroacedb-back.herokuapp.com/download/stories"
-            className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
-          >
+          <a href="https://aroacedb-back.herokuapp.com/download/stories">
             Export Stories
           </a>
 
-          <a
-            href="https://aroacedb-back.herokuapp.com/download/reviews"
-            className="bg-secondary dark:bg-darksecondary text-detail dark:text-darkdetail hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
-          >
+          <a href="https://aroacedb-back.herokuapp.com/download/reviews">
             Export Reviews
           </a>
         </div>
 
         <div className="toggle-container">
           <div className="toggle-input">
-            <span className="text-secondary dark:text-darksecondary">
+            <span>
               Currently character suggestions are
               <b> {characterCheck ? "enabled" : "disabled"}</b>, story
               suggestions are<b> {storyCheck ? "enabled" : "disabled"}</b> and
               review suggestions are{" "}
               <b>{reviewCheck ? "enabled" : "disabled"}</b>.
             </span>
-            <label className="switch text-secondary dark:text-darksecondary">
+            <label className="switch">
               Character Suggestions
               <div>
                 Enable
@@ -181,7 +167,7 @@ function Dashboard() {
                 />
               </div>
             </label>
-            <label className="switch text-secondary dark:text-darksecondary">
+            <label className="switch">
               Review Suggestions
               <div>
                 Enable
@@ -224,7 +210,7 @@ function Dashboard() {
                 />
               </div>
             </label>
-            <label className="switch text-secondary dark:text-darksecondary">
+            <label className="switch">
               Story Suggestions
               <div>
                 Enable

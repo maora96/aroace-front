@@ -43,12 +43,7 @@ export default function SingleCharacter(props) {
             </span>
           </span>
           <div className="button-container">
-            <a
-              href={`/character/${character.id}`}
-              className="bg-secondary dark:bg-darkprimary text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkdetail dark:hover:text-darksecondary"
-            >
-              Read more
-            </a>
+            <a href={`/character/${character.id}`}>Read more</a>
           </div>
         </div>
       </div>

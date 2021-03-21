@@ -35,14 +35,7 @@ export default function Reviews(props) {
       );
     } else {
       if (reviewCheck) {
-        return (
-          <a
-            href={`/suggest-review/${character_id}`}
-            className="bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
-          >
-            Suggest Review
-          </a>
-        );
+        return <a href={`/suggest-review/${character_id}`}>Suggest Review</a>;
       }
     }
   };

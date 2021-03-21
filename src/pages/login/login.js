@@ -15,7 +15,7 @@ function Login() {
       <Sidebar />
       <MobileHeader />
 
-      <div className="login-container bg-primary dark:bg-darkprimary transition duration-500">
+      <div className="login-container">
         <div className="login-box">
           <h2>Login</h2>
           <p>Admin login for the database. Non-admin users can't be created.</p>
@@ -100,10 +100,7 @@ function Login() {
                     onBlur={handleBlur}
                   />
 
-                  <button
-                    type="submit"
-                    className="submit bg-secondary dark:bg-darkdetail text-detail dark:text-darksecondary hover:bg-detail hover:text-primary dark:hover:bg-darkprimary dark:hover:text-darksecondary"
-                  >
+                  <button type="submit" className="submit">
                     Login
                   </button>
                 </form>
