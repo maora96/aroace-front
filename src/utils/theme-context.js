@@ -1,35 +1,58 @@
 import React from "react";
 
-// const getInitialTheme = () => {
-//   if (localStorage) {
-//     const storedPrefs = localStorage.getItem("current-theme");
-//     if (typeof storedPrefs === "string") {
-//       return storedPrefs;
-//     }
-//     if (matchMedia("(prefers-color-scheme: dark").matches) {
-//       return "dark";
-//     }
-//   }
-//   return "light";
-// };
+const getInitialTheme = () => {
+  if (typeof window !== "undefined" && window.localStorage) {
+    const storedPrefs = window.localStorage.getItem("current-theme");
+    if (typeof storedPrefs === "string") {
+      return storedPrefs;
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+  }
+  return "light";
+};
 
-// export const ThemeProvider = ({initialTheme, children}) => {
-//     const [theme, setTeheme] = React.useState(getInitialTheme);
+export const ThemeContext = React.createContext();
 
-//     const checkTheme = (existing) => {
-//         const root = window.documentEl
-//     }
-// }
+export const ThemeProvider = ({ initialTheme, children }) => {
+  const [theme, setTheme] = React.useState(getInitialTheme);
 
-export default function useDarkMode() {
-  const [theme, setTheme] = React.useState("dark");
+  const checkTheme = (existing) => {
+    const root = window.document.documentElement;
+    const isDark = existing === "dark";
 
-  const colorTheme = theme === "dark" ? "light" : "dark";
+    root.classList.remove(isDark ? "light" : "dark");
+    root.classList.add(existing);
+
+    localStorage.setItem("current-theme", existing);
+  };
+
+  if (initialTheme) {
+    checkTheme(initialTheme);
+  }
 
   React.useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.remove(colorTheme);
-    root.classList.add(theme);
+    checkTheme(theme);
   }, [theme]);
-  return [colorTheme, setTheme];
-}
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+//   };
+// export default function useDarkMode() {
+//   const [theme, setTheme] = React.useState("light");
+
+//   const colorTheme = theme === "dark" ? "light" : "dark";
+
+//   React.useEffect(() => {
+//     const root = window.document.documentElement;
+//     root.classList.remove(colorTheme);
+//     root.classList.add(theme);
+//   }, [theme]);
+//   return [colorTheme, setTheme];
+// }

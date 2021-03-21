@@ -37,7 +37,7 @@ import SuccessDeleteCharacter from "./pages/success-delete-all/success";
 import useDarkMode from "./utils/theme-context";
 
 function App() {
-  useDarkMode();
+  //   useDarkMode();
   const [characterCheck, setCharacterCheck] = React.useState(true);
   const [reviewCheck, setReviewCheck] = React.useState(true);
   const [storyCheck, setStoryCheck] = React.useState(true);
