@@ -1,0 +1,235 @@
+.About {
+  display: flex;
+  background-color: #3f3f44;
+  height: 100vh;
+}
+
+.About .about-container {
+  width: 73%;
+  margin: 0.35rem auto;
+  background: #f6f6f6;
+  overflow-y: auto;
+  height: 99vh;
+  border-radius: 15px;
+}
+
+.About .about-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #f6f6f6;
+}
+
+.About .about-container::-webkit-scrollbar {
+  width: 20px;
+  background-color: #f6f6f6;
+  border-radius: 0 10px 10px 0;
+}
+
+.About .about-container::-webkit-scrollbar-thumb {
+  border: none;
+
+  background-color: #3f3f44;
+}
+
+.About .about {
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.About h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #3f3f44;
+  margin-bottom: 1rem;
+}
+
+.About .about p {
+  line-height: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.About .social-media {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.About .social-media img {
+  margin-right: 1.5rem;
+}
+
+.About .kofi-link {
+  width: 250px;
+  background: #3f3f44;
+  color: #b5de9d;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  margin: 1.5rem auto 1.2rem auto;
+}
+
+.About h3 {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.About a {
+  color: #b5de9d;
+  font-weight: bold;
+}
+
+.About table {
+  border-collapse: collapse;
+}
+
+.About tbody {
+  border: 2px solid #2b193d;
+}
+
+.About tr,
+.About td {
+  border: 2px solid #2b193d;
+}
+
+.About .terminology {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.About .terminology .single {
+  display: flex;
+  width: 100%;
+}
+
+.About .terminology .single:nth-child(odd) {
+  display: flex;
+  background: lightgrey;
+  width: 100%;
+}
+
+.About .terminology .single div {
+  width: 70%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.About .terminology .single div:first-child {
+  width: 30%;
+}
+
+.About .terminology .multi {
+  display: flex;
+  background-color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.About .terminology .multi div {
+  width: 70%;
+}
+
+.About .terminology .multi div:first-child {
+  width: 30%;
+  padding: 1rem;
+}
+
+.About .terminology .multi div:last-child {
+  border-bottom: none;
+}
+
+.About .terminology .multi div .info {
+  width: 100%;
+  display: flex;
+}
+
+.About .terminology .multi div .side {
+  width: 100%;
+  display: flex;
+}
+
+.About .terminology .multi div .side div {
+  padding: 1rem;
+}
+
+.About .terminology .multi .title {
+  display: flex;
+  justify-content: center;
+  background-color: gainsboro;
+  align-items: center;
+}
+
+.About .terminology .multi .side-container > div:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.About .terminology .multi .side-container .info {
+  display: flex;
+  justify-content: center;
+}
+
+.About .tooltip {
+  width: auto !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .About .about {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .About {
+    flex-direction: column;
+  }
+
+  .About .about-container {
+    width: 90%;
+  }
+
+  .About .kofi-link {
+    width: 150px;
+  }
+
+  .About h2 {
+    font-size: 1.5rem;
+  }
+
+  .About .single {
+    flex-direction: column;
+  }
+
+  .About .terminology .single div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .About .terminology .single div:first-child {
+    width: 100%;
+  }
+
+  .About .terminology .multi .side {
+    flex-direction: column;
+  }
+
+  .About .terminology .multi .side div {
+    width: 100%;
+  }
+
+  .About .terminology .multi div:first-child {
+    overflow-wrap: anywhere;
+  }
+}

@@ -34,6 +34,8 @@ import Contact from "./pages/contact/contact";
 import Results from "./pages/results/results";
 import SuccessDelete from "./pages/success-delete/success";
 import SuccessDeleteCharacter from "./pages/success-delete-all/success";
+import About2 from "./pages/about2/about";
+
 // import useDarkMode from "./utils/theme-context";
 
 function App() {
@@ -104,6 +106,7 @@ function App() {
             />
             <Route path="/contact" component={Contact} />
             <Route path="/results" component={Results} />
+            <Route path="/editor" component={About2} />
           </Switch>
         </div>
       </DataContext.Provider>

@@ -356,6 +356,16 @@ export default function SuggestedCharacter() {
                           .then((resJson) => {
                             console.log(resJson);
                             history.push("/success-deleted");
+
+                            fetchWithTokenNoBody(
+                              `https://aroacedb-back.herokuapp.com/suggest/sc/character/stories/${params.id}`,
+                              "DELETE",
+                              token
+                            )
+                              .then((res) => res.json())
+                              .then((resJson) => {
+                                console.log(resJson);
+                              });
                           });
                       }}
                     >

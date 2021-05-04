@@ -27,6 +27,13 @@ function SuccessSTSC() {
           >
             Go back
           </button>
+          <button
+            onClick={() => {
+              history.push("/");
+            }}
+          >
+            I'm done here
+          </button>
         </div>
       </div>
     </div>
