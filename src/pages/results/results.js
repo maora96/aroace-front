@@ -54,6 +54,36 @@ function Results({ location }) {
             setCount(newCount);
           }
         });
+    } else if (final.includes("canonaces")) {
+      fetch("https://aroacedb-back.herokuapp.com/characters/search/canonaces")
+        .then((res) => res.json())
+        .then((resJson) => {
+          console.log(resJson);
+          if (resJson.data) {
+            console.log(resJson.data);
+            const newResults = resJson.data.character;
+            setFilteredResults(newResults);
+
+            const newCount = resJson.data.length;
+            console.log(newCount);
+            setCount(newCount);
+          }
+        });
+    } else if (final.includes("canonaros")) {
+      fetch("https://aroacedb-back.herokuapp.com/characters/search/canonaros")
+        .then((res) => res.json())
+        .then((resJson) => {
+          console.log(resJson);
+          if (resJson.data) {
+            console.log(resJson.data);
+            const newResults = resJson.data.character;
+            setFilteredResults(newResults);
+
+            const newCount = resJson.data.length;
+            console.log(newCount);
+            setCount(newCount);
+          }
+        });
     } else {
       fetch(`https://aroacedb-back.herokuapp.com/character/infinite?${final}`)
         .then((res) => res.json())

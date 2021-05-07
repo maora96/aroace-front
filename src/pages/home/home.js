@@ -88,8 +88,8 @@ function Home() {
           <div className="common-searches">
             <span>Common searches: </span>
             <a href="/results?search=acespec">All Aces</a>
-            <a href="/results?search=arospec">All Aros</a>
-            <a href="/results?search=canonleads">In-Canon Aro/Ace leads </a>
+            <a href="/results?search=canonaros">All Aros</a>
+            <a href="/results?search=canonaces">In-Canon Aro/Ace leads </a>
           </div>
 
           <button
