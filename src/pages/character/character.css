@@ -32,6 +32,6 @@
 
 @media only screen and (max-width: 690px) {
   .Character .character-container {
-    width: 90%;
+    width: 100%;
   }
 }
