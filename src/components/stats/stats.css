@@ -44,3 +44,15 @@
   text-transform: uppercase;
   color: #b5de9d;
 }
+@media only screen and (max-width: 690px) {
+  .Stats {
+    width: 90%;
+  }
+  .Stats .big-box {
+    width: 100%;
+  }
+
+  .Stats h3 {
+    text-align: center;
+  }
+}

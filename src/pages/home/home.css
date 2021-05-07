@@ -206,7 +206,38 @@
     flex-direction: column;
   }
   .Home .home-container {
-    width: 90%;
+    width: 100%;
     padding-bottom: 1rem;
+  }
+
+  .Home .welcome {
+    width: 90%;
+  }
+
+  .Home .button-container {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .Home .common-searches {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .Home .random {
+    width: 90%;
+  }
+
+  .Home .random h2 {
+    text-align: center;
+  }
+
+  .Home .fields label {
+    width: 100%;
+  }
+
+  .Home .SearchBar button {
+    margin: 1rem auto;
   }
 }

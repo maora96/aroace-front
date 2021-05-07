@@ -197,6 +197,10 @@
   }
 
   .About .about-container {
+    width: 100%;
+  }
+
+  .About .about {
     width: 90%;
   }
 
