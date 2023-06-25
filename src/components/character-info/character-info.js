@@ -8,14 +8,13 @@ export default function CharacterInfo(props) {
   const [token, setToken] = React.useState("");
   const history = useHistory();
 
-  React.useEffect(() => {
-    const newToken = localStorage.getItem("token");
-    setToken(newToken);
-    console.log(token);
-  }, []);
+  // React.useEffect(() => {
+  //   const newToken = localStorage.getItem("token");
+  //   setToken(newToken);
+  // }, []);
   return (
     <div className="CharacterInfo">
-      <h2>{character.character_name}</h2>
+      <h2>{character.name}</h2>
       <div className="line">
         <div className="chunk">
           <span>Author</span>
@@ -26,21 +25,21 @@ export default function CharacterInfo(props) {
         </div>
         <div className="chunk">
           <span>Pairing</span>
-          {character.pairing_qpp_or_romantic == null
+          {character.pairing == null
             ? "Not informed/applicable."
-            : character.pairing_qpp_or_romantic}
+            : character.pairing}
         </div>
       </div>
 
       <div className="line">
         <div className="chunk">
           <span>Series</span>{" "}
-          {character.main_storyseries == null
+          {character.series == null
             ? "Not informed or not applicable."
-            : character.main_storyseries}
+            : character.series}
         </div>
         <div className="chunk">
-          <span>Type of Rep</span> {character.type_of_rep}
+          <span>Type of Rep</span> {character.typeOfRep}
         </div>
 
         <div className="chunk">
@@ -51,21 +50,21 @@ export default function CharacterInfo(props) {
       <div className="line">
         <div className="chunk">
           <span>Romantic orientation</span>{" "}
-          {character.romantic_orientation == null
+          {character.romanticOrientation == null
             ? "Not informed."
-            : character.romantic_orientation}
+            : character.romanticOrientation}
         </div>
         <div className="chunk">
           <span>Sexual Orientation</span>{" "}
-          {character.sexual_orientation == null
+          {character.sexualOrientation == null
             ? "Not informed."
-            : character.sexual_orientation}
+            : character.sexualOrientation}
         </div>
       </div>
 
       <div className="line">
         <div className="chunk">
-          <span>Genre</span> {character.genre}
+          <span>Genre</span> {character.genres.join(", ")}
         </div>
       </div>
 
@@ -81,12 +80,12 @@ export default function CharacterInfo(props) {
       <div clasName="square">
         <p>
           <span>Notes & Warnings</span>
-          {character.rep_noteswarnings == null
+          {character.notesAndWarnings == null
             ? "No warnings."
-            : character.rep_noteswarnings}
+            : character.notesAndWarnings}
         </p>
       </div>
-      {token ? (
+      {/* {token ? (
         <div className="buttons-character">
           <button
             onClick={() => {
@@ -135,7 +134,7 @@ export default function CharacterInfo(props) {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 }

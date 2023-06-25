@@ -4,8 +4,21 @@ import Sidebar from "../../components/sidebar/sidebar";
 import SingleCharacter from "../../components/single-character/single-character";
 import { ReactComponent as ButtonIcon } from "../../assets/chevron-right-solid.svg";
 import MobileHeader from "../../components/mobile-header/mobile-header";
-import { useHistory, useRouteMatch, useParams } from "react-router-dom";
+import {
+  useHistory,
+  useRouteMatch,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 import SearchBar from "../../components/search-bar/search-bar";
+import { searchCharacters } from "../../api";
+import { dictionary } from "../../utils/dictionary";
+
+function useQuery() {
+  const { search } = useLocation();
+
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
 
 function Results({ location }) {
   const [search, setSearch] = React.useState("");
@@ -16,6 +29,8 @@ function Results({ location }) {
 
   const history = useHistory();
 
+  let query = useQuery();
+
   React.useEffect(() => {
     return history.listen((location) => {
       console.log(`You changed the page to: ${location.pathname}`);
@@ -25,80 +40,13 @@ function Results({ location }) {
     });
   }, [history]);
 
-  React.useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const url_params = [];
-    for (const key of params.entries()) {
-      if (url_params.length > 0) {
-        url_params.push("&");
-        url_params.push(`${key[0]}=${key[1]}`);
-      } else {
-        url_params.push(`${key[0]}=${key[1]}`);
-      }
-    }
-    const final = url_params.join("");
-    console.log(final);
-    if (final.includes("canonleads")) {
-      console.log("fetch canon leads pls");
-      fetch("https://aroacedb-back.herokuapp.com/characters/search/canonleads")
-        .then((res) => res.json())
-        .then((resJson) => {
-          console.log(resJson);
-          if (resJson.data) {
-            console.log(resJson.data);
-            const newResults = resJson.data.character;
-            setFilteredResults(newResults);
-
-            const newCount = resJson.data.length;
-            console.log(newCount);
-            setCount(newCount);
-          }
-        });
-    } else if (final.includes("canonaces")) {
-      fetch("https://aroacedb-back.herokuapp.com/characters/search/canonaces")
-        .then((res) => res.json())
-        .then((resJson) => {
-          console.log(resJson);
-          if (resJson.data) {
-            console.log(resJson.data);
-            const newResults = resJson.data.character;
-            setFilteredResults(newResults);
-
-            const newCount = resJson.data.length;
-            console.log(newCount);
-            setCount(newCount);
-          }
-        });
-    } else if (final.includes("canonaros")) {
-      fetch("https://aroacedb-back.herokuapp.com/characters/search/canonaros")
-        .then((res) => res.json())
-        .then((resJson) => {
-          console.log(resJson);
-          if (resJson.data) {
-            console.log(resJson.data);
-            const newResults = resJson.data.character;
-            setFilteredResults(newResults);
-
-            const newCount = resJson.data.length;
-            console.log(newCount);
-            setCount(newCount);
-          }
-        });
-    } else {
-      fetch(`https://aroacedb-back.herokuapp.com/character/infinite?${final}`)
-        .then((res) => res.json())
-        .then((resJson) => {
-          if (resJson.data) {
-            console.log(resJson.data);
-            const newResults = resJson.data.characters;
-            setFilteredResults(newResults);
-            const newCount = resJson.data.length;
-            console.log(newCount);
-            setCount(newCount);
-          }
-        });
-    }
-  }, [location.search]);
+  React.useEffect(async () => {
+    const search = query.get("search").toLowerCase();
+    const formattedSearch = dictionary[search];
+    const results = await searchCharacters(formattedSearch);
+    setFilteredResults(results.data.result);
+    setCount(results.data.result.length);
+  }, [query.get("search")]);
 
   return (
     <div className="Results">
@@ -108,25 +56,9 @@ function Results({ location }) {
       <div className="results-container">
         <div className="free-search">
           <form
-            onSubmit={(event) => {
-              console.log(search);
-
+            onSubmit={async (event) => {
               event.preventDefault();
               history.push(`/results?search=${search}`);
-              fetch(
-                `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
-              )
-                .then((res) => res.json())
-                .then((resJson) => {
-                  console.log(search);
-                  console.log(resJson);
-
-                  if (resJson.data) {
-                    const newResults = resJson.data.characters;
-                    setFilteredResults(newResults);
-                    console.log(filteredResults);
-                  }
-                });
             }}
           >
             <input
@@ -142,7 +74,7 @@ function Results({ location }) {
           </form>
         </div>
 
-        <div className="button-container">
+        {/* <div className="button-container">
           <button
             onClick={() => {
               setAdvancedSearch(!advancedSearch);
@@ -151,14 +83,14 @@ function Results({ location }) {
             Advanced Search
           </button>
         </div>
-        {advancedSearch ? <SearchBar /> : ""}
+        {advancedSearch ? <SearchBar /> : ""} */}
 
         <div className="count">The database found {count} entries.</div>
         {filteredResults ? (
           <div className="results">
             {filteredResults.map((i) => {
               return (
-                <div>
+                <div key={i.id}>
                   <SingleCharacter character={i} />
                 </div>
               );

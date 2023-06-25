@@ -7,17 +7,17 @@ import Stats from "../../components/stats/stats";
 import MobileHeader from "../../components/mobile-header/mobile-header";
 
 export default function About() {
-  const [stats, setStats] = React.useState([]);
+  // const [stats, setStats] = React.useState([]);
 
-  React.useEffect(() => {
-    fetch("https://aroacedb-back.herokuapp.com/stats").then((res) =>
-      res.json().then((resJson) => {
-        const data = resJson.data;
-        console.log(data);
-        setStats(data);
-      })
-    );
-  }, []);
+  // React.useEffect(() => {
+  //   fetch("https://aroacedb-back.herokuapp.com/stats").then((res) =>
+  //     res.json().then((resJson) => {
+  //       const data = resJson.data;
+  //       console.log(data);
+  //       setStats(data);
+  //     })
+  //   );
+  // }, []);
   return (
     <div className="About">
       <Sidebar />
@@ -41,7 +41,7 @@ export default function About() {
           </p>
         </div>
 
-        <Stats stats={stats} />
+        {/* <Stats stats={stats} /> */}
 
         <div className="about">
           <h2>Database structure</h2>

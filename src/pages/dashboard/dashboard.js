@@ -17,54 +17,54 @@ function Dashboard() {
   const [permissions, setPermissions] = React.useState(false);
 
   const onChangeValue = (event) => {
-    fetchWithBody(
-      "https://aroacedb-back.herokuapp.com/permissions/review",
-      "POST",
-      { checked: event.target.value }
-    )
-      .then((res) => res.json())
-      .then((resJson) => {
-        console.log(resJson);
-      });
+    // fetchWithBody(
+    //   "https://aroacedb-back.herokuapp.com/permissions/review",
+    //   "POST",
+    //   { checked: event.target.value }
+    // )
+    //   .then((res) => res.json())
+    //   .then((resJson) => {
+    //     console.log(resJson);
+    //   });
   };
 
   const onChangeValueC = (event) => {
     setCharacterCheck(event.target.value);
-    fetchWithBody(
-      "https://aroacedb-back.herokuapp.com/permissions/character",
-      "POST",
-      { checked: event.target.value }
-    )
-      .then((res) => res.json())
-      .then((resJson) => {
-        console.log(resJson);
-      });
+    // fetchWithBody(
+    //   "https://aroacedb-back.herokuapp.com/permissions/character",
+    //   "POST",
+    //   { checked: event.target.value }
+    // )
+    //   .then((res) => res.json())
+    //   .then((resJson) => {
+    //     console.log(resJson);
+    //   });
   };
 
   const onChangeValueS = (event) => {
     const newValue = event.target.value;
     setStoryCheck(newValue);
     console.log(storyCheck);
-    fetchWithBody(
-      "https://aroacedb-back.herokuapp.com/permissions/story",
-      "POST",
-      { checked: event.target.value }
-    )
-      .then((res) => res.json())
-      .then((resJson) => {
-        console.log(resJson);
-      });
+    // fetchWithBody(
+    //   "https://aroacedb-back.herokuapp.com/permissions/story",
+    //   "POST",
+    //   { checked: event.target.value }
+    // )
+    //   .then((res) => res.json())
+    //   .then((resJson) => {
+    //     console.log(resJson);
+    //   });
   };
 
   React.useEffect(() => {
-    fetch("https://aroacedb-back.herokuapp.com/permissions")
-      .then((res) => res.json())
-      .then((resJson) => {
-        console.log(resJson);
-        setCharacterCheck(resJson.data.character.checked);
-        setStoryCheck(resJson.data.story.checked);
-        setReviewCheck(resJson.data.review.checked);
-      });
+    // fetch("https://aroacedb-back.herokuapp.com/permissions")
+    //   .then((res) => res.json())
+    //   .then((resJson) => {
+    //     console.log(resJson);
+    //     setCharacterCheck(resJson.data.character.checked);
+    //     setStoryCheck(resJson.data.story.checked);
+    //     setReviewCheck(resJson.data.review.checked);
+    //   });
   }, [permissions]);
 
   React.useEffect(() => {
@@ -133,18 +133,18 @@ function Dashboard() {
                   name="character"
                   value={true}
                   checked={characterCheck ? "checked" : ""}
-                  onClick={() => {
-                    setCharacterCheck(true);
-                    fetchWithBody(
-                      "https://aroacedb-back.herokuapp.com/permissions/character",
-                      "POST",
-                      { checked: true }
-                    )
-                      .then((res) => res.json())
-                      .then((resJson) => {
-                        console.log(resJson);
-                      });
-                  }}
+                  // onClick={() => {
+                  //   setCharacterCheck(true);
+                  //   fetchWithBody(
+                  //     "https://aroacedb-back.herokuapp.com/permissions/character",
+                  //     "POST",
+                  //     { checked: true }
+                  //   )
+                  //     .then((res) => res.json())
+                  //     .then((resJson) => {
+                  //       console.log(resJson);
+                  //     });
+                  // }}
                 />
                 Disable
                 <input
@@ -152,18 +152,18 @@ function Dashboard() {
                   name="character"
                   value={false}
                   checked={characterCheck ? "" : "checked"}
-                  onClick={() => {
-                    setCharacterCheck(false);
-                    fetchWithBody(
-                      "https://aroacedb-back.herokuapp.com/permissions/character",
-                      "POST",
-                      { checked: false }
-                    )
-                      .then((res) => res.json())
-                      .then((resJson) => {
-                        console.log(resJson);
-                      });
-                  }}
+                  // onClick={() => {
+                  //   setCharacterCheck(false);
+                  //   fetchWithBody(
+                  //     "https://aroacedb-back.herokuapp.com/permissions/character",
+                  //     "POST",
+                  //     { checked: false }
+                  //   )
+                  //     .then((res) => res.json())
+                  //     .then((resJson) => {
+                  //       console.log(resJson);
+                  //     });
+                  // }}
                 />
               </div>
             </label>
@@ -176,18 +176,18 @@ function Dashboard() {
                   name="review"
                   value={true}
                   checked={reviewCheck ? "checked" : ""}
-                  onClick={() => {
-                    setReviewCheck(true);
-                    fetchWithBody(
-                      "https://aroacedb-back.herokuapp.com/permissions/review",
-                      "POST",
-                      { checked: true }
-                    )
-                      .then((res) => res.json())
-                      .then((resJson) => {
-                        console.log(resJson);
-                      });
-                  }}
+                  // onClick={() => {
+                  //   setReviewCheck(true);
+                  //   fetchWithBody(
+                  //     "https://aroacedb-back.herokuapp.com/permissions/review",
+                  //     "POST",
+                  //     { checked: true }
+                  //   )
+                  //     .then((res) => res.json())
+                  //     .then((resJson) => {
+                  //       console.log(resJson);
+                  //     });
+                  // }}
                 />
                 Disable
                 <input
@@ -195,18 +195,18 @@ function Dashboard() {
                   name="review"
                   value={false}
                   checked={reviewCheck ? "" : "checked"}
-                  onClick={() => {
-                    setReviewCheck(false);
-                    fetchWithBody(
-                      "https://aroacedb-back.herokuapp.com/permissions/review",
-                      "POST",
-                      { checked: false }
-                    )
-                      .then((res) => res.json())
-                      .then((resJson) => {
-                        console.log(resJson);
-                      });
-                  }}
+                  // onClick={() => {
+                  //   setReviewCheck(false);
+                  //   fetchWithBody(
+                  //     "https://aroacedb-back.herokuapp.com/permissions/review",
+                  //     "POST",
+                  //     { checked: false }
+                  //   )
+                  //     .then((res) => res.json())
+                  //     .then((resJson) => {
+                  //       console.log(resJson);
+                  //     });
+                  // }}
                 />
               </div>
             </label>
@@ -219,18 +219,18 @@ function Dashboard() {
                   name="story"
                   value={true}
                   checked={storyCheck ? "checked" : ""}
-                  onClick={() => {
-                    setStoryCheck(true);
-                    fetchWithBody(
-                      "https://aroacedb-back.herokuapp.com/permissions/story",
-                      "POST",
-                      { checked: true }
-                    )
-                      .then((res) => res.json())
-                      .then((resJson) => {
-                        console.log(resJson);
-                      });
-                  }}
+                  // onClick={() => {
+                  //   setStoryCheck(true);
+                  //   fetchWithBody(
+                  //     "https://aroacedb-back.herokuapp.com/permissions/story",
+                  //     "POST",
+                  //     { checked: true }
+                  //   )
+                  //     .then((res) => res.json())
+                  //     .then((resJson) => {
+                  //       console.log(resJson);
+                  //     });
+                  // }}
                 />
                 Disable
                 <input
@@ -238,18 +238,18 @@ function Dashboard() {
                   name="story"
                   value={false}
                   checked={storyCheck ? "" : "checked"}
-                  onClick={() => {
-                    setStoryCheck(false);
-                    fetchWithBody(
-                      "https://aroacedb-back.herokuapp.com/permissions/story",
-                      "POST",
-                      { checked: false }
-                    )
-                      .then((res) => res.json())
-                      .then((resJson) => {
-                        console.log(resJson);
-                      });
-                  }}
+                  // onClick={() => {
+                  //   setStoryCheck(false);
+                  //   fetchWithBody(
+                  //     "https://aroacedb-back.herokuapp.com/permissions/story",
+                  //     "POST",
+                  //     { checked: false }
+                  //   )
+                  //     .then((res) => res.json())
+                  //     .then((resJson) => {
+                  //       console.log(resJson);
+                  //     });
+                  // }}
                 />
               </div>
             </label>

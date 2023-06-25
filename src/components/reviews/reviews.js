@@ -13,14 +13,14 @@ export default function Reviews(props) {
     setToken(newToken);
     console.log(token);
 
-    fetch("https://aroacedb-back.herokuapp.com/permissions")
-      .then((res) => res.json())
-      .then((resJson) => {
-        console.log(resJson);
-        setCharacterCheck(resJson.data.character.checked);
-        setStoryCheck(resJson.data.story.checked);
-        setReviewCheck(resJson.data.review.checked);
-      });
+    // fetch("https://aroacedb-back.herokuapp.com/permissions")
+    //   .then((res) => res.json())
+    //   .then((resJson) => {
+    //     console.log(resJson);
+    //     setCharacterCheck(resJson.data.character.checked);
+    //     setStoryCheck(resJson.data.story.checked);
+    //     setReviewCheck(resJson.data.review.checked);
+    //   });
   });
 
   const showButtons = () => {

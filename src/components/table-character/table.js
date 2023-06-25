@@ -6,13 +6,12 @@ import "./table.css";
 
 function TableCharacter(props) {
   const { content, type, id } = props;
-
   return (
     <table className="table">
       <thead>
         {id === "character" ? (
           <tr>
-            <th>Character Name</th>
+            <th>Name</th>
             <th>Genre</th>
             <th>Importance</th>
             <th>Gender</th>

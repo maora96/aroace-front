@@ -5,15 +5,15 @@ export default function RowCharacter(props) {
   const { content, type, id } = props;
   return (
     <tr className="tbody">
-      <td>{content.character_name}</td>
-      <td>{content.genre}</td>
+      <td>{content.name}</td>
+      <td>{content.genres.join(", ")}</td>
       <td>{content.importance}</td>
       <td>{content.gender}</td>
-      <td>{content.pairing_qpp_or_romantic}</td>
-      <td>{content.main_storyseries}</td>
-      <td>{content.relationships}</td>
-      <td>{content.romantic_orientation}</td>
-      <td>{content.sexual_orientation}</td>
+      <td>{content.pairing}</td>
+      <td>{content.series}</td>
+      <td>{content.relationships?.join(", ")}</td>
+      <td>{content.romanticOrientation}</td>
+      <td>{content.sexualOrientation}</td>
       <td>
         {type === "regular" ? (
           <a href={`/character/${content.id}`}>
@@ -26,48 +26,5 @@ export default function RowCharacter(props) {
         )}
       </td>
     </tr>
-
-    // <tr class="tbody">
-    //   {id === "character" ? (
-    //     <div>
-    //   <td>{content.character_name}</td>
-    //   <td>{content.author}</td>
-    //   <td>{content.importance}</td>
-    //   <td>{content.romantic_orientation}</td>
-    //   <td>{content.sexual_orientation}</td>
-    //   <td>
-    //     {type === "regular" ? (
-    //       <a href={`/character/${content.id}`}>
-    //         <img src={ExternalLink} alt="profile link" />
-    //       </a>
-    //     ) : (
-    //       <a href={`/suggested-character/${content.id}`}>
-    //         <img src={ExternalLink} alt="profile link" />
-    //       </a>
-    //     )}
-    //   </td>
-    //     </div>
-    //   ) : id === "story" ? (
-    //     <div>
-    //       <td>{content.story_title}</td>
-    //       <td>{content.author}</td>
-    //       <td>
-    //         <a href={`/suggested-story/${content.id}`}>
-    //           <img src={ExternalLink} alt="profile link" />
-    //         </a>
-    //       </td>
-    //     </div>
-    //   ) : (
-    //     <div>
-    //       <td>{content.review_for}</td>
-    //       <td>{content.reviewer}</td>
-    //       <td>
-    //         <a href={`/suggested-review/${content.id}`}>
-    //           <img src={ExternalLink} alt="profile link" />
-    //         </a>
-    //       </td>
-    //     </div>
-    //   )}
-    // </tr>
   );
 }

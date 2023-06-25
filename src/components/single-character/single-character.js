@@ -19,26 +19,24 @@ export default function SingleCharacter(props) {
         <div className="single-character-container-flex">
           <div className="top">
             <div className="header">
-              <h2>{character.character_name}</h2>
+              <h2>{character.name}</h2>
               <h3>
                 by {character.author}
                 <span>
                   {character.gender} | {character.importance}{" "}
-                  {character.pairing_qpp_or_romantic
-                    ? character.pairing_qpp_or_romantic
-                    : ""}
+                  {character.pairing ? character.pairing : ""}
                 </span>
               </h3>
             </div>
           </div>
-          <span>in the {character.main_storyseries} series</span>
+          <span>in the {character.series} series</span>
           <span>
-            {character.genre} | {character.relationships}
+            {character.genres?.join(", ")} | {character.relationships}
           </span>
           <span>
             A(n){" "}
             <span>
-              {character.romantic_orientation} {character.sexual_orientation}{" "}
+              {character.romanticOrientation} {character.sexualOrientation}{" "}
               character.
             </span>
           </span>

@@ -29,7 +29,7 @@ export default function Contact() {
             </a>
           </div>
 
-          <Formik
+          {/* <Formik
             initialValues={{
               name: "",
               email: "",
@@ -107,7 +107,7 @@ export default function Contact() {
                 </form>
               );
             }}
-          </Formik>
+          </Formik> */}
         </div>
       </div>
     </div>

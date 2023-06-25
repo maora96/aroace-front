@@ -6,6 +6,8 @@ import { ReactComponent as ButtonIcon } from "../../assets/chevron-right-solid.s
 import MobileHeader from "../../components/mobile-header/mobile-header";
 import { useHistory } from "react-router-dom";
 import SearchBar from "../../components/search-bar/search-bar";
+import { useEffect } from "react";
+import { getRandomCharacter } from "../../api";
 
 function Home() {
   const [random, setRandom] = React.useState([]);
@@ -15,16 +17,18 @@ function Home() {
   const [advancedSearch, setAdvancedSearch] = React.useState(false);
   const history = useHistory();
 
-  React.useEffect(() => {
-    fetch("https://aroacedb-back.herokuapp.com/character")
-      .then((res) => res.json())
-      .then((resJson) => {
-        console.log(resJson);
-        const newRandom = resJson.data;
-        console.log(newRandom);
-        console.log(filteredResults.length);
-        setRandom(newRandom);
-      });
+  useEffect(async () => {
+    // fetch("https://urchin-app-l7pyx.ondigitalocean.app/characters/random")
+    //   .then((res) => res.json())
+    //   .then((resJson) => {
+    //     console.log(resJson);
+    //     const newRandom = resJson.data;
+    //     console.log(newRandom);
+    //     console.log(filteredResults.length);
+    //     setRandom(newRandom);
+    //   });
+    const randomCharacter = await getRandomCharacter();
+    setRandom(randomCharacter.data.result);
   }, []);
 
   return (
@@ -55,20 +59,20 @@ function Home() {
 
               event.preventDefault();
               history.push(`/results?search=${search}`);
-              fetch(
-                `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
-              )
-                .then((res) => res.json())
-                .then((resJson) => {
-                  console.log(search);
-                  console.log(resJson.data);
+              // fetch(
+              //   `https://aroacedb-back.herokuapp.com/character/infinite?search=${search}`
+              // )
+              //   .then((res) => res.json())
+              //   .then((resJson) => {
+              //     console.log(search);
+              //     console.log(resJson.data);
 
-                  if (resJson.data) {
-                    const newResults = resJson.data.characters;
-                    setFilteredResults(newResults);
-                    console.log(filteredResults);
-                  }
-                });
+              //     if (resJson.data) {
+              //       const newResults = resJson.data.characters;
+              //       setFilteredResults(newResults);
+              //       console.log(filteredResults);
+              //     }
+              //   });
             }}
           >
             <input
@@ -84,7 +88,7 @@ function Home() {
           </form>
         </div>
 
-        <div className="button-container">
+        {/* <div className="button-container">
           <div className="common-searches">
             <span>Common searches: </span>
             <a href="/results?search=acespec">All Aces</a>
@@ -100,40 +104,23 @@ function Home() {
             Advanced Search
           </button>
         </div>
-        {advancedSearch ? <SearchBar /> : ""}
+        {advancedSearch ? <SearchBar /> : ""} */}
 
         <div className="results">
-          {filteredResults.map((i) => {
-            return (
-              <div>
-                <SingleCharacter character={i} />
-              </div>
-            );
-          })}
-
-          {filteredResults.length !== 0 ? (
-            <div></div>
-          ) : (
-            <div className="random">
-              <h2>Your random character</h2>
-              <SingleCharacter character={random} />
-              <div className="char-btn">
-                <button
-                  onClick={() => {
-                    fetch("https://aroacedb-back.herokuapp.com/character")
-                      .then((res) => res.json())
-                      .then((resJson) => {
-                        console.log(resJson.data);
-                        const newRandom = resJson.data;
-                        setRandom(newRandom);
-                      });
-                  }}
-                >
-                  Give me a new character!
-                </button>
-              </div>
+          <div className="random">
+            <h2>Your random character</h2>
+            <SingleCharacter character={random} />
+            <div className="char-btn">
+              <button
+                onClick={async () => {
+                  const randomCharacter = await getRandomCharacter();
+                  setRandom(randomCharacter.data.result);
+                }}
+              >
+                Give me a new character!
+              </button>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
