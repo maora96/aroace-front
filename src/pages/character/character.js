@@ -18,6 +18,7 @@ export default function SingleCharacter() {
     const character = await getCharacter(params.id);
     console.log("character", character);
     setCharacter(character.data.result);
+    console.log(character.data.result);
     // fetch(`https://aroacedb-back.herokuapp.com/characters/${params.id}`)
     //   .then((res) => res.json())
     //   .then((resJson) => {
@@ -56,7 +57,9 @@ export default function SingleCharacter() {
       <MobileHeader />
       <div className="character-container">
         <CharacterInfo character={character} />
-        <Stories stories={stories} character_id={params.id} />
+        {character?.stories.length !== 0 && (
+          <Stories stories={character.stories} character_id={params.id} />
+        )}
         {/* <Reviews reviews={reviews} character_id={params.id} /> */}
       </div>
     </div>

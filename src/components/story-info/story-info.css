@@ -14,6 +14,12 @@
   margin-bottom: 0.8rem;
 }
 
+.StoryInfo .text {
+  /* display: flex;
+  justify-content: space-between; */
+  margin-bottom: 0.8rem;
+}
+
 .StoryInfo .line:last-of-type {
   margin-bottom: 1.5rem;
 }
@@ -60,6 +66,7 @@
   margin-right: 2rem;
   max-width: 250px;
   object-fit: contain;
+  align-self: start;
 }
 
 .StoryInfo .story-container {

@@ -2,6 +2,7 @@ import "./character-info.css";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { fetchWithTokenNoBody } from "../../utils/fetch";
+import { matcher } from "../../utils/dictionary";
 
 export default function CharacterInfo(props) {
   const { character } = props;
@@ -39,11 +40,11 @@ export default function CharacterInfo(props) {
             : character?.series}
         </div>
         <div className="chunk">
-          <span>Type of Rep</span> {character?.typeOfRep}
+          <span>Type of Rep</span> {matcher[character?.typeOfRep]}
         </div>
 
         <div className="chunk">
-          <span>Importance</span> {character?.importance}
+          <span>Importance</span> {matcher[character?.importance]}
         </div>
       </div>
 
@@ -52,19 +53,20 @@ export default function CharacterInfo(props) {
           <span>Romantic orientation</span>{" "}
           {character?.romanticOrientation == null
             ? "Not informed."
-            : character?.romanticOrientation}
+            : matcher[character?.romanticOrientation]}
         </div>
         <div className="chunk">
           <span>Sexual Orientation</span>{" "}
           {character?.sexualOrientation == null
             ? "Not informed."
-            : character?.sexualOrientation}
+            : matcher[character?.sexualOrientation]}
         </div>
       </div>
 
       <div className="line">
         <div className="chunk">
-          <span>Genre</span> {character?.genres?.join(", ")}
+          <span>Genre</span>{" "}
+          {character?.genres?.map((genre) => matcher[genre]).join(", ")}
         </div>
       </div>
 
@@ -73,7 +75,7 @@ export default function CharacterInfo(props) {
           <span>Relationships</span>
           {character?.relationships == null
             ? "Not informed."
-            : character?.relationships}
+            : character?.relationships?.map((ship) => matcher[ship]).join(", ")}
         </p>
       </div>
 

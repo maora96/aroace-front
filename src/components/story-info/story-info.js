@@ -1,7 +1,9 @@
 import "./story-info.css";
 import React from "react";
 import { fetchWithTokenNoBody } from "../../utils/fetch";
+import parse from "html-react-parser";
 import { useHistory } from "react-router-dom";
+import { matcher } from "../../utils/dictionary";
 
 export default function StoryInfo(props) {
   const { story } = props;
@@ -25,49 +27,52 @@ export default function StoryInfo(props) {
 
       <div className="story-container">
         <div className="line">
-          <h4>{story.story_title}</h4>
+          <h4>{story.title}</h4>
           <span>
-            <span>{story.story_length}</span>
+            <span>{matcher[story.length]}</span>
           </span>
         </div>
         <div className="line">
-          {story.series_or_anthology === null ? (
+          {story.series === null ? (
             "No series/anthology"
           ) : (
             <span>
-              in the <span>{story.series_or_anthology} </span>series
+              in the <span>{story.series} </span>series
             </span>
           )}
         </div>
         <div className="line">
           <span>
-            <span>{story.genre}</span>
+            by <span>{story.author}</span>
+          </span>
+        </div>
+        <div className="line">
+          <span>
+            <span>
+              {story.genres?.map((genre) => matcher[genre]).join(", ")}
+            </span>
           </span>
           <span>
-            <span className="to-capitalize">{story.type_of_rep} Rep</span>
+            <span className="to-capitalize">{matcher[story.ageGroup]}</span>
           </span>
         </div>
 
-        <div className="line">
-          <span>
-            {story.character_importance === null ? (
-              "No info on character importance"
-            ) : (
-              <span>{story.character_importance} Character</span>
-            )}
-          </span>
+        <div className="text">
+          {story?.description?.split("\n\n")?.map((paragraph) => {
+            return <p>{paragraph}</p>;
+          })}
         </div>
         <p>
           <span>Rep Notes & Warnings</span>
-          {story.rep_noteswarnings === null
+          {story.repNotesAndWarnings === null
             ? "No rep notes or warnings."
-            : story.rep_noteswarnings}
+            : story.repNotesAndWarnings}
         </p>
         <p>
           <span>Other Notes & Warnings</span>
-          {story.other_noteswarnings === null
+          {story.notesAndWarnings === null
             ? "No other notes or warnings."
-            : story.other_noteswarnings}
+            : story.notesAndWarnings}
         </p>
         {token ? (
           <div className="buttons-story">

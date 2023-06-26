@@ -23,6 +23,8 @@ export default function Stories(props) {
     //     setStoryCheck(resJson.data.story.checked);
     //     setReviewCheck(resJson.data.review.checked);
     //   });
+
+    console.log("stories", stories);
   }, []);
 
   const showButtons = () => {
@@ -52,7 +54,7 @@ export default function Stories(props) {
   return (
     <div className="Stories">
       <h3>Stories</h3>
-      {stories.map((story) => {
+      {stories?.map((story) => {
         return <StoryInfo story={story} />;
       })}
       {showButtons()}
