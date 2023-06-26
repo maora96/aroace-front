@@ -16,7 +16,7 @@ export default function StoryInfo(props) {
   }, []);
   return (
     <div className="StoryInfo">
-      {story.cover ? (
+      {story?.cover ? (
         <img src={story.cover} alt="cover" />
       ) : (
         <img
@@ -27,33 +27,33 @@ export default function StoryInfo(props) {
 
       <div className="story-container">
         <div className="line">
-          <h4>{story.title}</h4>
+          <h4>{story?.title}</h4>
           <span>
-            <span>{matcher[story.length]}</span>
+            <span>{matcher[story?.length]}</span>
           </span>
         </div>
         <div className="line">
-          {story.series === null ? (
+          {story?.series === null ? (
             "No series/anthology"
           ) : (
             <span>
-              in the <span>{story.series} </span>series
+              in the <span>{story?.series} </span>series
             </span>
           )}
         </div>
         <div className="line">
           <span>
-            by <span>{story.author}</span>
+            by <span>{story?.author}</span>
           </span>
         </div>
         <div className="line">
           <span>
             <span>
-              {story.genres?.map((genre) => matcher[genre]).join(", ")}
+              {story?.genres?.map((genre) => matcher[genre]).join(", ")}
             </span>
           </span>
           <span>
-            <span className="to-capitalize">{matcher[story.ageGroup]}</span>
+            <span className="to-capitalize">{matcher[story?.ageGroup]}</span>
           </span>
         </div>
 
@@ -64,15 +64,15 @@ export default function StoryInfo(props) {
         </div>
         <p>
           <span>Rep Notes & Warnings</span>
-          {story.repNotesAndWarnings === null
+          {story?.repNotesAndWarnings === null
             ? "No rep notes or warnings."
-            : story.repNotesAndWarnings}
+            : story?.repNotesAndWarnings}
         </p>
         <p>
           <span>Other Notes & Warnings</span>
-          {story.notesAndWarnings === null
+          {story?.notesAndWarnings === null
             ? "No other notes or warnings."
-            : story.notesAndWarnings}
+            : story?.notesAndWarnings}
         </p>
         {token ? (
           <div className="buttons-story">
