@@ -57,7 +57,7 @@ export default function SingleCharacter() {
       <MobileHeader />
       <div className="character-container">
         <CharacterInfo character={character} />
-        {character?.stories.length !== 0 && (
+        {character?.stories?.length !== 0 && (
           <Stories stories={character.stories} character_id={params.id} />
         )}
         {/* <Reviews reviews={reviews} character_id={params.id} /> */}

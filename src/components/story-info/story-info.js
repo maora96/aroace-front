@@ -29,7 +29,7 @@ export default function StoryInfo(props) {
         <div className="line">
           <h4>{story?.title}</h4>
           <span>
-            <span>{matcher[story?.length]}</span>
+            <span>{story?.length && matcher[story?.length]}</span>
           </span>
         </div>
         <div className="line">
