@@ -64,7 +64,7 @@ export default function CharacterInfo(props) {
 
       <div className="line">
         <div className="chunk">
-          <span>Genre</span> {character.genres.join(", ")}
+          <span>Genre</span> {character.genres?.join(", ")}
         </div>
       </div>
 
