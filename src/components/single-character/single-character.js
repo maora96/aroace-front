@@ -19,29 +19,29 @@ export default function SingleCharacter(props) {
         <div className="single-character-container-flex">
           <div className="top">
             <div className="header">
-              <h2>{character.name}</h2>
+              <h2>{character?.name}</h2>
               <h3>
-                by {character.author}
+                by {character?.author}
                 <span>
-                  {character.gender} | {character.importance}{" "}
-                  {character.pairing ? character.pairing : ""}
+                  {character?.gender} | {character?.importance}{" "}
+                  {character?.pairing ? character?.pairing : ""}
                 </span>
               </h3>
             </div>
           </div>
-          <span>in the {character.series} series</span>
+          <span>in the {character?.series} series</span>
           <span>
-            {character.genres?.join(", ")} | {character.relationships}
+            {character?.genres?.join(", ")} | {character?.relationships}
           </span>
           <span>
             A(n){" "}
             <span>
-              {character.romanticOrientation} {character.sexualOrientation}{" "}
+              {character?.romanticOrientation} {character?.sexualOrientation}{" "}
               character.
             </span>
           </span>
           <div className="button-container">
-            <a href={`/character/${character.id}`}>Read more</a>
+            <a href={`/character/${character?.id}`}>Read more</a>
           </div>
         </div>
       </div>

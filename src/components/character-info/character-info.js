@@ -14,75 +14,75 @@ export default function CharacterInfo(props) {
   // }, []);
   return (
     <div className="CharacterInfo">
-      <h2>{character.name}</h2>
+      <h2>{character?.name}</h2>
       <div className="line">
         <div className="chunk">
           <span>Author</span>
-          {character.author}
+          {character?.author}
         </div>
         <div className="chunk">
-          <span>Gender</span> {character.gender}
+          <span>Gender</span> {character?.gender}
         </div>
         <div className="chunk">
           <span>Pairing</span>
-          {character.pairing == null
+          {character?.pairing == null
             ? "Not informed/applicable."
-            : character.pairing}
+            : character?.pairing}
         </div>
       </div>
 
       <div className="line">
         <div className="chunk">
           <span>Series</span>{" "}
-          {character.series == null
+          {character?.series == null
             ? "Not informed or not applicable."
-            : character.series}
+            : character?.series}
         </div>
         <div className="chunk">
-          <span>Type of Rep</span> {character.typeOfRep}
+          <span>Type of Rep</span> {character?.typeOfRep}
         </div>
 
         <div className="chunk">
-          <span>Importance</span> {character.importance}
+          <span>Importance</span> {character?.importance}
         </div>
       </div>
 
       <div className="line">
         <div className="chunk">
           <span>Romantic orientation</span>{" "}
-          {character.romanticOrientation == null
+          {character?.romanticOrientation == null
             ? "Not informed."
-            : character.romanticOrientation}
+            : character?.romanticOrientation}
         </div>
         <div className="chunk">
           <span>Sexual Orientation</span>{" "}
-          {character.sexualOrientation == null
+          {character?.sexualOrientation == null
             ? "Not informed."
-            : character.sexualOrientation}
+            : character?.sexualOrientation}
         </div>
       </div>
 
       <div className="line">
         <div className="chunk">
-          <span>Genre</span> {character.genres?.join(", ")}
+          <span>Genre</span> {character?.genres?.join(", ")}
         </div>
       </div>
 
       <div clasName="square">
         <p>
           <span>Relationships</span>
-          {character.relationships == null
+          {character?.relationships == null
             ? "Not informed."
-            : character.relationships}
+            : character?.relationships}
         </p>
       </div>
 
       <div clasName="square">
         <p>
           <span>Notes & Warnings</span>
-          {character.notesAndWarnings == null
+          {character?.notesAndWarnings == null
             ? "No warnings."
-            : character.notesAndWarnings}
+            : character?.notesAndWarnings}
         </p>
       </div>
       {/* {token ? (
