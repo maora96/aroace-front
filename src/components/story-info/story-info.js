@@ -43,6 +43,11 @@ export default function StoryInfo(props) {
         </div>
         <div className="line">
           <span>
+            volume <span>{story?.volume}</span>
+          </span>
+        </div>
+        <div className="line">
+          <span>
             by <span>{story?.author}</span>
           </span>
         </div>

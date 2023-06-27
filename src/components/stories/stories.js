@@ -54,9 +54,11 @@ export default function Stories(props) {
   return (
     <div className="Stories">
       <h3>Stories</h3>
-      {stories?.map((story) => {
-        return <StoryInfo story={story} />;
-      })}
+      {stories
+        ?.sort((a, b) => Number(a.volume) - Number(b.volume))
+        .map((story) => {
+          return <StoryInfo story={story} key={story.id} />;
+        })}
       {showButtons()}
       {/* {token ? (
         <a href={`/add-story/${character_id}`}>Add Story</a>

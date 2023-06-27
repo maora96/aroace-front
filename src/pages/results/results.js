@@ -42,8 +42,11 @@ function Results({ location }) {
 
   React.useEffect(async () => {
     const search = query.get("search").toLowerCase();
+    console.log("SEARCH", search);
     const formattedSearch = dictionary[search];
-    const results = await searchCharacters(formattedSearch);
+
+    const results = await searchCharacters(formattedSearch ?? search);
+    console.log(results);
     setFilteredResults(results.data.result);
     setCount(results.data.result.length);
   }, [query.get("search")]);
